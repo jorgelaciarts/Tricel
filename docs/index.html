@@ -146,9 +146,16 @@ async function load() {
           e.Fecha + ' — ' + (e.Numero_Causas || '?') + ' causas, ' + (e.Numero_Tramites || '?') + ' trámites' +
           '</summary>';
         if (causas.length > 0) {
-          html += '<table style="box-shadow:none;"><thead><tr><th>ROL</th><th>Carátula</th><th>N° Trámites</th></tr></thead><tbody>';
+          html += '<table style="box-shadow:none;"><thead><tr><th>ROL</th><th>Carátula</th><th>N° Trámites</th><th>Resolución</th></tr></thead><tbody>';
           causas.forEach(c => {
-            html += '<tr><td>' + (c.ROL || '') + '</td><td>' + (c.Caratula || '') + '</td><td>' + (c.Numero_Tramites || '') + '</td></tr>';
+            const resoluciones = c.Resoluciones || [];
+            let descargaHtml = '—';
+            if (resoluciones.length > 0) {
+              descargaHtml = resoluciones.map(r =>
+                '<a href="' + r.url_publica + '" target="_blank" rel="noopener">Descargar PDF</a>'
+              ).join('<br>');
+            }
+            html += '<tr><td>' + (c.ROL || '') + '</td><td>' + (c.Caratula || '') + '</td><td>' + (c.Numero_Tramites || '') + '</td><td>' + descargaHtml + '</td></tr>';
           });
           html += '</tbody></table>';
         } else {
@@ -188,10 +195,6 @@ async function load() {
     console.error(err);
   }
 }
-load();
-</script>
-</body>
-</html>
 load();
 </script>
 </body>
