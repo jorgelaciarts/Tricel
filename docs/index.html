@@ -151,9 +151,11 @@ async function load() {
             const resoluciones = c.Resoluciones || [];
             let descargaHtml = '—';
             if (resoluciones.length > 0) {
-              descargaHtml = resoluciones.map(r =>
-                '<a href="' + r.url_publica + '" target="_blank" rel="noopener">Descargar PDF</a>'
-              ).join('<br>');
+              descargaHtml = resoluciones.map(r => {
+                const ref = r.referencia || 'Resolución';
+                const fechaR = r.fecha_tramite ? ' (' + r.fecha_tramite + ')' : '';
+                return '<a href="' + r.url_publica + '" target="_blank" rel="noopener">' + ref + fechaR + '</a>';
+              }).join('<br>');
             }
             html += '<tr><td>' + (c.ROL || '') + '</td><td>' + (c.Caratula || '') + '</td><td>' + (c.Numero_Tramites || '') + '</td><td>' + descargaHtml + '</td></tr>';
           });
@@ -199,3 +201,4 @@ load();
 </script>
 </body>
 </html>
+
