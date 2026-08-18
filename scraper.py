@@ -38,6 +38,7 @@ import re
 from datetime import datetime, timezone
 from pathlib import Path
 
+import pdfplumber
 from playwright.sync_api import sync_playwright
 
 URL = "https://tricel.lexsoft.cl/tce/estadoDiario"
@@ -59,6 +60,62 @@ MAX_CAUSAS_NUEVAS_POR_CORRIDA = 80
 def sanitize_filename(text):
     text = re.sub(r"[^\w\-.]", "_", text.strip())
     return text[:100]
+
+
+def _normalizar_texto(texto):
+    return re.sub(r"\s+", " ", texto).strip()
+
+
+def extraer_texto_pdf(pdf_path):
+    """Extrae todo el texto de un PDF (usado para leer el contenido de las Sentencias)."""
+    texto = ""
+    try:
+        with pdfplumber.open(pdf_path) as pdf:
+            for pagina in pdf.pages:
+                texto += (pagina.extract_text() or "") + "\n"
+    except Exception as exc:
+        print(f"Aviso: no se pudo leer el texto del PDF {pdf_path}: {exc}")
+    return texto
+
+
+def extraer_eleccion(texto):
+    """
+    Busca el cargo al que postula el reclamante, con el patrón
+    'candidata/candidato al cargo de <CARGO> de la...'. Ej: 'Concejal',
+    'Alcalde', 'Gobernador Regional'. Si el documento no menciona una
+    candidatura (p. ej. reclamos sobre el propio Servicio Electoral sin
+    mencionar el cargo), devuelve cadena vacía.
+    """
+    t = _normalizar_texto(texto)
+    m = re.search(
+        r"al cargo de ([A-ZÁÉÍÓÚÑa-záéíóúñ]+(?:\s[A-ZÁÉÍÓÚÑa-záéíóúñ]+){0,2}?)\s(?:de la|,|;)",
+        t,
+    )
+    return m.group(1).strip().upper() if m else ""
+
+
+def extraer_pronunciamiento(texto):
+    """
+    Busca la frase que sigue a 'Por estas consideraciones,' -donde el
+    TCE declara su decisión- y la clasifica en una etiqueta corta.
+    """
+    t = _normalizar_texto(texto)
+    m = re.search(r"[Pp]or estas consideraciones,?\s*(.+?)[,;.]", t)
+    if not m:
+        return ""
+    frase = m.group(1).strip().lower()
+    if "acoge" in frase and "parcial" in frase:
+        return "ACOGE PARCIAL"
+    if "no acoge" in frase or "rechaza" in frase:
+        return "RECHAZA"
+    if "acoge" in frase:
+        return "ACOGE TOTAL"
+    if "no ha lugar" in frase:
+        return "NO HA LUGAR"
+    # Si no calza con ninguna etiqueta conocida, se guarda el fragmento
+    # de texto tal cual (recortado) para no perder la información y
+    # poder revisarlo manualmente.
+    return frase.upper()[:80]
 
 
 def extract_causas_from_modal(page):
@@ -110,14 +167,20 @@ def find_tramites_table(page):
 def download_resoluciones_for_causa(page, rol, fecha):
     """
     Dentro de la vista de una causa ya abierta, busca trámites tipo
-    'Resolución' y descarga su documento. Devuelve una lista de dicts
-    con la ruta relativa del PDF guardado y algunos metadatos de la fila.
+    'Resolución' y descarga su documento. Si el trámite es de tipo
+    'Sentencia', además lee el texto del PDF para extraer ELECCIÓN y
+    PRONUNCIAMIENTO.
+
+    Devuelve (resoluciones, eleccion, pronunciamiento).
     """
     resoluciones = []
+    eleccion = ""
+    pronunciamiento = ""
+
     table = find_tramites_table(page)
     if table is None:
         print(f"Aviso: no se encontró la tabla de trámites para la causa {rol}")
-        return resoluciones
+        return resoluciones, eleccion, pronunciamiento
 
     rows = table.query_selector_all("tbody tr")
     for idx, row in enumerate(rows):
@@ -150,10 +213,24 @@ def download_resoluciones_for_causa(page, rol, fecha):
                 "referencia": referencia,
                 "fecha_tramite": fecha_tramite,
             })
+
+            # Solo se lee el contenido de las "Sentencia" (ahí está la
+            # decisión final del caso); "Téngase presente", "Dese cuenta",
+            # etc. son trámites intermedios sin pronunciamiento de fondo.
+            if referencia.strip().lower() == "sentencia":
+                texto_pdf = extraer_texto_pdf(dest)
+                if texto_pdf:
+                    eleccion_encontrada = extraer_eleccion(texto_pdf)
+                    pronunciamiento_encontrado = extraer_pronunciamiento(texto_pdf)
+                    if eleccion_encontrada:
+                        eleccion = eleccion_encontrada
+                    if pronunciamiento_encontrado:
+                        pronunciamiento = pronunciamiento_encontrado
+
         except Exception as exc:
             print(f"Aviso: no se pudo descargar una resolución de la causa {rol}: {exc}")
 
-    return resoluciones
+    return resoluciones, eleccion, pronunciamiento
 
 
 def build_previous_rol_index(previous_entries):
@@ -258,6 +335,10 @@ def extract_entries(page, previous_entries):
 
             if previamente_vista is not None and previamente_vista.get("Revisado") is True:
                 causa["Resoluciones"] = previamente_vista.get("Resoluciones", [])
+                causa["Eleccion"] = previamente_vista.get("Eleccion", "")
+                causa["Pronunciamiento"] = previamente_vista.get("Pronunciamiento", "")
+                causa["Estado"] = previamente_vista.get("Estado", "")
+                causa["Solicitud_IA"] = previamente_vista.get("Solicitud_IA", "")
                 causa["Revisado"] = True
                 continue
 
@@ -321,14 +402,24 @@ def extract_entries(page, previous_entries):
                 entrar_btn.click(timeout=15000)
                 page.wait_for_timeout(2000)
 
-                resoluciones = download_resoluciones_for_causa(page, rol, fecha)
+                resoluciones, eleccion, pronunciamiento = download_resoluciones_for_causa(page, rol, fecha)
                 causa["Resoluciones"] = resoluciones
+                causa["Eleccion"] = eleccion
+                causa["Pronunciamiento"] = pronunciamiento
+                causa["Estado"] = "Con sentencia" if any(
+                    r.get("referencia", "").strip().lower() == "sentencia" for r in resoluciones
+                ) else "En trámite"
+                causa["Solicitud_IA"] = datetime.now(timezone.utc).astimezone().strftime("%d-%m-%Y")
                 causa["Revisado"] = True
                 procesadas_esta_corrida += 1
 
             except Exception as exc:
                 print(f"Aviso: error procesando la causa {rol} ({fecha}): {exc}")
                 causa["Resoluciones"] = causa.get("Resoluciones", [])
+                causa["Eleccion"] = causa.get("Eleccion", "")
+                causa["Pronunciamiento"] = causa.get("Pronunciamiento", "")
+                causa["Estado"] = causa.get("Estado", "")
+                causa["Solicitud_IA"] = causa.get("Solicitud_IA", "")
                 causa["Revisado"] = False
 
             # Pausa entre causa y causa para no saturar el sitio
@@ -363,6 +454,10 @@ def format_entry(entry, max_len=300):
             lines = []
             for c in causas[:5]:
                 line = f"{c.get('ROL', '')} {c.get('Caratula', '')}".strip()
+                if c.get("Eleccion") or c.get("Pronunciamiento") or c.get("Estado"):
+                    line += (f" — Elección: {c.get('Eleccion', '') or 's/i'} | "
+                             f"Pronunciamiento: {c.get('Pronunciamiento', '') or 's/i'} | "
+                             f"Estado: {c.get('Estado', '') or 's/i'}")
                 resoluciones = c.get("Resoluciones") or []
                 if resoluciones:
                     partes = []
@@ -497,11 +592,6 @@ def main():
 
     print(f"Entradas extraídas: {len(entries)} | Cambió respecto de ayer: {changed}")
     print(summary)
-
-
-if __name__ == "__main__":
-    main()
-
 
 
 if __name__ == "__main__":
