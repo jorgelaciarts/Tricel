@@ -1,18 +1,5 @@
 {
   "source_url": "https://tricel.lexsoft.cl/tce/estadoDiario",
-  "fetched_at": "2026-08-18T05:40:10.665421+00:00",
-  "entries": [
-    {
-      "": "",
-      "Número Causas": "11",
-      "Número Trámites": "11",
-      "Detalle": ""
-    },
-    {
-      "": "",
-      "Número Causas": "41",
-      "Número Trámites": "41",
-      "Detalle": ""
-    }
-  ]
+  "fetched_at": null,
+  "entries": []
 }
