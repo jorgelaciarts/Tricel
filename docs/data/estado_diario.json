@@ -1,6 +1,6 @@
 {
   "source_url": "https://tricel.lexsoft.cl/tce/estadoDiario",
-  "fetched_at": "2026-08-18T15:54:54.548116+00:00",
+  "fetched_at": "2026-08-18T16:39:51.213836+00:00",
   "entries": [
     {
       "Fecha": "14-08-2026",
@@ -37,7 +37,11 @@
               "fecha_tramite": "16-09-2025"
             }
           ],
-          "Revisado": true
+          "Revisado": true,
+          "Eleccion": "",
+          "Pronunciamiento": "RECHAZA",
+          "Estado": "Con sentencia",
+          "Solicitud_IA": "18-08-2026"
         },
         {
           "ROL": "1618-2025",
@@ -81,7 +85,11 @@
               "fecha_tramite": "16-09-2025"
             }
           ],
-          "Revisado": true
+          "Revisado": true,
+          "Eleccion": "CONCEJAL",
+          "Pronunciamiento": "ACOGE TOTAL",
+          "Estado": "Con sentencia",
+          "Solicitud_IA": "18-08-2026"
         },
         {
           "ROL": "1622-2025",
@@ -119,7 +127,11 @@
               "fecha_tramite": "23-09-2025"
             }
           ],
-          "Revisado": true
+          "Revisado": true,
+          "Eleccion": "CONCEJAL",
+          "Pronunciamiento": "ACOGE TOTAL",
+          "Estado": "Con sentencia",
+          "Solicitud_IA": "18-08-2026"
         },
         {
           "ROL": "1629-2025",
@@ -157,7 +169,11 @@
               "fecha_tramite": "24-09-2025"
             }
           ],
-          "Revisado": true
+          "Revisado": true,
+          "Eleccion": "CONCEJAL",
+          "Pronunciamiento": "ACOGE PARCIAL",
+          "Estado": "Con sentencia",
+          "Solicitud_IA": "18-08-2026"
         },
         {
           "ROL": "1637-2025",
@@ -195,7 +211,11 @@
               "fecha_tramite": "16-09-2025"
             }
           ],
-          "Revisado": true
+          "Revisado": true,
+          "Eleccion": "",
+          "Pronunciamiento": "RECHAZA",
+          "Estado": "Con sentencia",
+          "Solicitud_IA": "18-08-2026"
         },
         {
           "ROL": "1643-2025",
@@ -233,7 +253,11 @@
               "fecha_tramite": "16-09-2025"
             }
           ],
-          "Revisado": true
+          "Revisado": true,
+          "Eleccion": "",
+          "Pronunciamiento": "ACOGE PARCIAL",
+          "Estado": "Con sentencia",
+          "Solicitud_IA": "18-08-2026"
         },
         {
           "ROL": "1648-2025",
@@ -271,7 +295,11 @@
               "fecha_tramite": "16-09-2025"
             }
           ],
-          "Revisado": true
+          "Revisado": true,
+          "Eleccion": "",
+          "Pronunciamiento": "ACOGE PARCIAL",
+          "Estado": "Con sentencia",
+          "Solicitud_IA": "18-08-2026"
         },
         {
           "ROL": "1651-2025",
@@ -309,7 +337,11 @@
               "fecha_tramite": "16-09-2025"
             }
           ],
-          "Revisado": true
+          "Revisado": true,
+          "Eleccion": "",
+          "Pronunciamiento": "RECHAZA",
+          "Estado": "Con sentencia",
+          "Solicitud_IA": "18-08-2026"
         },
         {
           "ROL": "1662-2025",
@@ -347,7 +379,11 @@
               "fecha_tramite": "16-09-2025"
             }
           ],
-          "Revisado": true
+          "Revisado": true,
+          "Eleccion": "",
+          "Pronunciamiento": "ACOGE TOTAL",
+          "Estado": "Con sentencia",
+          "Solicitud_IA": "18-08-2026"
         },
         {
           "ROL": "533-2026",
@@ -361,7 +397,11 @@
               "fecha_tramite": "14-08-2026"
             }
           ],
-          "Revisado": true
+          "Revisado": true,
+          "Eleccion": "",
+          "Pronunciamiento": "",
+          "Estado": "",
+          "Solicitud_IA": ""
         },
         {
           "ROL": "534-2026",
@@ -375,7 +415,11 @@
               "fecha_tramite": "14-08-2026"
             }
           ],
-          "Revisado": true
+          "Revisado": true,
+          "Eleccion": "",
+          "Pronunciamiento": "",
+          "Estado": "",
+          "Solicitud_IA": ""
         }
       ]
     },
@@ -432,14 +476,22 @@
               "fecha_tramite": "05-09-2025"
             }
           ],
-          "Revisado": true
+          "Revisado": true,
+          "Eleccion": "",
+          "Pronunciamiento": "",
+          "Estado": "Con sentencia",
+          "Solicitud_IA": "18-08-2026"
         },
         {
           "ROL": "1337-2025",
           "Caratula": "CUMSILLE/Servicio Electoral",
           "Numero_Tramites": "1",
           "Resoluciones": [],
-          "Revisado": false
+          "Revisado": false,
+          "Eleccion": "",
+          "Pronunciamiento": "",
+          "Estado": "",
+          "Solicitud_IA": ""
         },
         {
           "ROL": "1603-2025",
@@ -471,14 +523,47 @@
               "fecha_tramite": "16-09-2025"
             }
           ],
-          "Revisado": true
+          "Revisado": true,
+          "Eleccion": "",
+          "Pronunciamiento": "Y CITAS LEGALES",
+          "Estado": "Con sentencia",
+          "Solicitud_IA": "18-08-2026"
         },
         {
           "ROL": "1607-2025",
           "Caratula": "VERGARA/Servicio Electoral",
           "Numero_Tramites": "1",
-          "Resoluciones": [],
-          "Revisado": false
+          "Resoluciones": [
+            {
+              "archivo_relativo": "data/resoluciones/1607-2025_11-08-2026_0.pdf",
+              "url_publica": "https://jorgelaciarts.github.io/Tricel/data/resoluciones/1607-2025_11-08-2026_0.pdf",
+              "referencia": "Sentencia",
+              "fecha_tramite": "11-08-2026"
+            },
+            {
+              "archivo_relativo": "data/resoluciones/1607-2025_04-03-2026_2.pdf",
+              "url_publica": "https://jorgelaciarts.github.io/Tricel/data/resoluciones/1607-2025_04-03-2026_2.pdf",
+              "referencia": "Téngase presente",
+              "fecha_tramite": "04-03-2026"
+            },
+            {
+              "archivo_relativo": "data/resoluciones/1607-2025_19-01-2026_4.pdf",
+              "url_publica": "https://jorgelaciarts.github.io/Tricel/data/resoluciones/1607-2025_19-01-2026_4.pdf",
+              "referencia": "Téngase presente",
+              "fecha_tramite": "19-01-2026"
+            },
+            {
+              "archivo_relativo": "data/resoluciones/1607-2025_16-09-2025_6.pdf",
+              "url_publica": "https://jorgelaciarts.github.io/Tricel/data/resoluciones/1607-2025_16-09-2025_6.pdf",
+              "referencia": "Dese cuenta",
+              "fecha_tramite": "16-09-2025"
+            }
+          ],
+          "Revisado": true,
+          "Eleccion": "",
+          "Pronunciamiento": "Y CITAS LEGALES",
+          "Estado": "Con sentencia",
+          "Solicitud_IA": "18-08-2026"
         },
         {
           "ROL": "1610-2025",
@@ -510,7 +595,11 @@
               "fecha_tramite": "16-09-2025"
             }
           ],
-          "Revisado": true
+          "Revisado": true,
+          "Eleccion": "",
+          "Pronunciamiento": "ACOGE TOTAL",
+          "Estado": "Con sentencia",
+          "Solicitud_IA": "18-08-2026"
         },
         {
           "ROL": "1619-2025",
@@ -548,14 +637,22 @@
               "fecha_tramite": "16-09-2025"
             }
           ],
-          "Revisado": true
+          "Revisado": true,
+          "Eleccion": "",
+          "Pronunciamiento": "Y CITA LEGAL",
+          "Estado": "Con sentencia",
+          "Solicitud_IA": "18-08-2026"
         },
         {
           "ROL": "1659-2025",
           "Caratula": "RIQUELME/Servicio Electoral",
           "Numero_Tramites": "1",
           "Resoluciones": [],
-          "Revisado": false
+          "Revisado": false,
+          "Eleccion": "",
+          "Pronunciamiento": "",
+          "Estado": "",
+          "Solicitud_IA": ""
         },
         {
           "ROL": "1661-2025",
@@ -593,7 +690,11 @@
               "fecha_tramite": "16-09-2025"
             }
           ],
-          "Revisado": true
+          "Revisado": true,
+          "Eleccion": "",
+          "Pronunciamiento": "RECHAZA",
+          "Estado": "Con sentencia",
+          "Solicitud_IA": "18-08-2026"
         },
         {
           "ROL": "1714-2025",
@@ -631,7 +732,11 @@
               "fecha_tramite": "16-09-2025"
             }
           ],
-          "Revisado": true
+          "Revisado": true,
+          "Eleccion": "",
+          "Pronunciamiento": "",
+          "Estado": "",
+          "Solicitud_IA": ""
         },
         {
           "ROL": "189-2026",
@@ -657,7 +762,11 @@
               "fecha_tramite": "14-05-2026"
             }
           ],
-          "Revisado": true
+          "Revisado": true,
+          "Eleccion": "",
+          "Pronunciamiento": "",
+          "Estado": "",
+          "Solicitud_IA": ""
         },
         {
           "ROL": "204-2026",
@@ -683,7 +792,11 @@
               "fecha_tramite": "28-05-2026"
             }
           ],
-          "Revisado": true
+          "Revisado": true,
+          "Eleccion": "",
+          "Pronunciamiento": "",
+          "Estado": "",
+          "Solicitud_IA": ""
         },
         {
           "ROL": "225-2026",
@@ -709,7 +822,11 @@
               "fecha_tramite": "28-05-2026"
             }
           ],
-          "Revisado": true
+          "Revisado": true,
+          "Eleccion": "",
+          "Pronunciamiento": "",
+          "Estado": "",
+          "Solicitud_IA": ""
         },
         {
           "ROL": "226-2026",
@@ -735,7 +852,11 @@
               "fecha_tramite": "28-05-2026"
             }
           ],
-          "Revisado": true
+          "Revisado": true,
+          "Eleccion": "",
+          "Pronunciamiento": "",
+          "Estado": "",
+          "Solicitud_IA": ""
         },
         {
           "ROL": "233-2026",
@@ -761,7 +882,11 @@
               "fecha_tramite": "28-05-2026"
             }
           ],
-          "Revisado": true
+          "Revisado": true,
+          "Eleccion": "",
+          "Pronunciamiento": "",
+          "Estado": "",
+          "Solicitud_IA": ""
         },
         {
           "ROL": "241-2026",
@@ -787,14 +912,22 @@
               "fecha_tramite": "04-06-2026"
             }
           ],
-          "Revisado": true
+          "Revisado": true,
+          "Eleccion": "",
+          "Pronunciamiento": "",
+          "Estado": "",
+          "Solicitud_IA": ""
         },
         {
           "ROL": "252-2026",
           "Caratula": "MUÑOZ/Servicio Electoral",
           "Numero_Tramites": "1",
           "Resoluciones": [],
-          "Revisado": false
+          "Revisado": false,
+          "Eleccion": "",
+          "Pronunciamiento": "",
+          "Estado": "",
+          "Solicitud_IA": ""
         },
         {
           "ROL": "255-2026",
@@ -820,7 +953,11 @@
               "fecha_tramite": "11-06-2026"
             }
           ],
-          "Revisado": true
+          "Revisado": true,
+          "Eleccion": "",
+          "Pronunciamiento": "",
+          "Estado": "",
+          "Solicitud_IA": ""
         },
         {
           "ROL": "264-2026",
@@ -852,7 +989,11 @@
               "fecha_tramite": "11-06-2026"
             }
           ],
-          "Revisado": true
+          "Revisado": true,
+          "Eleccion": "",
+          "Pronunciamiento": "",
+          "Estado": "",
+          "Solicitud_IA": ""
         },
         {
           "ROL": "265-2026",
@@ -878,7 +1019,11 @@
               "fecha_tramite": "11-06-2026"
             }
           ],
-          "Revisado": true
+          "Revisado": true,
+          "Eleccion": "",
+          "Pronunciamiento": "",
+          "Estado": "",
+          "Solicitud_IA": ""
         },
         {
           "ROL": "279-2026",
@@ -910,14 +1055,22 @@
               "fecha_tramite": "14-05-2026"
             }
           ],
-          "Revisado": true
+          "Revisado": true,
+          "Eleccion": "",
+          "Pronunciamiento": "",
+          "Estado": "",
+          "Solicitud_IA": ""
         },
         {
           "ROL": "283-2026",
           "Caratula": "NAVARRO BRAIN /Servicio Electoral",
           "Numero_Tramites": "1",
           "Resoluciones": [],
-          "Revisado": false
+          "Revisado": false,
+          "Eleccion": "",
+          "Pronunciamiento": "",
+          "Estado": "",
+          "Solicitud_IA": ""
         },
         {
           "ROL": "311-2026",
@@ -943,14 +1096,41 @@
               "fecha_tramite": "11-06-2026"
             }
           ],
-          "Revisado": true
+          "Revisado": true,
+          "Eleccion": "",
+          "Pronunciamiento": "",
+          "Estado": "",
+          "Solicitud_IA": ""
         },
         {
           "ROL": "316-2026",
           "Caratula": "MALDONADO/Servicio Electoral",
           "Numero_Tramites": "1",
-          "Resoluciones": [],
-          "Revisado": false
+          "Resoluciones": [
+            {
+              "archivo_relativo": "data/resoluciones/316-2026_11-08-2026_0.pdf",
+              "url_publica": "https://jorgelaciarts.github.io/Tricel/data/resoluciones/316-2026_11-08-2026_0.pdf",
+              "referencia": "Téngase presente",
+              "fecha_tramite": "11-08-2026"
+            },
+            {
+              "archivo_relativo": "data/resoluciones/316-2026_02-07-2026_2.pdf",
+              "url_publica": "https://jorgelaciarts.github.io/Tricel/data/resoluciones/316-2026_02-07-2026_2.pdf",
+              "referencia": "Téngase presente",
+              "fecha_tramite": "02-07-2026"
+            },
+            {
+              "archivo_relativo": "data/resoluciones/316-2026_11-06-2026_4.pdf",
+              "url_publica": "https://jorgelaciarts.github.io/Tricel/data/resoluciones/316-2026_11-06-2026_4.pdf",
+              "referencia": "Dese cuenta",
+              "fecha_tramite": "11-06-2026"
+            }
+          ],
+          "Revisado": true,
+          "Eleccion": "",
+          "Pronunciamiento": "",
+          "Estado": "En trámite",
+          "Solicitud_IA": "18-08-2026"
         },
         {
           "ROL": "321-2026",
@@ -976,14 +1156,22 @@
               "fecha_tramite": "17-06-2026"
             }
           ],
-          "Revisado": true
+          "Revisado": true,
+          "Eleccion": "",
+          "Pronunciamiento": "",
+          "Estado": "",
+          "Solicitud_IA": ""
         },
         {
           "ROL": "352-2026",
           "Caratula": "MENA/Servicio Electoral",
           "Numero_Tramites": "1",
           "Resoluciones": [],
-          "Revisado": false
+          "Revisado": false,
+          "Eleccion": "",
+          "Pronunciamiento": "",
+          "Estado": "",
+          "Solicitud_IA": ""
         },
         {
           "ROL": "358-2026",
@@ -1009,14 +1197,22 @@
               "fecha_tramite": "17-06-2026"
             }
           ],
-          "Revisado": true
+          "Revisado": true,
+          "Eleccion": "",
+          "Pronunciamiento": "",
+          "Estado": "",
+          "Solicitud_IA": ""
         },
         {
           "ROL": "367-2026",
           "Caratula": "farran/Servicio Electoral",
           "Numero_Tramites": "1",
           "Resoluciones": [],
-          "Revisado": false
+          "Revisado": false,
+          "Eleccion": "",
+          "Pronunciamiento": "",
+          "Estado": "",
+          "Solicitud_IA": ""
         },
         {
           "ROL": "370-2026",
@@ -1036,14 +1232,53 @@
               "fecha_tramite": "17-06-2026"
             }
           ],
-          "Revisado": true
+          "Revisado": true,
+          "Eleccion": "",
+          "Pronunciamiento": "",
+          "Estado": "",
+          "Solicitud_IA": ""
         },
         {
           "ROL": "408-2026",
           "Caratula": "PARISI/Servicio Electoral",
           "Numero_Tramites": "1",
-          "Resoluciones": [],
-          "Revisado": false
+          "Resoluciones": [
+            {
+              "archivo_relativo": "data/resoluciones/408-2026_11-08-2026_0.pdf",
+              "url_publica": "https://jorgelaciarts.github.io/Tricel/data/resoluciones/408-2026_11-08-2026_0.pdf",
+              "referencia": "Téngase presente",
+              "fecha_tramite": "11-08-2026"
+            },
+            {
+              "archivo_relativo": "data/resoluciones/408-2026_23-07-2026_2.pdf",
+              "url_publica": "https://jorgelaciarts.github.io/Tricel/data/resoluciones/408-2026_23-07-2026_2.pdf",
+              "referencia": "Téngase presente",
+              "fecha_tramite": "23-07-2026"
+            },
+            {
+              "archivo_relativo": "data/resoluciones/408-2026_23-06-2026_4.pdf",
+              "url_publica": "https://jorgelaciarts.github.io/Tricel/data/resoluciones/408-2026_23-06-2026_4.pdf",
+              "referencia": "Trámite",
+              "fecha_tramite": "23-06-2026"
+            },
+            {
+              "archivo_relativo": "data/resoluciones/408-2026_04-06-2026_6.pdf",
+              "url_publica": "https://jorgelaciarts.github.io/Tricel/data/resoluciones/408-2026_04-06-2026_6.pdf",
+              "referencia": "Trámite",
+              "fecha_tramite": "04-06-2026"
+            },
+            {
+              "archivo_relativo": "data/resoluciones/408-2026_14-05-2026_8.pdf",
+              "url_publica": "https://jorgelaciarts.github.io/Tricel/data/resoluciones/408-2026_14-05-2026_8.pdf",
+              "referencia": "Dese cuenta",
+              "fecha_tramite": "14-05-2026"
+            }
+          ],
+          "Revisado": true,
+          "Eleccion": "",
+          "Pronunciamiento": "",
+          "Estado": "En trámite",
+          "Solicitud_IA": "18-08-2026"
         },
         {
           "ROL": "421-2026",
@@ -1063,7 +1298,11 @@
               "fecha_tramite": "25-06-2026"
             }
           ],
-          "Revisado": true
+          "Revisado": true,
+          "Eleccion": "",
+          "Pronunciamiento": "",
+          "Estado": "",
+          "Solicitud_IA": ""
         },
         {
           "ROL": "490-2026",
@@ -1095,7 +1334,11 @@
               "fecha_tramite": "23-07-2026"
             }
           ],
-          "Revisado": true
+          "Revisado": true,
+          "Eleccion": "",
+          "Pronunciamiento": "",
+          "Estado": "",
+          "Solicitud_IA": ""
         },
         {
           "ROL": "502-2026",
@@ -1109,7 +1352,11 @@
               "fecha_tramite": "11-08-2026"
             }
           ],
-          "Revisado": true
+          "Revisado": true,
+          "Eleccion": "",
+          "Pronunciamiento": "",
+          "Estado": "",
+          "Solicitud_IA": ""
         },
         {
           "ROL": "512-2026",
@@ -1123,7 +1370,11 @@
               "fecha_tramite": "11-08-2026"
             }
           ],
-          "Revisado": true
+          "Revisado": true,
+          "Eleccion": "",
+          "Pronunciamiento": "",
+          "Estado": "",
+          "Solicitud_IA": ""
         },
         {
           "ROL": "513-2026",
@@ -1137,7 +1388,11 @@
               "fecha_tramite": "11-08-2026"
             }
           ],
-          "Revisado": true
+          "Revisado": true,
+          "Eleccion": "",
+          "Pronunciamiento": "",
+          "Estado": "",
+          "Solicitud_IA": ""
         },
         {
           "ROL": "514-2026",
@@ -1163,14 +1418,41 @@
               "fecha_tramite": "11-08-2026"
             }
           ],
-          "Revisado": true
+          "Revisado": true,
+          "Eleccion": "",
+          "Pronunciamiento": "",
+          "Estado": "Con sentencia",
+          "Solicitud_IA": "18-08-2026"
         },
         {
           "ROL": "515-2026",
           "Caratula": "Expediente Segundo tribunal electoral de la región metropolitana",
           "Numero_Tramites": "1",
-          "Resoluciones": [],
-          "Revisado": false
+          "Resoluciones": [
+            {
+              "archivo_relativo": "data/resoluciones/515-2026_11-08-2026_0.pdf",
+              "url_publica": "https://jorgelaciarts.github.io/Tricel/data/resoluciones/515-2026_11-08-2026_0.pdf",
+              "referencia": "Dese cuenta",
+              "fecha_tramite": "11-08-2026"
+            },
+            {
+              "archivo_relativo": "data/resoluciones/515-2026_11-08-2026_2.pdf",
+              "url_publica": "https://jorgelaciarts.github.io/Tricel/data/resoluciones/515-2026_11-08-2026_2.pdf",
+              "referencia": "Sentencia",
+              "fecha_tramite": "11-08-2026"
+            },
+            {
+              "archivo_relativo": "data/resoluciones/515-2026_11-08-2026_3.pdf",
+              "url_publica": "https://jorgelaciarts.github.io/Tricel/data/resoluciones/515-2026_11-08-2026_3.pdf",
+              "referencia": "Sentencia",
+              "fecha_tramite": "11-08-2026"
+            }
+          ],
+          "Revisado": true,
+          "Eleccion": "",
+          "Pronunciamiento": "",
+          "Estado": "Con sentencia",
+          "Solicitud_IA": "18-08-2026"
         },
         {
           "ROL": "516-2026",
@@ -1196,14 +1478,22 @@
               "fecha_tramite": "11-08-2026"
             }
           ],
-          "Revisado": true
+          "Revisado": true,
+          "Eleccion": "",
+          "Pronunciamiento": "",
+          "Estado": "Con sentencia",
+          "Solicitud_IA": "18-08-2026"
         },
         {
           "ROL": "517-2026",
           "Caratula": "Muñoz Ramos/",
           "Numero_Tramites": "1",
           "Resoluciones": [],
-          "Revisado": false
+          "Revisado": false,
+          "Eleccion": "",
+          "Pronunciamiento": "",
+          "Estado": "",
+          "Solicitud_IA": ""
         },
         {
           "ROL": "520-2026",
@@ -1217,7 +1507,11 @@
               "fecha_tramite": "11-08-2026"
             }
           ],
-          "Revisado": true
+          "Revisado": true,
+          "Eleccion": "",
+          "Pronunciamiento": "",
+          "Estado": "",
+          "Solicitud_IA": ""
         },
         {
           "ROL": "521-2026",
@@ -1231,14 +1525,22 @@
               "fecha_tramite": "11-08-2026"
             }
           ],
-          "Revisado": true
+          "Revisado": true,
+          "Eleccion": "",
+          "Pronunciamiento": "",
+          "Estado": "",
+          "Solicitud_IA": ""
         },
         {
           "ROL": "526-2026",
           "Caratula": "Fuentealba Inostroza /",
           "Numero_Tramites": "1",
           "Resoluciones": [],
-          "Revisado": false
+          "Revisado": false,
+          "Eleccion": "",
+          "Pronunciamiento": "",
+          "Estado": "",
+          "Solicitud_IA": ""
         }
       ]
     }
