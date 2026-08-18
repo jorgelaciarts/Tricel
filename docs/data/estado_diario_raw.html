@@ -1,0 +1,278 @@
+<!DOCTYPE html><html lang="en"><head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!--<meta name="viewport"
+              content="width=device-width, initial-scale=1, maximum-scale=1"/>-->
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <title>TCE</title>
+        <link rel="icon" type="image/png" href="img/tce/logo.png">
+        <!-- build:css -->
+
+        <!-- endbuild -->
+        <link href="bower_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/material.css" rel="stylesheet">
+        <link href="css/font-awesome.min.css" rel="stylesheet">
+        <link href="css/toastr.css" rel="stylesheet">
+        <link href="css/styles.css" rel="stylesheet">
+        <link href="bower_modules/bootstrap-datepicker/css/datepicker.css" rel="stylesheet">
+        <link href="bower_modules/select2/select2.css" rel="stylesheet">
+        <link href="bower_modules/select2-bootstrap-css/select2-bootstrap.css" rel="stylesheet">
+        <link href="bower_modules/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+        <link href="css/animate.css" rel="stylesheet">
+        <link href="css/animations.css" rel="stylesheet">
+        <link href="css/menuTribunal.css?bust=rev713fab0562efcc02b58cad494024782b1e8cd565" rel="stylesheet">
+        <link rel="stylesheet" id="fonts-css" href="https://fonts.googleapis.com/css?family=Lato%3A100%2C200%2C300%2C400%2C500%2C600%2C700%2C800%2C900%7CMontserrat%3A100%2C200%2C300%2C400%2C500%2C600%2C700%2C800%2C900%7CRaleway%3A100%2C200%2C300%2C400%2C500%2C600%2C700%2C800%2C900%7CPoppins%3A300%2C400%2C500%2C600%2C700&amp;subset=latin%2Clatin-ext" type="text/css" media="all">
+        <link href="css/cabecera/head.css" rel="stylesheet">
+        <script src="bower_modules/jquery/dist/jquery.min.js"></script>
+        <script src="bower_modules/components-bootstrap/js/bootstrap.js"></script>
+        <!--[if lt IE 9]>
+        <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        <script>
+            var require = {
+                paths: {
+                    "rest": "rest"
+                }
+            };
+        </script>
+
+        <!-- build:js -->
+        <script src="app/require.config.js"></script>
+        <script data-main="app/startup" src="bower_modules/requirejs/require.js"></script>
+        <!-- endbuild -->
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="app/bootstrap-app" src="./app/bootstrap-app.js?bust=rev713fab0562efcc02b58cad494024782b1e8cd565"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="app/startup" src="./app/startup.js?bust=rev713fab0562efcc02b58cad494024782b1e8cd565"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jquery" src="./bower_modules/jquery/dist/jquery.js?bust=rev713fab0562efcc02b58cad494024782b1e8cd565"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="knockout" src="./bower_modules/knockout/dist/knockout.debug.js?bust=rev713fab0562efcc02b58cad494024782b1e8cd565"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="router" src="./app/router.js?bust=rev713fab0562efcc02b58cad494024782b1e8cd565"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="app/core/TaskComponentManager" src="./app/core/TaskComponentManager.js?bust=rev713fab0562efcc02b58cad494024782b1e8cd565"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="app/core/knockout-init" src="./app/core/knockout-init.js?bust=rev713fab0562efcc02b58cad494024782b1e8cd565"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="app/core/utils" src="./app/core/utils.js?bust=rev713fab0562efcc02b58cad494024782b1e8cd565"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="app/core/User" src="./app/core/User.js?bust=rev713fab0562efcc02b58cad494024782b1e8cd565"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="json" src="./bower_modules/requirejs-json/json.js?bust=rev713fab0562efcc02b58cad494024782b1e8cd565"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="app/core/Badge" src="./app/core/Badge.js?bust=rev713fab0562efcc02b58cad494024782b1e8cd565"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="app/ooeditor.custom.binding" src="./app/ooeditor.custom.binding.js?bust=rev713fab0562efcc02b58cad494024782b1e8cd565"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="bootstrap" src="./bower_modules/bootstrap/dist/js/bootstrap.min.js?bust=rev713fab0562efcc02b58cad494024782b1e8cd565"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="underscore" src="./bower_modules/underscore/underscore.js?bust=rev713fab0562efcc02b58cad494024782b1e8cd565"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="toastr" src="./bower_modules/toastr/toastr.js?bust=rev713fab0562efcc02b58cad494024782b1e8cd565"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="AppNavigation" src="./resources/js/AppNavigation.js?bust=rev713fab0562efcc02b58cad494024782b1e8cd565"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="crossroads" src="./bower_modules/crossroads/dist/crossroads.min.js?bust=rev713fab0562efcc02b58cad494024782b1e8cd565"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="hasher" src="./bower_modules/hasher/dist/js/hasher.min.js?bust=rev713fab0562efcc02b58cad494024782b1e8cd565"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="text" src="./bower_modules/requirejs-text/text.js?bust=rev713fab0562efcc02b58cad494024782b1e8cd565"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="app/custom.validations" src="./app/custom.validations.js?bust=rev713fab0562efcc02b58cad494024782b1e8cd565"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="bower_modules/knockout-projections/dist/knockout-projections" src="./bower_modules/knockout-projections/dist/knockout-projections.js?bust=rev713fab0562efcc02b58cad494024782b1e8cd565"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="bower_modules/knockout-validation/Dist/knockout.validation" src="./bower_modules/knockout-validation/Dist/knockout.validation.js?bust=rev713fab0562efcc02b58cad494024782b1e8cd565"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="bower_modules/knockout-validation/Localization/es-ES" src="./bower_modules/knockout-validation/Localization/es-ES.js?bust=rev713fab0562efcc02b58cad494024782b1e8cd565"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="app/ko/extender-initialize" src="./app/ko/extender-initialize.js?bust=rev713fab0562efcc02b58cad494024782b1e8cd565"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="app/ko/ko-array-oftype" src="./app/ko/ko-array-oftype.js?bust=rev713fab0562efcc02b58cad494024782b1e8cd565"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="moment" src="./bower_modules/moment/min/moment-with-locales.min.js?bust=rev713fab0562efcc02b58cad494024782b1e8cd565"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="numeral" src="./bower_modules/numeral/min/numeral.min.js?bust=rev713fab0562efcc02b58cad494024782b1e8cd565"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="components/model/IdNameModel" src="./components/model/IdNameModel.js?bust=rev713fab0562efcc02b58cad494024782b1e8cd565"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="datepicker-core" src="./bower_modules/bootstrap-datepicker/js/bootstrap-datepicker.js?bust=rev713fab0562efcc02b58cad494024782b1e8cd565"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="select2.core" src="./bower_modules/select2/select2.js?bust=rev713fab0562efcc02b58cad494024782b1e8cd565"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="signals" src="./bower_modules/js-signals/dist/signals.min.js?bust=rev713fab0562efcc02b58cad494024782b1e8cd565"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ModelBase" src="./app/core/ModelBase.js?bust=rev713fab0562efcc02b58cad494024782b1e8cd565"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="datepicker" src="./bower_modules/bootstrap-datepicker/js/locales/bootstrap-datepicker.es.js?bust=rev713fab0562efcc02b58cad494024782b1e8cd565"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="select2" src="./bower_modules/select2/select2_locale_es.js?bust=rev713fab0562efcc02b58cad494024782b1e8cd565"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="app/core/Events" src="./app/core/Events.js?bust=rev713fab0562efcc02b58cad494024782b1e8cd565"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="components/page/public/estadoDiario" src="./components/page/public/estadoDiario.js?bust=rev713fab0562efcc02b58cad494024782b1e8cd565"></script><script id="ooapi" type="text/javascript" src="https://ooffice.kpitec.com/ds-vpath/web-apps/apps/api/documents/api.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="components/model/EstadoDiario" src="./components/model/EstadoDiario.js?bust=rev713fab0562efcc02b58cad494024782b1e8cd565"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="components/model/Causa" src="./components/model/Causa.js?bust=rev713fab0562efcc02b58cad494024782b1e8cd565"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="app/utils/moment" src="./app/utils/moment.js?bust=rev713fab0562efcc02b58cad494024782b1e8cd565"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="components/model/Cuaderno" src="./components/model/Cuaderno.js?bust=rev713fab0562efcc02b58cad494024782b1e8cd565"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="components/model/Parte" src="./components/model/Parte.js?bust=rev713fab0562efcc02b58cad494024782b1e8cd565"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="components/model/Escrito" src="./components/model/Escrito.js?bust=rev713fab0562efcc02b58cad494024782b1e8cd565"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="components/model/Materia" src="./components/model/Materia.js?bust=rev713fab0562efcc02b58cad494024782b1e8cd565"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="components/model/CustomForm" src="./components/model/CustomForm.js?bust=rev713fab0562efcc02b58cad494024782b1e8cd565"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="components/model/MultaValor" src="./components/model/MultaValor.js?bust=rev713fab0562efcc02b58cad494024782b1e8cd565"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="components/model/TipoMoneda" src="./components/model/TipoMoneda.js?bust=rev713fab0562efcc02b58cad494024782b1e8cd565"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="components/model/Inhabilitado" src="./components/model/Inhabilitado.js?bust=rev713fab0562efcc02b58cad494024782b1e8cd565"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="components/model/Archivo" src="./components/model/Archivo.js?bust=rev713fab0562efcc02b58cad494024782b1e8cd565"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="components/model/Persona" src="./components/model/Persona.js?bust=rev713fab0562efcc02b58cad494024782b1e8cd565"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="components/model/Tramite" src="./components/model/Tramite.js?bust=rev713fab0562efcc02b58cad494024782b1e8cd565"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="components/model/TipoEscrito" src="./components/model/TipoEscrito.js?bust=rev713fab0562efcc02b58cad494024782b1e8cd565"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="components/model/ArchivoDigital" src="./components/model/ArchivoDigital.js?bust=rev713fab0562efcc02b58cad494024782b1e8cd565"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="components/model/Compareciente" src="./components/model/Compareciente.js?bust=rev713fab0562efcc02b58cad494024782b1e8cd565"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="components/model/Vehiculo" src="./components/model/Vehiculo.js?bust=rev713fab0562efcc02b58cad494024782b1e8cd565"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="components/model/Usuario" src="./components/model/Usuario.js?bust=rev713fab0562efcc02b58cad494024782b1e8cd565"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="components/model/Hito" src="./components/model/Hito.js?bust=rev713fab0562efcc02b58cad494024782b1e8cd565"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="components/model/HistoriaEscrito" src="./components/model/HistoriaEscrito.js?bust=rev713fab0562efcc02b58cad494024782b1e8cd565"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="components/model/BitacoraResolucion" src="./components/model/BitacoraResolucion.js?bust=rev713fab0562efcc02b58cad494024782b1e8cd565"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="components/model/Pais" src="./components/model/Pais.js?bust=rev713fab0562efcc02b58cad494024782b1e8cd565"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="components/model/Cliente" src="./components/model/Cliente.js?bust=rev713fab0562efcc02b58cad494024782b1e8cd565"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="app/core/Uploader" src="./app/core/Uploader.js?bust=rev713fab0562efcc02b58cad494024782b1e8cd565"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="components/model/DesgloseDocumento" src="./components/model/DesgloseDocumento.js?bust=rev713fab0562efcc02b58cad494024782b1e8cd565"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="components/model/Empresa" src="./components/model/Empresa.js?bust=rev713fab0562efcc02b58cad494024782b1e8cd565"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="components/model/DireccionParte" src="./components/model/DireccionParte.js?bust=rev713fab0562efcc02b58cad494024782b1e8cd565"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="components/model/Multa" src="./components/model/Multa.js?bust=rev713fab0562efcc02b58cad494024782b1e8cd565"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="components/model/MarcaVehiculo" src="./components/model/MarcaVehiculo.js?bust=rev713fab0562efcc02b58cad494024782b1e8cd565"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="components/model/TipoVehiculo" src="./components/model/TipoVehiculo.js?bust=rev713fab0562efcc02b58cad494024782b1e8cd565"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="plupload" src="./bower_modules/plupload/js/plupload.full.min.js?bust=rev713fab0562efcc02b58cad494024782b1e8cd565"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="components/model/Contacto" src="./components/model/Contacto.js?bust=rev713fab0562efcc02b58cad494024782b1e8cd565"></script></head>
+    <body style="overflow: inherit; padding-top: 0px; padding-bottom: 0px; padding-left: 0px;" class="">
+    <div class="col-sm-12 col-md-12 col-lg-12" id="contenedor">
+        <div class="col-sm-12 col-md-12 col-lg-12" id="cabecera">
+            <div class="col-sm-5 col-md-5 col-lg-5">
+                <a href="https://tribunalcalificador.cl/"><img class="logo-tce-head" src="img/tricel_2024.svg"></a>
+            </div>
+            <div class="col-sm-7 col-md-7 col-lg-7" style="font-family: 'Montserrat', sans-serif; font-weight: 400;" id="lateralmenu">
+                <ul>
+                    <li><a href="https://tribunalcalificador.cl/" style="font-family: 'Montserrat', Sans-Serif; font-weight: 400; !important;">Home</a></li>
+                    <li><a href="https://tribunalcalificador.cl/nuestra_institucion/" style="font-family: 'Montserrat', Sans-Serif; font-weight: 400; !important;">| Nuestra institución</a></li>
+                    <li><a href="https://tricel.lexsoft.cl/tce/validaDocumento" style="font-family: 'Montserrat', Sans-Serif; font-weight: 400; !important;">| Validar Documento</a></li>
+                    <li><a href="https://tricel.lexsoft.cl/tce/jurisprudenciaBuscador" style="font-family: 'Montserrat', Sans-Serif; font-weight: 400; !important;">| Jurisprudencia </a></li>
+                    <li><a href="https://tribunalcalificador.cl/contactenos/" style="font-family: 'Montserrat', Sans-Serif; font-weight: 400; !important;">| Contáctenos</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-12" id="cuerpo">
+            <div class="topnav" id="lateral">
+                <br>
+                <ul>
+                    <li style="padding-left: 7px"><a href="https://tribunalcalificador.cl/"><img style="width: 107px" src="img/iconos/home_volver.svg"></a></li>
+                    <li style="padding-right: 19px"><a href="https://tricel.lexsoft.cl/tce/views/loginEscritos.html"><img style="width: 118px" src="img/iconos/i-ingreso-escritos.svg"></a></li>
+                    <li><a href="https://tricel.lexsoft.cl/tce/views/loginReclamaciones.html"><img style="width: 150px" src="img/iconos/i-ingreso-reclamaciones.svg"></a></li>
+                    <li><a href="https://tricel.lexsoft.cl/tce/views/loginAbogados.html"><img src="img/iconos/i-ingreso-recursos2-1.svg"></a></li>
+                    <li><a href="https://tricel.lexsoft.cl/tce/views/loginInstituciones.html"><img style="width: 150px" src="img/iconos/i-ingreso-instituciones-1.svg"></a></li>
+                    <li><a href="https://tribunalcalificador.cl/resultados_de_elecciones/"><img style="width: 150px" src="img/iconos/i-resultado-de-elecciones.svg"></a></li>
+                    <li><a href="https://tribunalcalificador.cl/normativas/"><img style="width: 150px" src="img/iconos/i-normativa.svg"></a></li>
+                    <li><a href="https://tribunalcalificador.cl/publicaciones/"><img style="width: 150px" src="img/iconos/i-publicaciones.svg"></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-12" id="menuMovil">
+            <a href="#" data-bind="click: function(){changeIcon()}" class="bt-menu"><img id="icono-movil" src="img/iconos/hamburger.png"></a>
+        </div>
+        <div class="container col-sm-12 col-md-12 col-lg-12" id="contenedorMovil">
+            <div class="col-sm-12 col-md-12 col-lg-12" id="menuMovilLinks">
+                <ul id="lista-menu-movil" style="list-style-type:none">
+                    <li style="height: 5px"></li>
+                    <li onclick="location.href='https://tribunalcalificador.cl/';">HOME</li>
+                    <li onclick="location.href='https://tribunalcalificador.cl/nuestra_institucion/';">NUESTRA INSTITUCIÓN</li>
+                    <li onclick="location.href='https://tricel.lexsoft.cl/tce/validaDocumento';">VALIDAR DOCUMENTO</li>
+                    <li onclick="location.href='https://tricel.lexsoft.cl/tce/jurisprudenciaBuscador';">JURISPRUDENCIA</li>
+                    <li onclick="location.href='https://tricel.lexsoft.cl/tce/buscador';">CONSULTA DE CAUSA</li>
+                    <li class="seleccionado" onclick="location.href='#'">ESTADO DIARIO</li>
+                    <li onclick="location.href='https://tricel.lexsoft.cl/tce/tablaWeb';">TABLA DE SESIONES</li>
+                    <li onclick="location.href='https://tricel.lexsoft.cl/tce/views/loginEscritos.html';">INGRESO DE ESCRITOS</li>
+                    <li onclick="location.href='https://tricel.lexsoft.cl/tce/views/loginReclamaciones.html';">INGRESO RECLAMACIONES</li>
+                    <li onclick="location.href='https://tricel.lexsoft.cl/tce/views/loginAbogados.html';">INGRESO RECURSOS DE QUEJA Y DE HECHO</li>
+                    <li onclick="location.href='https://tricel.lexsoft.cl/tce/views/loginInstituciones.html';">INGRESO INSTITUCIONES</li>
+                    <li onclick="location.href='https://tribunalcalificador.cl/resultados_de_elecciones/';">RESULTADO DE ELECCIONES</li>
+                    <li onclick="location.href='https://tribunalcalificador.cl/normativas/';">NORMATIVA</li>
+                    <li onclick="location.href='https://tribunalcalificador.cl/publicaciones/';">PUBLICACIONES</li>
+                    <li onclick="location.href='https://tribunalcalificador.cl/contactenos/';">CONTÁCTENOS</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+        <div id="main" class="row-offcanvas row-offcanvas-left">
+             <div id="page" data-bind="component: { name: 'page/public/estadoDiario', params: {} }"><meta charset="utf-8">
+	<div class="panel row" style="min-height:800px;">
+	<div class="container-fluid">
+		<div class="row-offcanvas row-offcanvas-left">
+			<div class="col-sm-12 col-md-12">
+				<div class="row">
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:0px;margin-top:15px;">
+						<h3 style="padding-bottom: 15px; font-size: 22px;text-shadow: 1px 1px 2px rgba(50, 50, 50, 0.75);border-bottom: 3px solid;padding-left: 15px;">
+							<span>Estado Diario</span>
+						</h3>
+					</div>
+
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:0px; margin-top: 10px;" data-bind="visible: !idCausa()">
+						<form role="form" data-bind="submit:search">
+							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-10">
+								<label for="datetimepicker1" class="required">Fecha Desde:</label>
+								<div class="input-group date" id="datetimepicker1">
+									<input type="text" class="form-control" data-bind="value:fechaIni">
+									<span class="input-group-addon">
+											<span class="glyphicon glyphicon-calendar"></span>
+										</span>
+								</div>
+							</div>
+							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-10">
+								<label for="datetimepicker2" class="required">Fecha Hasta:</label>
+								<div class="input-group date" id="datetimepicker2">
+									<input type="text" class="form-control" data-bind="value:fechaFin">
+									<span class="input-group-addon">
+											<span class="glyphicon glyphicon-calendar"></span>
+										</span>
+								</div>
+							</div>
+							<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="padding-top: 15px;">
+									<span class="input-group-btn">
+										<button type="submit" class="btn btn-icon-toggle btn-primary ink-reaction">
+											<span class="glyphicon glyphicon-search"></span>
+										</button>
+									</span>
+							</div>
+						</form>
+					</div>
+				</div>
+
+				<div class="row" style="padding-top: 15px;" data-bind="visible: !idCausa()">
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+						<!-- ko if: estadoDiarios().length > 0 -->
+						<div class="table-responsive">
+							<table id="selectable" class="table table-striped">
+								<thead>
+								<tr style="color: #ffffff; background-color: #1976d2;border-color: #1976d2;">
+									<th><span class="texto-custom-fecha"></span></th>
+									<th class="esconder-movil"><span>Número Causas</span></th>
+									<th class="esconder-movil"><span>Número Trámites</span></th>
+									<th style="text-align:center"><span>Detalle</span></th>
+									<th style="text-align:center"><span class="texto-custom-documento"></span></th>
+								</tr>
+								</thead>
+								<tbody data-bind="foreach: estadoDiarios()">
+								<tr>
+									<td nowrap="" data-bind="text: $parent.formatearFechaUTC(fecha())">14-08-2026</td>
+									<td class="esconder-movil" nowrap="" data-bind="text: numeroCausas()">11</td>
+									<td class="esconder-movil" nowrap="" data-bind="text: tramites().length">11</td>
+									<td align="center" nowrap=""><span data-bind="click: function(){$parent.openDetalle($data)}" style="cursor: pointer;" class="glyphicon glyphicon-new-window"></span></td>
+									<td align="center" nowrap="" style="cursor: pointer" data-bind="click: function(){$parent.descargarDocumento($data, true)}">
+										<i class="fa fa-fw fa-download text-success"></i></td>
+								</tr>
+								
+								<tr>
+									<td nowrap="" data-bind="text: $parent.formatearFechaUTC(fecha())">11-08-2026</td>
+									<td class="esconder-movil" nowrap="" data-bind="text: numeroCausas()">41</td>
+									<td class="esconder-movil" nowrap="" data-bind="text: tramites().length">41</td>
+									<td align="center" nowrap=""><span data-bind="click: function(){$parent.openDetalle($data)}" style="cursor: pointer;" class="glyphicon glyphicon-new-window"></span></td>
+									<td align="center" nowrap="" style="cursor: pointer" data-bind="click: function(){$parent.descargarDocumento($data, true)}">
+										<i class="fa fa-fw fa-download text-success"></i></td>
+								</tr>
+								</tbody>
+							</table>
+						</div>
+						<!-- /ko -->
+						<!-- ko ifnot: estadoDiarios().length > 0 --><!-- /ko -->
+					</div>
+				</div>
+
+				<!-- ko if: idCausa() --><!-- /ko -->
+
+
+				<div class="modal fade" id="showDetalle" tabindex="-1" role="dialog" aria-labelledby="bootstrapModalLabel" aria-hidden="true" data-backdrop="static">
+					<div class="modal-dialog modal-lg">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close" style="opacity:.6;"><span class="glyphicon glyphicon-remove" aria-hidden="true" style="color:white"></span></button>
+								<h4 class="modal-title" id="comparecientes-jur-sinRep-title">Información de Causa</h4>
+							</div>
+							<div class="modal-body" style="max-height: 400px; overflow-y: auto;">
+								<div class="table-responsive">
+									<table id="selectable" class="table  table-bordered table-condensed table-hover">
+										<thead>
+										<tr style="color: #ffffff; background-color: #1976d2;border-color: #1976d2;">
+											<th style="width: 10%"><span>ROL</span></th>
+											<th style="width: 20%;"><span>Carátula</span></th>
+											<th class="esconder-movil" style="width: 10%"><span>Número de Trámites</span></th>
+											<th style="text-align:center; width: 10%"><span>Entrar</span></th>
+										</tr>
+										</thead>
+										<tbody data-bind="foreach: causas()"></tbody>
+									</table>
+								</div>
+							</div>
+							<div class="modal-footer">
+								<div class="btn-group">
+									<button type="button" class="btn btn-primary" data-dismiss="modal">
+										Cerrar
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" id="buscandoestadodiariopublico" aria-hidden="true" style="display: none;">
+					<div class="modal-dialog modal-sm" role="document">
+						<div class="modal-content">
+							<div class="modal-body">
+								<p class="lead text-center" id="pleaseWaitDialog-text"> <i class="fa fa-refresh fa-spin fa-fw"></i> Buscando...</p>
+								<div class="progress">
+									<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" id="buscandocausaspublico">
+					<div class="modal-dialog modal-sm" role="document">
+						<div class="modal-content">
+							<div class="modal-body">
+								<p class="lead text-center" id="pleaseWaitDialog-text"> <i class="fa fa-refresh fa-spin fa-fw"></i> Cargando causas...</p>
+								<div class="progress">
+									<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+</div>
+        </div>
+    <script type="text/javascript">
+        var contador = 0;
+        function changeIcon(){
+            var icono = document.getElementById("icono-movil");
+            if(contador == 0){
+                icono.setAttribute("src", "img/iconos/close-menu.png");
+                $("#menuMovilLinks").slideDown(350);
+                $("#contenedorMovil").slideDown(350);
+                contador = 1;
+            }else if(contador == 1){
+                $("#menuMovilLinks").slideUp(350);
+                $("#contenedorMovil").slideUp(350);
+                icono.setAttribute("src", "img/iconos/hamburger.png");
+
+                contador = 0;
+            }
+        };
+        $('#lista-menu-movil li').click(function() {
+            var $this = $(this);
+            $(this).addClass("seleccionado");
+        });
+    </script>
+    <script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a2ce94dfad5e4f53',t:'MTc4NzAzMTYwMw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe>
+
+</body></html>
