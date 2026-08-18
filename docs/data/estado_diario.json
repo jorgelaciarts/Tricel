@@ -1,5 +1,280 @@
 {
   "source_url": "https://tricel.lexsoft.cl/tce/estadoDiario",
-  "fetched_at": null,
-  "entries": []
+  "fetched_at": "2026-08-18T05:53:08.003314+00:00",
+  "entries": [
+    {
+      "Fecha": "14-08-2026",
+      "Numero_Causas": "11",
+      "Numero_Tramites": "11",
+      "Causas": [
+        {
+          "ROL": "1612-2025",
+          "Caratula": "Lavín Miranda /Servicio Electoral",
+          "Numero_Tramites": "1"
+        },
+        {
+          "ROL": "1618-2025",
+          "Caratula": "GALLARDO/Servicio Electoral",
+          "Numero_Tramites": "1"
+        },
+        {
+          "ROL": "1622-2025",
+          "Caratula": "BERRIOS/Servicio Electoral",
+          "Numero_Tramites": "1"
+        },
+        {
+          "ROL": "1629-2025",
+          "Caratula": "RAMIREZ/Servicio Electoral",
+          "Numero_Tramites": "1"
+        },
+        {
+          "ROL": "1637-2025",
+          "Caratula": "Concha /Servicio Electoral",
+          "Numero_Tramites": "1"
+        },
+        {
+          "ROL": "1643-2025",
+          "Caratula": "silva/Servicio Electoral",
+          "Numero_Tramites": "1"
+        },
+        {
+          "ROL": "1648-2025",
+          "Caratula": "BORQUEZ CASTILLO/Servicio Electoral",
+          "Numero_Tramites": "1"
+        },
+        {
+          "ROL": "1651-2025",
+          "Caratula": "ORELLANA/Servicio Electoral",
+          "Numero_Tramites": "1"
+        },
+        {
+          "ROL": "1662-2025",
+          "Caratula": "LOPEZ/Servicio Electoral",
+          "Numero_Tramites": "1"
+        },
+        {
+          "ROL": "533-2026",
+          "Caratula": "Guajardo Oyarce/",
+          "Numero_Tramites": "1"
+        },
+        {
+          "ROL": "534-2026",
+          "Caratula": "Kegevic Bustamante/",
+          "Numero_Tramites": "1"
+        }
+      ]
+    },
+    {
+      "Fecha": "11-08-2026",
+      "Numero_Causas": "41",
+      "Numero_Tramites": "41",
+      "Causas": [
+        {
+          "ROL": "1317-2025",
+          "Caratula": "CASAS-CORDERO/Servicio Electoral",
+          "Numero_Tramites": "1"
+        },
+        {
+          "ROL": "1337-2025",
+          "Caratula": "CUMSILLE/Servicio Electoral",
+          "Numero_Tramites": "1"
+        },
+        {
+          "ROL": "1603-2025",
+          "Caratula": "FERNANDEZ/Servicio Electoral",
+          "Numero_Tramites": "1"
+        },
+        {
+          "ROL": "1607-2025",
+          "Caratula": "VERGARA/Servicio Electoral",
+          "Numero_Tramites": "1"
+        },
+        {
+          "ROL": "1610-2025",
+          "Caratula": "FLORES CANALES /Servicio Electoral",
+          "Numero_Tramites": "1"
+        },
+        {
+          "ROL": "1619-2025",
+          "Caratula": "NAVARRETE/Servicio Electoral",
+          "Numero_Tramites": "1"
+        },
+        {
+          "ROL": "1659-2025",
+          "Caratula": "RIQUELME/Servicio Electoral",
+          "Numero_Tramites": "1"
+        },
+        {
+          "ROL": "1661-2025",
+          "Caratula": "Facuse Rojas/Servicio Electoral",
+          "Numero_Tramites": "1"
+        },
+        {
+          "ROL": "1714-2025",
+          "Caratula": "Jara Torres /Servicio Electoral",
+          "Numero_Tramites": "1"
+        },
+        {
+          "ROL": "189-2026",
+          "Caratula": "GODOY/Servicio Electoral",
+          "Numero_Tramites": "1"
+        },
+        {
+          "ROL": "204-2026",
+          "Caratula": "VERA/Servicio Electoral",
+          "Numero_Tramites": "1"
+        },
+        {
+          "ROL": "225-2026",
+          "Caratula": "OLAVARRIA/Servicio Electoral",
+          "Numero_Tramites": "1"
+        },
+        {
+          "ROL": "226-2026",
+          "Caratula": "MARTINEZ/Servicio Electoral",
+          "Numero_Tramites": "1"
+        },
+        {
+          "ROL": "233-2026",
+          "Caratula": "Martinez /Servicio Electoral",
+          "Numero_Tramites": "1"
+        },
+        {
+          "ROL": "241-2026",
+          "Caratula": "BLANCO/Servicio Electoral",
+          "Numero_Tramites": "1"
+        },
+        {
+          "ROL": "252-2026",
+          "Caratula": "MUÑOZ/Servicio Electoral",
+          "Numero_Tramites": "1"
+        },
+        {
+          "ROL": "255-2026",
+          "Caratula": "CORREA/Servicio Electoral",
+          "Numero_Tramites": "1"
+        },
+        {
+          "ROL": "264-2026",
+          "Caratula": "BASSALETTI/Servicio Electoral",
+          "Numero_Tramites": "1"
+        },
+        {
+          "ROL": "265-2026",
+          "Caratula": "LIZANA/Servicio Electoral",
+          "Numero_Tramites": "1"
+        },
+        {
+          "ROL": "279-2026",
+          "Caratula": "SCHNEIDER/Servicio Electoral",
+          "Numero_Tramites": "1"
+        },
+        {
+          "ROL": "283-2026",
+          "Caratula": "NAVARRO BRAIN /Servicio Electoral",
+          "Numero_Tramites": "1"
+        },
+        {
+          "ROL": "311-2026",
+          "Caratula": "QUIROZ/Servicio Electoral",
+          "Numero_Tramites": "1"
+        },
+        {
+          "ROL": "316-2026",
+          "Caratula": "MALDONADO/Servicio Electoral",
+          "Numero_Tramites": "1"
+        },
+        {
+          "ROL": "321-2026",
+          "Caratula": "ORDENES/Servicio Electoral",
+          "Numero_Tramites": "1"
+        },
+        {
+          "ROL": "352-2026",
+          "Caratula": "MENA/Servicio Electoral",
+          "Numero_Tramites": "1"
+        },
+        {
+          "ROL": "358-2026",
+          "Caratula": "Lineros González /Servicio Electoral",
+          "Numero_Tramites": "1"
+        },
+        {
+          "ROL": "367-2026",
+          "Caratula": "farran/Servicio Electoral",
+          "Numero_Tramites": "1"
+        },
+        {
+          "ROL": "370-2026",
+          "Caratula": "DEL REAL/Servicio Electoral",
+          "Numero_Tramites": "1"
+        },
+        {
+          "ROL": "408-2026",
+          "Caratula": "PARISI/Servicio Electoral",
+          "Numero_Tramites": "1"
+        },
+        {
+          "ROL": "421-2026",
+          "Caratula": "Santelices Cañas /Servicio Electoral",
+          "Numero_Tramites": "1"
+        },
+        {
+          "ROL": "490-2026",
+          "Caratula": "Universidad de Santiago de Chile/Jerardino Weisenborn",
+          "Numero_Tramites": "1"
+        },
+        {
+          "ROL": "502-2026",
+          "Caratula": "Comité de Agua Potable Rural de Laraquete/Menares Castro",
+          "Numero_Tramites": "1"
+        },
+        {
+          "ROL": "512-2026",
+          "Caratula": "Puelma Dunner/Federacion Deportiva Nacional de Tenis de Chile",
+          "Numero_Tramites": "1"
+        },
+        {
+          "ROL": "513-2026",
+          "Caratula": "TORO QUINTANA/Riquelme Tabach",
+          "Numero_Tramites": "1"
+        },
+        {
+          "ROL": "514-2026",
+          "Caratula": "MuñozHeredia/Muñoz Vargas",
+          "Numero_Tramites": "1"
+        },
+        {
+          "ROL": "515-2026",
+          "Caratula": "Expediente Segundo tribunal electoral de la región metropolitana",
+          "Numero_Tramites": "1"
+        },
+        {
+          "ROL": "516-2026",
+          "Caratula": "Expediente Segundo tribunal electoral de la región metropolitana",
+          "Numero_Tramites": "1"
+        },
+        {
+          "ROL": "517-2026",
+          "Caratula": "Muñoz Ramos/",
+          "Numero_Tramites": "1"
+        },
+        {
+          "ROL": "520-2026",
+          "Caratula": "Norero Carkovic/",
+          "Numero_Tramites": "1"
+        },
+        {
+          "ROL": "521-2026",
+          "Caratula": "Vera Ojeda/Gatica Villegas",
+          "Numero_Tramites": "1"
+        },
+        {
+          "ROL": "526-2026",
+          "Caratula": "Fuentealba Inostroza /",
+          "Numero_Tramites": "1"
+        }
+      ]
+    }
+  ]
 }
