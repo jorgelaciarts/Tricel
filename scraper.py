@@ -241,21 +241,30 @@ def extract_entries(page, previous_entries):
             except Exception as exc:
                 print(f"Aviso: no se pudo abrir el detalle de la fecha {fecha}: {exc}")
 
-        # Para cada causa: si ya la conocíamos, reutilizamos sus resoluciones
-        # previas (no volvemos a descargar). Si es nueva, entramos y
-        # buscamos resoluciones para descargar.
+        # Marcar todas las causas de este resultado como "no revisadas" por
+        # defecto; solo pasan a "Revisado": True si la descarga se
+        # completó sin errores. Así, si algo falla, se reintenta al día
+        # siguiente en vez de quedar saltado para siempre.
+        for causa in causas:
+            causa.setdefault("Revisado", False)
+
+        # Para cada causa: si ya la conocíamos Y quedó marcada como
+        # "Revisado" (la descarga se completó bien), reutilizamos sus
+        # resoluciones previas sin volver a intentarlo. Si es nueva O si
+        # antes falló (Revisado=False), la procesamos (o reintentamos).
         for causa in causas:
             rol = causa.get("ROL")
             previamente_vista = previous_rol_index.get(rol) if rol else None
 
-            if previamente_vista is not None:
+            if previamente_vista is not None and previamente_vista.get("Revisado") is True:
                 causa["Resoluciones"] = previamente_vista.get("Resoluciones", [])
+                causa["Revisado"] = True
                 continue
 
             if procesadas_esta_corrida >= MAX_CAUSAS_NUEVAS_POR_CORRIDA:
                 print(f"Aviso: se alcanzó el límite de {MAX_CAUSAS_NUEVAS_POR_CORRIDA} "
-                      f"causas nuevas procesadas en esta corrida; el resto se procesará "
-                      f"en la siguiente ejecución diaria.")
+                      f"causas nuevas/pendientes procesadas en esta corrida; el resto se "
+                      f"reintentará en la siguiente ejecución diaria.")
                 continue
 
             try:
@@ -275,8 +284,26 @@ def extract_entries(page, previous_entries):
                     continue
 
                 target_detalle_btn = fresh_target_row.query_selector("td:nth-child(4) span")
-                target_detalle_btn.click(timeout=15000)
-                page.wait_for_selector("#showDetalle", state="visible", timeout=15000)
+
+                # Reintento: si el modal no abre a la primera (posible
+                # lentitud del servidor bajo automatización intensa),
+                # se espera un poco más y se prueba una segunda vez.
+                modal_abierto = False
+                for intento in range(2):
+                    try:
+                        target_detalle_btn.click(timeout=15000)
+                        page.wait_for_selector("#showDetalle", state="visible", timeout=15000)
+                        modal_abierto = True
+                        break
+                    except Exception:
+                        if intento == 0:
+                            print(f"Aviso: reintentando abrir el detalle para la causa {rol}...")
+                            page.wait_for_timeout(3000)
+                        else:
+                            raise
+                if not modal_abierto:
+                    continue
+
                 page.wait_for_timeout(1000)
 
                 entrar_btn = None
@@ -296,14 +323,16 @@ def extract_entries(page, previous_entries):
 
                 resoluciones = download_resoluciones_for_causa(page, rol, fecha)
                 causa["Resoluciones"] = resoluciones
+                causa["Revisado"] = True
                 procesadas_esta_corrida += 1
 
             except Exception as exc:
                 print(f"Aviso: error procesando la causa {rol} ({fecha}): {exc}")
-                causa["Resoluciones"] = []
+                causa["Resoluciones"] = causa.get("Resoluciones", [])
+                causa["Revisado"] = False
 
-            # Pequeña pausa entre causa y causa para no saturar el sitio
-            page.wait_for_timeout(800)
+            # Pausa entre causa y causa para no saturar el sitio
+            page.wait_for_timeout(2500)
 
         entries.append({
             "Fecha": fecha,
