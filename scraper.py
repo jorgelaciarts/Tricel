@@ -176,6 +176,13 @@ def extract_entries(page, previous_entries):
     fecha, abre el modal de "Detalle" para listar sus causas. Para cada
     causa NUEVA (ROL no visto en la corrida anterior), entra a la causa y
     descarga los documentos de sus trámites tipo "Resolución".
+
+    Se recarga la página completa (page.goto) antes de procesar cada
+    fecha Y antes de procesar cada causa nueva, para partir siempre de un
+    estado limpio: tras muchas interacciones seguidas (abrir modales,
+    entrar a causas, descargar documentos) la SPA puede quedar en un
+    estado inesperado (p. ej. una ventana de "Cargando..." tapando los
+    botones), lo que hacía fallar el clic de la fecha siguiente.
     """
     page.wait_for_load_state("networkidle", timeout=30000)
     page.wait_for_timeout(2000)
@@ -183,34 +190,52 @@ def extract_entries(page, previous_entries):
     previous_rol_index = build_previous_rol_index(previous_entries)
     procesadas_esta_corrida = 0
 
+    # Primero, solo recolectar la lista de fechas (sin entrar a ninguna),
+    # para saber cuántas hay y sus textos exactos.
     main_rows = page.query_selector_all("table#selectable tbody tr")
-    num_rows = len(main_rows)
+    fechas = []
+    for row in main_rows:
+        cells = row.query_selector_all("td")
+        if len(cells) >= 3:
+            fechas.append(cells[0].inner_text().strip())
 
-    if num_rows == 0:
+    if not fechas:
         body_text = page.inner_text("body")
         return [{"texto_bruto": body_text}]
 
     entries = []
 
-    for i in range(num_rows):
-        rows = page.query_selector_all("table#selectable tbody tr")
-        if i >= len(rows):
-            break
-        row = rows[i]
-        cells = row.query_selector_all("td")
-        if len(cells) < 3:
+    for fecha in fechas:
+        # Estado limpio antes de cada fecha
+        try:
+            page.goto(URL, wait_until="domcontentloaded", timeout=60000)
+            page.wait_for_load_state("networkidle", timeout=30000)
+            page.wait_for_timeout(1500)
+        except Exception as exc:
+            print(f"Aviso: no se pudo recargar la página antes de procesar la fecha {fecha}: {exc}")
             continue
 
-        fecha = cells[0].inner_text().strip()
-        numero_causas = cells[1].inner_text().strip()
-        numero_tramites = cells[2].inner_text().strip()
+        rows = page.query_selector_all("table#selectable tbody tr")
+        target_row = None
+        numero_causas = numero_tramites = ""
+        for r in rows:
+            rcells = r.query_selector_all("td")
+            if rcells and rcells[0].inner_text().strip() == fecha:
+                target_row = r
+                numero_causas = rcells[1].inner_text().strip() if len(rcells) > 1 else ""
+                numero_tramites = rcells[2].inner_text().strip() if len(rcells) > 2 else ""
+                break
+
+        if target_row is None:
+            print(f"Aviso: no se pudo re-ubicar la fecha {fecha} en la tabla principal")
+            continue
 
         causas = []
-        detalle_btn = row.query_selector("td:nth-child(4) span")
+        detalle_btn = target_row.query_selector("td:nth-child(4) span")
         if detalle_btn:
             try:
-                detalle_btn.click()
-                page.wait_for_selector("#showDetalle", state="visible", timeout=10000)
+                detalle_btn.click(timeout=15000)
+                page.wait_for_selector("#showDetalle", state="visible", timeout=15000)
                 page.wait_for_timeout(1200)
                 causas = extract_causas_from_modal(page)
             except Exception as exc:
@@ -233,29 +258,25 @@ def extract_entries(page, previous_entries):
                       f"en la siguiente ejecución diaria.")
                 continue
 
-            # Entrar a la causa: recargamos la página desde cero y repetimos
-            # el camino (Detalle -> Entrar) para asegurar un estado limpio,
-            # ya que no conocemos un botón "Volver" fiable para reutilizar
-            # la misma sesión de navegación entre causas.
             try:
                 page.goto(URL, wait_until="domcontentloaded", timeout=60000)
                 page.wait_for_load_state("networkidle", timeout=30000)
                 page.wait_for_timeout(1500)
 
                 fresh_rows = page.query_selector_all("table#selectable tbody tr")
-                target_row = None
+                fresh_target_row = None
                 for r in fresh_rows:
                     rcells = r.query_selector_all("td")
                     if rcells and rcells[0].inner_text().strip() == fecha:
-                        target_row = r
+                        fresh_target_row = r
                         break
-                if target_row is None:
+                if fresh_target_row is None:
                     print(f"Aviso: no se pudo re-ubicar la fecha {fecha} para entrar a la causa {rol}")
                     continue
 
-                target_detalle_btn = target_row.query_selector("td:nth-child(4) span")
-                target_detalle_btn.click()
-                page.wait_for_selector("#showDetalle", state="visible", timeout=10000)
+                target_detalle_btn = fresh_target_row.query_selector("td:nth-child(4) span")
+                target_detalle_btn.click(timeout=15000)
+                page.wait_for_selector("#showDetalle", state="visible", timeout=15000)
                 page.wait_for_timeout(1000)
 
                 entrar_btn = None
@@ -270,7 +291,7 @@ def extract_entries(page, previous_entries):
                     print(f"Aviso: no se encontró el botón 'Entrar' para la causa {rol}")
                     continue
 
-                entrar_btn.click()
+                entrar_btn.click(timeout=15000)
                 page.wait_for_timeout(2000)
 
                 resoluciones = download_resoluciones_for_causa(page, rol, fecha)
@@ -280,6 +301,9 @@ def extract_entries(page, previous_entries):
             except Exception as exc:
                 print(f"Aviso: error procesando la causa {rol} ({fecha}): {exc}")
                 causa["Resoluciones"] = []
+
+            # Pequeña pausa entre causa y causa para no saturar el sitio
+            page.wait_for_timeout(800)
 
         entries.append({
             "Fecha": fecha,
@@ -448,6 +472,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 if __name__ == "__main__":
