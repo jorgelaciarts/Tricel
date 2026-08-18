@@ -247,6 +247,64 @@ def build_previous_rol_index(previous_entries):
     return index
 
 
+def backfill_missing_fields(previous_entries):
+    """
+    Corrige causas que ya fueron procesadas (Revisado=True) ANTES de que
+    existiera la lectura de PDF (o cuya extracción no encontró nada la
+    primera vez), pero que ya tienen el PDF de la Sentencia guardado en
+    el repo. En vez de volver a visitar el sitio web, vuelve a leer ese
+    PDF local -mucho más rápido y sin riesgo de fallar por el sitio-.
+
+    Modifica 'previous_entries' en el sitio (in-place).
+    """
+    hoy = datetime.now(timezone.utc).astimezone().strftime("%d-%m-%Y")
+    corregidas = 0
+
+    for entry in previous_entries:
+        for causa in entry.get("Causas", []) or []:
+            if not causa.get("Revisado"):
+                continue
+            if causa.get("Eleccion") and causa.get("Pronunciamiento"):
+                continue  # ya está completa, nada que hacer
+
+            resoluciones = causa.get("Resoluciones") or []
+            sentencia = next(
+                (r for r in resoluciones if r.get("referencia", "").strip().lower() == "sentencia"),
+                None,
+            )
+            if not sentencia:
+                continue
+
+            archivo_relativo = sentencia.get("archivo_relativo")
+            if not archivo_relativo:
+                continue
+
+            pdf_path = ROOT / "docs" / archivo_relativo
+            if not pdf_path.exists():
+                continue
+
+            texto_pdf = extraer_texto_pdf(pdf_path)
+            if not texto_pdf:
+                continue
+
+            eleccion = extraer_eleccion(texto_pdf)
+            pronunciamiento = extraer_pronunciamiento(texto_pdf)
+
+            if eleccion and not causa.get("Eleccion"):
+                causa["Eleccion"] = eleccion
+                corregidas += 1
+            if pronunciamiento and not causa.get("Pronunciamiento"):
+                causa["Pronunciamiento"] = pronunciamiento
+            if not causa.get("Estado"):
+                causa["Estado"] = "Con sentencia"
+            if not causa.get("Solicitud_IA"):
+                causa["Solicitud_IA"] = hoy
+
+    if corregidas:
+        print(f"Backfill: se completaron datos de {corregidas} causa(s) ya procesadas "
+              f"leyendo su PDF ya descargado (sin volver a visitar el sitio).")
+
+
 def extract_entries(page, previous_entries):
     """
     Extrae las filas de la tabla principal (una por fecha). Para cada
@@ -550,6 +608,8 @@ def main():
             previous_entries = previous.get("entries", [])
         except Exception:
             previous_entries = []
+
+    backfill_missing_fields(previous_entries)
 
     with sync_playwright() as p:
         browser = p.chromium.launch()
