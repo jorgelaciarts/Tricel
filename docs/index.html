@@ -135,6 +135,32 @@ async function load() {
       return;
     }
 
+    // Modo estructurado con fechas: una sección expandible por fecha,
+    // con el listado de causas de ese día.
+    if (entries.length > 0 && entries[0].Fecha !== undefined) {
+      let html = '';
+      entries.forEach(e => {
+        const causas = e.Causas || [];
+        html += '<details style="margin-bottom:1rem;background:var(--card);border:1px solid var(--border);border-radius:4px;">';
+        html += '<summary style="cursor:pointer;padding:0.9rem 1rem;font-family:-apple-system,sans-serif;font-weight:600;">' +
+          e.Fecha + ' — ' + (e.Numero_Causas || '?') + ' causas, ' + (e.Numero_Tramites || '?') + ' trámites' +
+          '</summary>';
+        if (causas.length > 0) {
+          html += '<table style="box-shadow:none;"><thead><tr><th>ROL</th><th>Carátula</th><th>N° Trámites</th></tr></thead><tbody>';
+          causas.forEach(c => {
+            html += '<tr><td>' + (c.ROL || '') + '</td><td>' + (c.Caratula || '') + '</td><td>' + (c.Numero_Tramites || '') + '</td></tr>';
+          });
+          html += '</tbody></table>';
+        } else {
+          html += '<p style="padding:0 1rem 1rem;color:var(--muted);font-family:-apple-system,sans-serif;font-size:0.85rem;">Sin detalle de causas disponible para esta fecha.</p>';
+        }
+        html += '</details>';
+      });
+      contentEl.innerHTML = html;
+      return;
+    }
+
+    // Modo genérico (respaldo): tabla plana con las columnas encontradas
     const columns = Array.from(
       entries.reduce((set, e) => {
         Object.keys(e).forEach(k => set.add(k));
@@ -162,6 +188,11 @@ async function load() {
     console.error(err);
   }
 }
+load();
+</script>
+</body>
+</html>
+
 load();
 </script>
 </body>
