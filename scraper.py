@@ -312,8 +312,12 @@ def format_entry(entry, max_len=300):
                 line = f"{c.get('ROL', '')} {c.get('Caratula', '')}".strip()
                 resoluciones = c.get("Resoluciones") or []
                 if resoluciones:
-                    links = ", ".join(r["url_publica"] for r in resoluciones)
-                    line += f" [Resolución disponible: {links}]"
+                    partes = []
+                    for r in resoluciones:
+                        ref = r.get("referencia") or "Resolución"
+                        fecha_r = r.get("fecha_tramite") or ""
+                        partes.append(f"{ref} ({fecha_r}): {r['url_publica']}")
+                    line += " [" + " | ".join(partes) + "]"
                 lines.append(line)
             sample = "; ".join(lines)
             if len(causas) > 5:
@@ -379,7 +383,9 @@ def build_summary(previous_entries, new_entries):
         lines.append(f"Resoluciones nuevas disponibles para descarga ({len(nuevas_resoluciones)}):")
         for fecha, c in nuevas_resoluciones[:20]:
             for r in c.get("Resoluciones", []):
-                lines.append(f"  - {fecha} · {c.get('ROL')} {c.get('Caratula')}: {r['url_publica']}")
+                ref = r.get("referencia") or "Resolución"
+                fecha_r = r.get("fecha_tramite") or ""
+                lines.append(f"  - {fecha} · {c.get('ROL')} {c.get('Caratula')} · {ref} ({fecha_r}): {r['url_publica']}")
 
     return "\n".join(lines)
 
@@ -438,6 +444,10 @@ def main():
 
     print(f"Entradas extraídas: {len(entries)} | Cambió respecto de ayer: {changed}")
     print(summary)
+
+
+if __name__ == "__main__":
+    main()
 
 
 if __name__ == "__main__":
