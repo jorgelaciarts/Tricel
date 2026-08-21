@@ -51,7 +51,17 @@ PAGES_BASE_URL = "https://jorgelaciarts.github.io/Tricel/"
 # que trae el propio formulario ('Fecha Desde' / 'Fecha Hasta'). Se puede
 # sobreescribir sin tocar el código definiendo la variable de entorno
 # FECHA_DESDE en el workflow (formato DD-MM-AAAA, igual que el sitio).
-FECHA_DESDE_HISTORICA = os.environ.get("FECHA_DESDE", "01-01-2026")
+FECHA_DESDE_HISTORICA = os.environ.get("FECHA_DESDE", "21-06-2026")
+
+# El filtro por rango de fecha (buscador "Fecha Desde/Hasta" del sitio)
+# falló el 100% de las veces en la práctica -el modal de carga
+# "Buscando..." se queda pegado en pantalla y nunca se cierra-, así que
+# por ahora queda DESACTIVADO por defecto para no romper ni alargar cada
+# ejecución diaria. Se puede activar a propósito definiendo la variable
+# de entorno ACTIVAR_FILTRO_FECHA=true en el workflow, una vez que se
+# entienda por qué el sitio no acepta la búsqueda automatizada tal como
+# está implementada.
+ACTIVAR_FILTRO_FECHA = os.environ.get("ACTIVAR_FILTRO_FECHA", "false").lower() == "true"
 
 ROOT = Path(__file__).parent
 DATA_DIR = ROOT / "docs" / "data"
@@ -386,6 +396,9 @@ def aplicar_filtro_fecha(page, fecha_desde=FECHA_DESDE_HISTORICA):
     bloqueando todos los clics del resto de la ejecución (eso fue lo que
     causó que fallara también la fecha 19-08-2026, que antes funcionaba).
     """
+    if not ACTIVAR_FILTRO_FECHA:
+        return
+
     try:
         campo_fecha = page.locator("#datetimepicker1 input")
         campo_fecha.fill(fecha_desde)
