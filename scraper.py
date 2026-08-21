@@ -61,7 +61,7 @@ FECHA_DESDE_HISTORICA = os.environ.get("FECHA_DESDE", "21-06-2026")
 # de entorno ACTIVAR_FILTRO_FECHA=true en el workflow, una vez que se
 # entienda por qué el sitio no acepta la búsqueda automatizada tal como
 # está implementada.
-ACTIVAR_FILTRO_FECHA = os.environ.get("ACTIVAR_FILTRO_FECHA", "false").lower() == "true"
+ACTIVAR_FILTRO_FECHA = os.environ.get("ACTIVAR_FILTRO_FECHA", "true").lower() == "true"
 
 ROOT = Path(__file__).parent
 DATA_DIR = ROOT / "docs" / "data"
@@ -382,27 +382,42 @@ def esperar_red_inactiva(page, timeout=30000):
         pass
 
 
-def aplicar_filtro_fecha(page, fecha_desde=FECHA_DESDE_HISTORICA):
+def aplicar_filtro_fecha(page, fecha_desde=FECHA_DESDE_HISTORICA, fecha_hasta=None):
     """
-    Llena el campo 'Fecha Desde' del formulario de búsqueda del Estado
-    Diario y envía el formulario, para traer resultados históricos (por
-    defecto el sitio solo muestra los últimos días). Deja 'Fecha Hasta'
-    vacío para traer todo hasta hoy.
+    Llena los campos 'Fecha Desde' y 'Fecha Hasta' del formulario de
+    búsqueda del Estado Diario y lo envía, para traer resultados
+    históricos (por defecto el sitio solo muestra los últimos días).
+
+    IMPORTANTE: ambos campos son obligatorios en el sitio (marcados con
+    "*"). La primera versión de esta función solo llenaba 'Fecha Desde' y
+    dejaba 'Fecha Hasta' vacío, lo que hacía que la búsqueda fallara en
+    silencio siempre (el modal de carga quedaba pegado en pantalla para
+    siempre). Se confirmó manualmente que llenando ambos campos con el
+    formato DD-MM-AAAA la búsqueda sí funciona.
+
+    Si no se especifica 'fecha_hasta', se usa la fecha de hoy.
 
     Al enviar el formulario aparece un modal de carga
     (#buscandoestadodiariopublico, "Buscando..."). Hay que esperar a que
     se cierre solo; si por algún motivo queda atascado abierto, se cierra
     a la fuerza vía jQuery/Bootstrap para no dejar su fondo oscuro
-    bloqueando todos los clics del resto de la ejecución (eso fue lo que
-    causó que fallara también la fecha 19-08-2026, que antes funcionaba).
+    bloqueando todos los clics del resto de la ejecución.
     """
     if not ACTIVAR_FILTRO_FECHA:
         return
 
+    if fecha_hasta is None:
+        fecha_hasta = datetime.now(timezone.utc).astimezone().strftime("%d-%m-%Y")
+
     try:
-        campo_fecha = page.locator("#datetimepicker1 input")
-        campo_fecha.fill(fecha_desde)
-        campo_fecha.press("Tab")  # dispara el evento 'change' que usa Knockout
+        campo_desde = page.locator("#datetimepicker1 input")
+        campo_desde.fill(fecha_desde)
+        campo_desde.press("Tab")  # dispara el evento 'change' que usa Knockout
+
+        campo_hasta = page.locator("#datetimepicker2 input")
+        campo_hasta.fill(fecha_hasta)
+        campo_hasta.press("Tab")
+
         page.click("form button[type='submit']")
 
         # Esperar a que aparezca el modal de carga (puede ser demasiado
@@ -417,7 +432,7 @@ def aplicar_filtro_fecha(page, fecha_desde=FECHA_DESDE_HISTORICA):
         page.wait_for_timeout(1000)
 
     except Exception as exc:
-        print(f"Aviso: no se pudo aplicar el filtro de fecha desde {fecha_desde}: {exc}")
+        print(f"Aviso: no se pudo aplicar el filtro de fecha desde {fecha_desde} hasta {fecha_hasta}: {exc}")
         # Seguridad: si el modal de "Buscando..." quedó atascado abierto,
         # forzarlo a cerrar para que no bloquee los clics del resto de la
         # ejecución (aunque en ese caso el filtro histórico puede no
