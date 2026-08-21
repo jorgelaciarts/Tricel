@@ -172,19 +172,26 @@ def extraer_comuna(texto):
     return m.group(1).strip() if m else ""
 
 
-def extraer_region(texto):
+def extraer_cargo_y_region(texto):
+    """
+    Devuelve (cargo, región). Maneja tanto cargos de nivel comunal
+    ('candidata al cargo de Concejal de la comuna de X, Región de Y')
+    como cargos de nivel regional, sin comuna
+    ('candidato al cargo de Consejero Regional por la Región de X').
+    """
     t = _normalizar_texto(texto)
-    m = re.search(r"Regi[oó]n de ([^,]+),", t)
-    return m.group(1).strip() if m else ""
-
-
-def extraer_tipo_y_anio_eleccion(texto):
-    """Devuelve (tipo_de_elecciones, año_en_palabras), ej. ('Alcaldes y Concejales', 'dos mil veinticuatro')."""
-    t = _normalizar_texto(texto)
-    m = re.search(r"en las elecciones de (.+?)\s+de\s+((?:dos mil|mil)[a-záéíóúñ\s]+?),", t)
+    m = re.search(
+        r"al cargo de ([A-ZÁÉÍÓÚÑa-záéíóúñ]+(?:\s[A-ZÁÉÍÓÚÑa-záéíóúñ]+){0,2}?)\s*"
+        r"(?:de la comuna de [^,]+,\s*Regi[oó]n de ([^,]+)|"
+        r"por la Regi[oó]n(?:\s+de)?\s+([^,]+)|"
+        r"Regi[oó]n(?:\s+de)?\s+([^,]+))",
+        t,
+    )
     if not m:
         return "", ""
-    return m.group(1).strip(), m.group(2).strip()
+    cargo = m.group(1).strip()
+    region = next((g for g in m.groups()[1:] if g), "")
+    return cargo, region.strip()
 
 
 def extraer_materia_central(texto):
@@ -200,47 +207,58 @@ def extraer_materia_central(texto):
     return m.group(1).strip() if m else ""
 
 
-def construir_materia(rol, texto, pronunciamiento, fecha_sentencia=""):
-    """
-    Arma la oración de MATERIA combinando: número de causa, fecha de la
-    Sentencia, el sentido del fallo, el asunto de fondo, y los datos del
-    reclamante (nombre, cargo, comuna, región, tipo de elección).
+def extraer_numero_resolucion_servel(texto):
+    """El número de la resolución ORIGINAL del Servicio Electoral que se reclama (ej. 'G8751')."""
+    t = _normalizar_texto(texto)
+    m = re.search(r"contra la resolución N[°º]?\s*([A-Za-z]?\d+)", t)
+    return m.group(1).strip() if m else ""
 
-    Si falta algún dato clave (nombre o materia central), devuelve cadena
-    vacía en vez de una oración incompleta/rara.
+
+def extraer_verbo_materia(texto):
+    """El verbo con que el Servicio Electoral resolvió (aprueba/rechaza/objeta), capitalizado."""
+    t = _normalizar_texto(texto)
+    m = re.search(r"Servicio Electoral,\s*que\s+(aprueba|rechaza|objeta)\b", t, re.IGNORECASE)
+    return m.group(1).capitalize() if m else ""
+
+
+def construir_materia(texto):
     """
-    nombre = extraer_nombre_reclamante(texto)
-    materia_central = extraer_materia_central(texto)
-    if not nombre or not materia_central:
+    Arma la oración de MATERIA con el formato:
+    'Reclamación interpuesta contra la resolución N° X, del Servicio
+    Electoral, que <Verbo> la <materia central> de <tratamiento> <nombre>,
+    candidato/a al cargo de <cargo> de la comuna de <comuna>, Región de
+    <región>.' (o 'candidato/a a <cargo> por la Región <región>' si es un
+    cargo regional sin comuna).
+
+    Si faltan datos clave (nombre, materia, número de resolución o verbo),
+    devuelve cadena vacía en vez de una oración incompleta.
+    """
+    t = _normalizar_texto(texto)
+    nombre = extraer_nombre_reclamante(t)
+    materia_central = extraer_materia_central(t)
+    numero_resolucion = extraer_numero_resolucion_servel(t)
+    verbo = extraer_verbo_materia(t)
+    if not (nombre and materia_central and numero_resolucion and verbo):
         return ""
 
-    tratamiento = extraer_tratamiento(texto) or "don/doña"
-    comuna = extraer_comuna(texto)
-    region = extraer_region(texto)
-    tipo_eleccion, anio_eleccion = extraer_tipo_y_anio_eleccion(texto)
-    cargo = extraer_eleccion(texto)
-    verbo = VERBO_POR_PRONUNCIAMIENTO.get(pronunciamiento, "se pronuncia sobre")
-    rol_numero = rol.split("-")[0] if rol else ""
-    fecha_larga = convertir_fecha_larga(fecha_sentencia) if fecha_sentencia else ""
+    tratamiento = extraer_tratamiento(t) or "don/doña"
+    comuna = extraer_comuna(t)
+    cargo, region = extraer_cargo_y_region(t)
 
-    encabezado = f"Recurso de reclamación en contra de la resolución G. Nº {rol_numero}"
-    if fecha_larga:
-        encabezado += f", de fecha {fecha_larga}"
-
-    partes = [encabezado]
-    partes.append(f"que {verbo} la reclamación de la {materia_central} de {tratamiento} {nombre}")
+    frase = (f"Reclamación interpuesta contra la resolución N° {numero_resolucion}, "
+             f"del Servicio Electoral, que {verbo} la {materia_central} de {tratamiento} {nombre}")
     if cargo:
-        detalle_cargo = f"candidat{'a' if tratamiento == 'doña' else 'o'} al cargo de {cargo.title()}"
+        sufijo_genero = "a" if tratamiento == "doña" else "o"
         if comuna:
-            detalle_cargo += f" de la comuna de {comuna}"
-        if region:
-            detalle_cargo += f", Región de {region}"
-        partes.append(detalle_cargo)
-    if tipo_eleccion:
-        sufijo_anio = f" de {anio_eleccion}" if anio_eleccion else ""
-        partes.append(f"en las elecciones de {tipo_eleccion}{sufijo_anio}")
-
-    return ", ".join(partes)
+            frase += f", candidat{sufijo_genero} al cargo de {cargo.title()} de la comuna de {comuna}"
+            if region:
+                frase += f", Región de {region}"
+        else:
+            frase += f", candidat{sufijo_genero} a {cargo.title()}"
+            if region:
+                frase += f" por la Región {region}"
+    frase += "."
+    return frase
 
 
 def extract_causas_from_modal(page):
@@ -352,9 +370,7 @@ def download_resoluciones_for_causa(page, rol, fecha):
                         eleccion = eleccion_encontrada
                     if pronunciamiento_encontrado:
                         pronunciamiento = pronunciamiento_encontrado
-                    materia_encontrada = construir_materia(
-                        rol, texto_pdf, pronunciamiento_encontrado, fecha_tramite
-                    )
+                    materia_encontrada = construir_materia(texto_pdf)
                     if materia_encontrada:
                         materia = materia_encontrada
 
@@ -395,8 +411,6 @@ def backfill_missing_fields(previous_entries):
         for causa in entry.get("Causas", []) or []:
             if not causa.get("Revisado"):
                 continue
-            if causa.get("Eleccion") and causa.get("Pronunciamiento") and causa.get("Materia"):
-                continue  # ya está completa, nada que hacer
 
             resoluciones = causa.get("Resoluciones") or []
             sentencia = next(
@@ -414,22 +428,33 @@ def backfill_missing_fields(previous_entries):
             if not pdf_path.exists():
                 continue
 
+            # MATERIA se recalcula siempre (aunque ya tuviera un valor):
+            # es una simple relectura del PDF ya descargado, así que es
+            # barato, y garantiza que si se ajusta la plantilla, los datos
+            # existentes se actualicen solos en la próxima corrida.
+            if causa.get("Eleccion") and causa.get("Pronunciamiento"):
+                texto_pdf = extraer_texto_pdf(pdf_path)
+                if texto_pdf:
+                    nueva_materia = construir_materia(texto_pdf)
+                    if nueva_materia and nueva_materia != causa.get("Materia"):
+                        causa["Materia"] = nueva_materia
+                        corregidas += 1
+                continue
+
             texto_pdf = extraer_texto_pdf(pdf_path)
             if not texto_pdf:
                 continue
 
             eleccion = extraer_eleccion(texto_pdf)
             pronunciamiento = extraer_pronunciamiento(texto_pdf)
-            materia = construir_materia(
-                causa.get("ROL", ""), texto_pdf, pronunciamiento, sentencia.get("fecha_tramite", "")
-            )
+            materia = construir_materia(texto_pdf)
 
             if eleccion and not causa.get("Eleccion"):
                 causa["Eleccion"] = eleccion
                 corregidas += 1
             if pronunciamiento and not causa.get("Pronunciamiento"):
                 causa["Pronunciamiento"] = pronunciamiento
-            if materia and not causa.get("Materia"):
+            if materia:
                 causa["Materia"] = materia
             if not causa.get("Estado"):
                 causa["Estado"] = "Con sentencia"
@@ -795,6 +820,4 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-    
 
