@@ -61,7 +61,7 @@ FECHA_DESDE_HISTORICA = os.environ.get("FECHA_DESDE", "21-06-2026")
 # de entorno ACTIVAR_FILTRO_FECHA=true en el workflow, una vez que se
 # entienda por qué el sitio no acepta la búsqueda automatizada tal como
 # está implementada.
-ACTIVAR_FILTRO_FECHA = os.environ.get("ACTIVAR_FILTRO_FECHA", "true").lower() == "true"
+ACTIVAR_FILTRO_FECHA = os.environ.get("ACTIVAR_FILTRO_FECHA", "false").lower() == "true"
 
 ROOT = Path(__file__).parent
 DATA_DIR = ROOT / "docs" / "data"
@@ -1053,4 +1053,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
