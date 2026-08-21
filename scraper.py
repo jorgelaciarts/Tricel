@@ -32,6 +32,7 @@ necesite ajustes. Revisar:
   - Los "Aviso:" impresos en el log de la ejecución de GitHub Actions
 """
 
+import copy
 import json
 import os
 import re
@@ -873,6 +874,15 @@ def main():
         except Exception:
             previous_entries = []
 
+    # Copia "antes del backfill" -se usa más abajo para detectar
+    # correctamente si el backfill cambió algo (Materia, Elección, etc.),
+    # ya que 'previous_entries' se modifica en el sitio dentro de
+    # backfill_missing_fields() y luego 'entries' se reconstruye a partir
+    # de esos mismos datos ya corregidos -comparar uno contra el otro
+    # directamente siempre daría "sin cambios", aunque el backfill sí
+    # haya corregido datos que nunca llegarían a guardarse en el repo.
+    previous_entries_antes_del_backfill = copy.deepcopy(previous_entries)
+
     backfill_missing_fields(previous_entries)
 
     with sync_playwright() as p:
@@ -895,7 +905,7 @@ def main():
 
     RAW_HTML_FILE.write_text(raw_html, encoding="utf-8")
 
-    changed = previous_entries != entries
+    changed = previous_entries_antes_del_backfill != entries
 
     DATA_FILE.write_text(
         json.dumps(snapshot, ensure_ascii=False, indent=2), encoding="utf-8"
