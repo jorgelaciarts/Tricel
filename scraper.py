@@ -356,6 +356,22 @@ def generar_materia_con_ia(texto_pdf, rol):
     return ""
 
 
+def esperar_red_inactiva(page, timeout=30000):
+    """
+    Espera a que la red esté inactiva ('networkidle'), pero sin lanzar una
+    excepción si no se alcanza a tiempo -algunos scripts de fondo del
+    sitio (p. ej. de Cloudflare) pueden mantener actividad de red
+    constante y nunca llegar a un 'networkidle' real-. Si se agota el
+    tiempo, el programa sigue adelante igual: como esto se llama siempre
+    después de un page.goto(..., wait_until="domcontentloaded"), el
+    contenido principal ya está cargado de todas formas.
+    """
+    try:
+        page.wait_for_load_state("networkidle", timeout=timeout)
+    except Exception:
+        pass
+
+
 def aplicar_filtro_fecha(page, fecha_desde=FECHA_DESDE_HISTORICA):
     """
     Llena el campo 'Fecha Desde' del formulario de búsqueda del Estado
@@ -639,7 +655,7 @@ def extract_entries(page, previous_entries):
     estado inesperado (p. ej. una ventana de "Cargando..." tapando los
     botones), lo que hacía fallar el clic de la fecha siguiente.
     """
-    page.wait_for_load_state("networkidle", timeout=30000)
+    esperar_red_inactiva(page)
     page.wait_for_timeout(2000)
     aplicar_filtro_fecha(page)
 
@@ -665,7 +681,7 @@ def extract_entries(page, previous_entries):
         # Estado limpio antes de cada fecha
         try:
             page.goto(URL, wait_until="domcontentloaded", timeout=60000)
-            page.wait_for_load_state("networkidle", timeout=30000)
+            esperar_red_inactiva(page)
             page.wait_for_timeout(1500)
             aplicar_filtro_fecha(page)
         except Exception as exc:
@@ -731,7 +747,7 @@ def extract_entries(page, previous_entries):
 
             try:
                 page.goto(URL, wait_until="domcontentloaded", timeout=60000)
-                page.wait_for_load_state("networkidle", timeout=30000)
+                esperar_red_inactiva(page)
                 page.wait_for_timeout(1500)
                 aplicar_filtro_fecha(page)
 
@@ -991,3 +1007,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
