@@ -2,6 +2,8 @@ name: Scrape Estado Diario TCE
 
 on:
   schedule:
+    # 13:00 UTC ≈ 10:00 / 09:00 hora de Chile (según horario de verano).
+    # Ajusta la hora si quieres que corra en otro momento del día.
     - cron: "0 13 * * *"
   workflow_dispatch: {}
 
@@ -27,6 +29,8 @@ jobs:
 
       - name: Ejecutar scraper
         id: scrape
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: python scraper.py
 
       - name: Commitear datos actualizados
@@ -52,6 +56,9 @@ jobs:
           body: |
             Se detectaron cambios en el Estado Diario del Tribunal Calificador de Elecciones.
 
+            ${{ steps.scrape.outputs.summary }}
+
             Fuente: https://tricel.lexsoft.cl/tce/estadoDiario
+            Página del proyecto: https://jorgelaciarts.github.io/Tricel/
 
             Este es un mensaje automático.
