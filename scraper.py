@@ -261,6 +261,85 @@ def construir_materia(texto):
     return frase
 
 
+# Ejemplos reales que definen el estilo exacto esperado para "Materia".
+# Se usan como guía (few-shot) para el modelo de IA.
+EJEMPLOS_MATERIA = [
+    "Reclamación interpuesta contra la resolución N°G613 del Servicio Electoral que rechazó, por "
+    "omisiones graves, la cuenta general de ingresos y gastos electorales de don Álvaro Gonzalo "
+    "Bravo Núñez, candidato a Concejal por la comuna de Providencia, en elecciones de 26 y 27 de "
+    "octubre de 2024.",
+    "Reclamación interpuesta contra la resolución N° G3441 del Servicio Electoral, que Rechaza la "
+    "rendición de cuenta de ingresos y gastos electorales de don Sergio Tapia Sandoval, candidato "
+    "a Alcalde por la comuna de Tiltil, en elecciones municipales 2024.",
+    "Reclamación interpuesta contra la resolución N° G2600 del Servicio Electoral, que Aprueba con "
+    "Observaciones la cuenta general de ingresos y gastos electorales de don Tomas Vodanovic "
+    "Escudero, candidato a Alcalde por la comuna de Maipú, en elecciones municipales 2024.",
+    "Reclamación interpuesta contra la resolución N°G14697 del Servicio Electoral, que Rechaza la "
+    "cuenta general de ingresos y gastos electorales de doña Camila Nisleth Jarpa Fernandez, "
+    "candidata a Consejera Regional por la Región de Biobío.",
+    "Reclamación interpuesta contra la resolución N°G3591 del Servicio Electoral, que Rechaza la "
+    "cuenta general de ingresos y gastos electorales de don Julio Cesar Sanzana Cárdenas candidato "
+    "a Consejero Regional por la Región de Los Lagos, en las elecciones municipales 2024.",
+]
+
+
+def generar_materia_con_ia(texto_pdf, rol):
+    """
+    Le pide a un modelo de Claude (vía API) que redacte la oración de
+    MATERIA a partir del texto completo de la Sentencia, siguiendo el
+    estilo exacto de EJEMPLOS_MATERIA. Esto maneja mucho mejor las
+    variaciones de redacción entre documentos (verbos, calificadores como
+    "por omisiones graves", distintas formas de mencionar la elección)
+    que las reglas de texto fijas.
+
+    Requiere la variable de entorno ANTHROPIC_API_KEY. Si no está
+    configurada, o si la llamada falla por cualquier motivo (red, cuota,
+    error de la API), devuelve cadena vacía sin interrumpir la ejecución
+    -el llamador debe usar construir_materia() como respaldo en ese caso-.
+    """
+    api_key = os.environ.get("ANTHROPIC_API_KEY")
+    if not api_key:
+        return ""
+
+    try:
+        import anthropic
+
+        client = anthropic.Anthropic(api_key=api_key)
+        texto_recortado = texto_pdf[:6000]
+
+        ejemplos_formateados = "\n".join(f"{i+1}. \"{ej}\"" for i, ej in enumerate(EJEMPLOS_MATERIA))
+
+        prompt = (
+            "Eres un asistente que redacta la columna \"Materia\" de una planilla de seguimiento "
+            "de causas del Tribunal Calificador de Elecciones (TCE) de Chile, a partir del texto "
+            "de una Sentencia.\n\n"
+            "Sigue este estilo EXACTO, con estos ejemplos reales como referencia:\n\n"
+            f"{ejemplos_formateados}\n\n"
+            "Notarás que el verbo, los calificadores (como 'por omisiones graves' o 'con "
+            "Observaciones') y la forma de mencionar la elección varían según lo que diga cada "
+            "documento textualmente -- usa siempre lo que dice el documento, no inventes ni "
+            "normalices a una única forma fija.\n\n"
+            "Ahora, a partir del siguiente texto de una Sentencia del TCE, escribe UNA sola "
+            "oración de Materia, en el mismo estilo. No agregues nada más (sin comillas, sin "
+            "explicación, sin encabezados ni notas) -- responde solo con la oración.\n\n"
+            f"Texto de la Sentencia (causa ROL {rol}):\n\"\"\"\n{texto_recortado}\n\"\"\""
+        )
+
+        response = client.messages.create(
+            model="claude-haiku-4-5-20251001",
+            max_tokens=300,
+            messages=[{"role": "user", "content": prompt}],
+        )
+        texto_generado = "".join(
+            getattr(block, "text", "") for block in response.content
+        ).strip()
+        return texto_generado
+
+    except Exception as exc:
+        print(f"Aviso: no se pudo generar la Materia con IA para la causa {rol}: {exc}")
+        return ""
+
+
 def extract_causas_from_modal(page):
     """Lee las filas de la tabla del modal 'Información de Causa' (#showDetalle)."""
     causas = []
@@ -370,7 +449,7 @@ def download_resoluciones_for_causa(page, rol, fecha):
                         eleccion = eleccion_encontrada
                     if pronunciamiento_encontrado:
                         pronunciamiento = pronunciamiento_encontrado
-                    materia_encontrada = construir_materia(texto_pdf)
+                    materia_encontrada = generar_materia_con_ia(texto_pdf, rol) or construir_materia(texto_pdf)
                     if materia_encontrada:
                         materia = materia_encontrada
 
@@ -435,7 +514,8 @@ def backfill_missing_fields(previous_entries):
             if causa.get("Eleccion") and causa.get("Pronunciamiento"):
                 texto_pdf = extraer_texto_pdf(pdf_path)
                 if texto_pdf:
-                    nueva_materia = construir_materia(texto_pdf)
+                    rol_causa = causa.get("ROL", "")
+                    nueva_materia = generar_materia_con_ia(texto_pdf, rol_causa) or construir_materia(texto_pdf)
                     if nueva_materia and nueva_materia != causa.get("Materia"):
                         causa["Materia"] = nueva_materia
                         corregidas += 1
@@ -447,7 +527,7 @@ def backfill_missing_fields(previous_entries):
 
             eleccion = extraer_eleccion(texto_pdf)
             pronunciamiento = extraer_pronunciamiento(texto_pdf)
-            materia = construir_materia(texto_pdf)
+            materia = generar_materia_con_ia(texto_pdf, causa.get("ROL", "")) or construir_materia(texto_pdf)
 
             if eleccion and not causa.get("Eleccion"):
                 causa["Eleccion"] = eleccion
