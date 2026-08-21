@@ -363,20 +363,48 @@ def aplicar_filtro_fecha(page, fecha_desde=FECHA_DESDE_HISTORICA):
     defecto el sitio solo muestra los últimos días). Deja 'Fecha Hasta'
     vacío para traer todo hasta hoy.
 
-    NOTA: los selectores se definieron a partir del HTML ya renderizado
-    (docs/data/estado_diario_raw.html) pero no se pudieron probar en vivo
-    antes de esta ejecución. Si el filtro no toma efecto (sigue mostrando
-    solo los últimos días), revisar ese archivo y ajustar los selectores.
+    Al enviar el formulario aparece un modal de carga
+    (#buscandoestadodiariopublico, "Buscando..."). Hay que esperar a que
+    se cierre solo; si por algún motivo queda atascado abierto, se cierra
+    a la fuerza vía jQuery/Bootstrap para no dejar su fondo oscuro
+    bloqueando todos los clics del resto de la ejecución (eso fue lo que
+    causó que fallara también la fecha 19-08-2026, que antes funcionaba).
     """
     try:
         campo_fecha = page.locator("#datetimepicker1 input")
         campo_fecha.fill(fecha_desde)
         campo_fecha.press("Tab")  # dispara el evento 'change' que usa Knockout
         page.click("form button[type='submit']")
-        page.wait_for_load_state("networkidle", timeout=30000)
-        page.wait_for_timeout(1500)
+
+        # Esperar a que aparezca el modal de carga (puede ser demasiado
+        # rápido para alcanzar a verlo, no es un error si no aparece)
+        try:
+            page.wait_for_selector("#buscandoestadodiariopublico.in", state="visible", timeout=3000)
+        except Exception:
+            pass
+
+        # Esperar a que se cierre solo
+        page.wait_for_selector("#buscandoestadodiariopublico", state="hidden", timeout=20000)
+        page.wait_for_timeout(1000)
+
     except Exception as exc:
         print(f"Aviso: no se pudo aplicar el filtro de fecha desde {fecha_desde}: {exc}")
+        # Seguridad: si el modal de "Buscando..." quedó atascado abierto,
+        # forzarlo a cerrar para que no bloquee los clics del resto de la
+        # ejecución (aunque en ese caso el filtro histórico puede no
+        # haberse aplicado, y el resto de la corrida sigue con lo que el
+        # sitio muestre por defecto).
+        try:
+            page.evaluate(
+                "if (window.jQuery) { "
+                "jQuery('#buscandoestadodiariopublico').modal('hide'); "
+                "jQuery('.modal-backdrop').remove(); "
+                "jQuery('body').removeClass('modal-open'); "
+                "}"
+            )
+            page.wait_for_timeout(500)
+        except Exception:
+            pass
 
 
 def extract_causas_from_modal(page):
