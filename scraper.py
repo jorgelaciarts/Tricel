@@ -46,6 +46,13 @@ from playwright.sync_api import sync_playwright
 URL = "https://tricel.lexsoft.cl/tce/estadoDiario"
 PAGES_BASE_URL = "https://jorgelaciarts.github.io/Tricel/"
 
+# Por defecto el sitio solo muestra los últimos días del Estado Diario.
+# Para traer el historial completo se usa el buscador por rango de fecha
+# que trae el propio formulario ('Fecha Desde' / 'Fecha Hasta'). Se puede
+# sobreescribir sin tocar el código definiendo la variable de entorno
+# FECHA_DESDE en el workflow (formato DD-MM-AAAA, igual que el sitio).
+FECHA_DESDE_HISTORICA = os.environ.get("FECHA_DESDE", "01-01-2026")
+
 ROOT = Path(__file__).parent
 DATA_DIR = ROOT / "docs" / "data"
 DATA_FILE = DATA_DIR / "estado_diario.json"
@@ -349,6 +356,29 @@ def generar_materia_con_ia(texto_pdf, rol):
     return ""
 
 
+def aplicar_filtro_fecha(page, fecha_desde=FECHA_DESDE_HISTORICA):
+    """
+    Llena el campo 'Fecha Desde' del formulario de búsqueda del Estado
+    Diario y envía el formulario, para traer resultados históricos (por
+    defecto el sitio solo muestra los últimos días). Deja 'Fecha Hasta'
+    vacío para traer todo hasta hoy.
+
+    NOTA: los selectores se definieron a partir del HTML ya renderizado
+    (docs/data/estado_diario_raw.html) pero no se pudieron probar en vivo
+    antes de esta ejecución. Si el filtro no toma efecto (sigue mostrando
+    solo los últimos días), revisar ese archivo y ajustar los selectores.
+    """
+    try:
+        campo_fecha = page.locator("#datetimepicker1 input")
+        campo_fecha.fill(fecha_desde)
+        campo_fecha.press("Tab")  # dispara el evento 'change' que usa Knockout
+        page.click("form button[type='submit']")
+        page.wait_for_load_state("networkidle", timeout=30000)
+        page.wait_for_timeout(1500)
+    except Exception as exc:
+        print(f"Aviso: no se pudo aplicar el filtro de fecha desde {fecha_desde}: {exc}")
+
+
 def extract_causas_from_modal(page):
     """Lee las filas de la tabla del modal 'Información de Causa' (#showDetalle)."""
     causas = []
@@ -583,6 +613,7 @@ def extract_entries(page, previous_entries):
     """
     page.wait_for_load_state("networkidle", timeout=30000)
     page.wait_for_timeout(2000)
+    aplicar_filtro_fecha(page)
 
     previous_rol_index = build_previous_rol_index(previous_entries)
     procesadas_esta_corrida = 0
@@ -608,6 +639,7 @@ def extract_entries(page, previous_entries):
             page.goto(URL, wait_until="domcontentloaded", timeout=60000)
             page.wait_for_load_state("networkidle", timeout=30000)
             page.wait_for_timeout(1500)
+            aplicar_filtro_fecha(page)
         except Exception as exc:
             print(f"Aviso: no se pudo recargar la página antes de procesar la fecha {fecha}: {exc}")
             continue
@@ -673,6 +705,7 @@ def extract_entries(page, previous_entries):
                 page.goto(URL, wait_until="domcontentloaded", timeout=60000)
                 page.wait_for_load_state("networkidle", timeout=30000)
                 page.wait_for_timeout(1500)
+                aplicar_filtro_fecha(page)
 
                 fresh_rows = page.query_selector_all("table#selectable tbody tr")
                 fresh_target_row = None
@@ -930,4 +963,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
