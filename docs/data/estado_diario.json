@@ -1,6 +1,6 @@
 {
   "source_url": "https://tricel.lexsoft.cl/tce/estadoDiario",
-  "fetched_at": "2026-08-21T16:31:14.797135+00:00",
+  "fetched_at": "2026-08-21T20:29:20.303191+00:00",
   "entries": [
     {
       "Fecha": "19-08-2026",
@@ -46,7 +46,7 @@
           "Revisado": true,
           "Eleccion": "",
           "Pronunciamiento": "Y CONFORME A LO ESTABLECIDO EN LOS ARTÍCULOS 47",
-          "Materia": "Recurso de reclamación en contra de la resolución G. Nº 434, de fecha 19 de agosto de 2026, que se pronuncia sobre la reclamación de la rendición de cuentas de don Álvaro Gonzalo Bravo Núñez",
+          "Materia": "Reclamación interpuesta contra la resolución N° G613 del Servicio Electoral, que Rechaza la cuenta de ingresos y gastos electorales de don Álvaro Gonzalo Bravo Núñez, candidato a Concejal por la comuna de Providencia, en la elección de Concejales 2024.",
           "Estado": "Con sentencia",
           "Solicitud_IA": "20-08-2026"
         },
@@ -83,7 +83,7 @@
           "Revisado": true,
           "Eleccion": "",
           "Pronunciamiento": "RECHAZA",
-          "Materia": "",
+          "Materia": "Reclamación interpuesta contra la resolución N°G3441 del Servicio Electoral que rechazó la cuenta de ingresos y gastos electorales de don Sergio Antonio Tapia Sandoval, candidato a Alcalde por la comuna de Til Til, en las elecciones municipales 2024.",
           "Estado": "Con sentencia",
           "Solicitud_IA": "20-08-2026"
         },
@@ -126,7 +126,7 @@
           "Revisado": true,
           "Eleccion": "",
           "Pronunciamiento": "ACOGE TOTAL",
-          "Materia": "Recurso de reclamación en contra de la resolución G. Nº 1555, de fecha 19 de agosto de 2026, que se acoge la reclamación de la cuenta general de ingresos y gastos electorales de don Tomás Vodanovic Escudero, en las elecciones de Gobernadores Regionales, Consejeros Regionales, Alcaldes y Concejales de dos mil veinticuatro",
+          "Materia": "Reclamación interpuesta contra la resolución N°G2600 del Servicio Electoral, que Aprobó con Observaciones la cuenta general de ingresos y gastos electorales de don Tomás Vodanovic Escudero, candidato a Alcalde por la comuna de Maipú, en las elecciones de Gobernadores Regionales, Consejeros Regionales, Alcaldes y Concejales de dos mil veinticuatro.",
           "Estado": "Con sentencia",
           "Solicitud_IA": "20-08-2026"
         },
@@ -151,7 +151,7 @@
           "Revisado": true,
           "Eleccion": "",
           "Pronunciamiento": "ACOGE TOTAL",
-          "Materia": "",
+          "Materia": "Reclamación interpuesta contra la resolución N°G14697 del Servicio Electoral, que Rechaza la cuenta general de ingresos y gastos electorales de doña Camila Nisleth Jarpa Fernández, candidata a Consejera Regional por la Región del Bío Bío, en las elecciones 2024.",
           "Estado": "Con sentencia",
           "Solicitud_IA": "20-08-2026"
         },
@@ -176,7 +176,7 @@
           "Revisado": true,
           "Eleccion": "",
           "Pronunciamiento": "ACOGE PARCIAL",
-          "Materia": "Recurso de reclamación en contra de la resolución G. Nº 1644, de fecha 19 de agosto de 2026, que se acoge parcialmente la reclamación de la gasto electoral de don Julio Sanzana Cárdenas, en las elecciones de 2024, contra la Resolución N°G3591 de veintinueve de abril de dos mil veinticinco",
+          "Materia": "Reclamación interpuesta contra la resolución N°G3591 del Servicio Electoral, que Rechazó la cuenta de ingresos y gastos electorales de don Julio Sanzana Cárdenas, candidato a Consejero Regional por la circunscripción territorial Chiloé, Región de Los Lagos, en las elecciones de 2024.",
           "Estado": "Con sentencia",
           "Solicitud_IA": "20-08-2026"
         }
@@ -226,7 +226,7 @@
           "Revisado": true,
           "Eleccion": "",
           "Pronunciamiento": "ACOGE PARCIAL",
-          "Materia": "",
+          "Materia": "Reclamación interpuesta contra la Resolución N°G3252 del Servicio Electoral, que aprobó con observaciones la cuenta general de ingresos y gastos electorales de don Gonzalo Andrés Vega Moreno, candidato a Alcalde por la comuna de San Antonio, en las elecciones municipales 2024.",
           "Estado": "Con sentencia",
           "Solicitud_IA": "19-08-2026"
         },
@@ -263,7 +263,7 @@
           "Revisado": true,
           "Eleccion": "",
           "Pronunciamiento": "RECHAZA",
-          "Materia": "",
+          "Materia": "Reclamación interpuesta contra la resolución N°G10028 del Servicio Electoral, que rechazó la cuenta general de ingresos y gastos electorales de doña Javiera Román Amarales, candidata a Consejera Regional por la Región de Magallanes y de la Antártica Chilena, en las elecciones de Consejeros Regionales 2024.",
           "Estado": "Con sentencia",
           "Solicitud_IA": "19-08-2026"
         },
@@ -300,7 +300,7 @@
           "Revisado": true,
           "Eleccion": "",
           "Pronunciamiento": "ACOGE PARCIAL",
-          "Materia": "",
+          "Materia": "Reclamación interpuesta contra la Resolución N°G14950 del Servicio Electoral, que Rechazó la cuenta general de ingresos y gastos de don Esteban Hernán Barahona Contreras, candidato a Consejero Regional por la Región de Valparaíso, en las elecciones de Consejeros Regionales 2024.",
           "Estado": "Con sentencia",
           "Solicitud_IA": "19-08-2026"
         },
@@ -325,7 +325,7 @@
           "Revisado": true,
           "Eleccion": "",
           "Pronunciamiento": "RECHAZA",
-          "Materia": "",
+          "Materia": "Reclamación interpuesta contra la resolución N°G3683 del Servicio Electoral, que Aprobó la cuenta general de ingresos y gastos electorales de don Luis David Juica Arriagada, candidato a Consejero Regional por la Región de Coquimbo, en las elecciones de Consejeros Regionales 2024.",
           "Estado": "Con sentencia",
           "Solicitud_IA": "19-08-2026"
         },
@@ -368,7 +368,7 @@
           "Revisado": true,
           "Eleccion": "",
           "Pronunciamiento": "ACOGE TOTAL",
-          "Materia": "",
+          "Materia": "Reclamación interpuesta contra la Resolución N°G2475 del Servicio Electoral, que Aprobó con Observaciones la cuenta general de ingresos y gastos electorales de doña Cristina Emilia Ríos Saavedra, candidata a Alcaldesa por la comuna de Ñuñoa, en las elecciones municipales 2024.",
           "Estado": "Con sentencia",
           "Solicitud_IA": "19-08-2026"
         },
@@ -405,7 +405,7 @@
           "Revisado": true,
           "Eleccion": "",
           "Pronunciamiento": "RECHAZA",
-          "Materia": "",
+          "Materia": "Reclamación interpuesta contra la resolución N°G14431 del Servicio Electoral, que Rechaza la cuenta general de ingresos y gastos electorales de doña María Soledad Roblin Leupin, candidata a Concejala por la comuna de Villa Alemana, en las elecciones Municipales 2024.",
           "Estado": "Con sentencia",
           "Solicitud_IA": "19-08-2026"
         },
@@ -448,7 +448,7 @@
           "Revisado": true,
           "Eleccion": "",
           "Pronunciamiento": "ACOGE TOTAL",
-          "Materia": "",
+          "Materia": "Reclamación interpuesta contra la resolución N°G16277 del Servicio Electoral, que rechazó la cuenta electoral de doña Paula Domínguez Risopatrón, candidata a Concejala por la comuna de Vitacura, en las elecciones Municipales 2024.",
           "Estado": "Con sentencia",
           "Solicitud_IA": "19-08-2026"
         },
@@ -497,7 +497,7 @@
           "Revisado": true,
           "Eleccion": "",
           "Pronunciamiento": "RECHAZA",
-          "Materia": "",
+          "Materia": "Reclamación interpuesta contra la resolución N°G16171 del Servicio Electoral, que Rechaza la cuenta general de ingresos y gastos electorales de don Matías Irarrázabal Gutiérrez, candidato a Concejal por la comuna de Limache, en las elecciones municipales 2024, por omisiones graves.",
           "Estado": "Con sentencia",
           "Solicitud_IA": "19-08-2026"
         },
@@ -540,7 +540,7 @@
           "Revisado": true,
           "Eleccion": "",
           "Pronunciamiento": "ACOGE PARCIAL",
-          "Materia": "",
+          "Materia": "Reclamación interpuesta contra la resolución N°G14813 del Servicio Electoral, que Aprobó con Observaciones la cuenta general de ingresos y gastos electorales de don Juan Salvador Rodríguez Brahm, candidato a Consejero Regional por la Región del Maule, en las elecciones de Consejeros Regionales 2024.",
           "Estado": "Con sentencia",
           "Solicitud_IA": "19-08-2026"
         },
@@ -583,7 +583,7 @@
           "Revisado": true,
           "Eleccion": "",
           "Pronunciamiento": "ACOGE PARCIAL",
-          "Materia": "Recurso de reclamación en contra de la resolución G. Nº 1758, de fecha 18 de agosto de 2026, que se acoge parcialmente la reclamación de la cuenta general de ingresos y gastos electorales de doña Isabel Margarita Garcés Ureta, en las elecciones de Consejeros Regionales 2024, contra la Resolución N° G4363 de veintinueve de abril de dos mil veinticinco",
+          "Materia": "Reclamación interpuesta contra la resolución N° G4363 del Servicio Electoral, que Aprobó con Observaciones la cuenta general de ingresos y gastos electorales de doña Isabel Margarita Garcés Ureta, candidata a Consejera Regional por la Región del Maule, en las elecciones de Consejeros Regionales 2024.",
           "Estado": "Con sentencia",
           "Solicitud_IA": "19-08-2026"
         },
@@ -614,7 +614,7 @@
           "Revisado": true,
           "Eleccion": "",
           "Pronunciamiento": "ACOGE TOTAL",
-          "Materia": "Recurso de reclamación en contra de la resolución G. Nº 1759, de fecha 18 de agosto de 2026, que se acoge la reclamación de la cuenta general de ingresos y gastos electorales de doña Lorena del Pilar Ventura Vásquez, en las elecciones de Consejeros Regionales 2024, contra la Resolución N° G14760 de cinco de mayo de dos mil veinticinco",
+          "Materia": "Reclamación interpuesta contra la resolución N° G14760 del Servicio Electoral, que Aprobó con Observaciones la cuenta general de ingresos y gastos electorales de doña Lorena del Pilar Ventura Vásquez, candidata a Consejera Regional por la Región de Arica y Parinacota, en las elecciones de Consejeros Regionales 2024.",
           "Estado": "Con sentencia",
           "Solicitud_IA": "19-08-2026"
         },
@@ -657,7 +657,7 @@
           "Revisado": true,
           "Eleccion": "",
           "Pronunciamiento": "RECHAZA",
-          "Materia": "Recurso de reclamación en contra de la resolución G. Nº 1760, de fecha 18 de agosto de 2026, que se rechaza la reclamación de la cuenta general de ingresos y gastos electorales de don Rafael Andrés González Camus",
+          "Materia": "Reclamación interpuesta contra la resolución N° G3107 del Servicio Electoral, que Rechaza la cuenta general de ingresos y gastos electorales de don Rafael Andrés González Camus, candidato a Alcalde por Valparaíso, en las elecciones municipales 2024, por omisiones graves.",
           "Estado": "Con sentencia",
           "Solicitud_IA": "19-08-2026"
         },
@@ -700,7 +700,7 @@
           "Revisado": true,
           "Eleccion": "",
           "Pronunciamiento": "RECHAZA",
-          "Materia": "Recurso de reclamación en contra de la resolución G. Nº 1761, de fecha 18 de agosto de 2026, que se rechaza la reclamación de la cuenta general de ingresos y gastos electorales de don Jorge Hernán Concha Toledo",
+          "Materia": "Reclamación interpuesta contra la resolución N° G6224 del Servicio Electoral, que Aprobó la cuenta general de ingresos y gastos electorales de don Jorge Hernán Concha Toledo, candidato a Concejal por la comuna de Tomé, en las elecciones municipales 2024.",
           "Estado": "Con sentencia",
           "Solicitud_IA": "19-08-2026"
         },
@@ -737,7 +737,7 @@
           "Revisado": true,
           "Eleccion": "",
           "Pronunciamiento": "RECHAZA",
-          "Materia": "Recurso de reclamación en contra de la resolución G. Nº 1763, de fecha 18 de agosto de 2026, que se rechaza la reclamación de la cuenta general de ingresos y gastos electorales de don José Luis Díaz Díaz",
+          "Materia": "Reclamación interpuesta contra la resolución N°G9334 del Servicio Electoral, que Aprobó la cuenta general de ingresos y gastos electorales de don José Luis Díaz Díaz, candidato a Concejal por la comuna de La Granja, en elecciones municipales 2024.",
           "Estado": "Con sentencia",
           "Solicitud_IA": "19-08-2026"
         },
@@ -843,7 +843,7 @@
           "Revisado": true,
           "Eleccion": "",
           "Pronunciamiento": "RECHAZA",
-          "Materia": "Recurso de reclamación en contra de la resolución G. Nº 1612, de fecha 14 de agosto de 2026, que se rechaza la reclamación de la cuenta general de ingresos y gastos electorales de don Manfred William Lavín Miranda, en las elecciones de Gobernadores Regionales, Consejeros Regionales, Alcaldes y Concejales de dos mil veinticuatro",
+          "Materia": "Reclamación interpuesta contra la resolución N°G10012 del Servicio Electoral, que Aprueba con Observaciones la cuenta general de ingresos y gastos electorales de don Manfred William Lavín Miranda, candidato a Consejero Regional por el Territorio Electoral Concepción 1, Región del Biobío, en las elecciones de Gobernadores Regionales, Consejeros Regionales, Alcaldes y Concejales de dos mil veinticuatro.",
           "Estado": "Con sentencia",
           "Solicitud_IA": "18-08-2026"
         },
@@ -892,7 +892,7 @@
           "Revisado": true,
           "Eleccion": "CONCEJAL",
           "Pronunciamiento": "ACOGE TOTAL",
-          "Materia": "Recurso de reclamación en contra de la resolución G. Nº 1618, de fecha 14 de agosto de 2026, que se acoge la reclamación de la cuenta general de ingresos y gastos electorales de doña Hilda Soledad Gallardo Vásquez, candidata al cargo de Concejal de la comuna de Temuco, Región de La Araucanía, en las elecciones de Gobernadores Regionales, Consejeros Regionales, Alcaldes y Concejales de dos mil veinticuatro",
+          "Materia": "Reclamación interpuesta contra la resolución N°G8751 del Servicio Electoral, que Aprueba con Observaciones la cuenta general de ingresos y gastos electorales de doña Hilda Soledad Gallardo Vásquez, candidata a Concejal por la comuna de Temuco, Región de La Araucanía, en las elecciones de Gobernadores Regionales, Consejeros Regionales, Alcaldes y Concejales de dos mil veinticuatro.",
           "Estado": "Con sentencia",
           "Solicitud_IA": "18-08-2026"
         },
@@ -935,7 +935,7 @@
           "Revisado": true,
           "Eleccion": "CONCEJAL",
           "Pronunciamiento": "ACOGE TOTAL",
-          "Materia": "Recurso de reclamación en contra de la resolución G. Nº 1622, de fecha 14 de agosto de 2026, que se acoge la reclamación de la cuenta general de ingresos y gastos electorales de doña Karen Alejandra Berrios Guerra, candidata al cargo de Concejal de la comuna de Fresia, Región de Los Lagos, en las elecciones de Gobernadores Regionales, Consejeros Regionales, Alcaldes y Concejales de dos mil veinticuatro",
+          "Materia": "Reclamación interpuesta contra la resolución N°G17917 del Servicio Electoral, que Aprueba con Observaciones la cuenta general de ingresos y gastos electorales de doña Karen Alejandra Berrios Guerra, candidata a Concejal por la comuna de Fresia, Región de Los Lagos, en las elecciones de Gobernadores Regionales, Consejeros Regionales, Alcaldes y Concejales de dos mil veinticuatro.",
           "Estado": "Con sentencia",
           "Solicitud_IA": "18-08-2026"
         },
@@ -978,7 +978,7 @@
           "Revisado": true,
           "Eleccion": "CONCEJAL",
           "Pronunciamiento": "ACOGE PARCIAL",
-          "Materia": "Recurso de reclamación en contra de la resolución G. Nº 1629, de fecha 14 de agosto de 2026, que se acoge parcialmente la reclamación de la cuenta general de ingresos y gastos electorales de don Carlos Francisco Ramírez Pérez, candidato al cargo de Concejal de la comuna de Rengo, en las elecciones de Gobernadores Regionales, Consejeros Regionales, Alcaldes y Concejales de dos mil veinticuatro",
+          "Materia": "Reclamación interpuesta contra la resolución N°G13272 del Servicio Electoral, que Aprueba con Observaciones la cuenta general de ingresos y gastos electorales de don Carlos Francisco Ramírez Pérez, candidato a Concejal de la comuna de Rengo, Región del Libertador Gral. B. O'Higgins, en las elecciones de Gobernadores Regionales, Consejeros Regionales, Alcaldes y Concejales de dos mil veinticuatro.",
           "Estado": "Con sentencia",
           "Solicitud_IA": "18-08-2026"
         },
@@ -1021,7 +1021,7 @@
           "Revisado": true,
           "Eleccion": "",
           "Pronunciamiento": "RECHAZA",
-          "Materia": "Recurso de reclamación en contra de la resolución G. Nº 1637, de fecha 14 de agosto de 2026, que se rechaza la reclamación de la cuenta general de ingresos y gastos electorales de don Pedro Miguel Concha Riquelme",
+          "Materia": "Reclamación interpuesta contra la resolución N°G11413 del Servicio Electoral, que Aprueba con Observaciones la cuenta general de ingresos y gastos electorales de don Pedro Miguel Concha Riquelme, candidato a Concejal por la Municipalidad de Trehuaco, Región de Ñuble, en elecciones de veintiséis y veintisiete de octubre de dos mil veinticuatro.",
           "Estado": "Con sentencia",
           "Solicitud_IA": "18-08-2026"
         },
@@ -1064,7 +1064,7 @@
           "Revisado": true,
           "Eleccion": "",
           "Pronunciamiento": "ACOGE PARCIAL",
-          "Materia": "Recurso de reclamación en contra de la resolución G. Nº 1643, de fecha 14 de agosto de 2026, que se acoge parcialmente la reclamación de la cuenta general de ingresos y gastos electorales de don Héctor Rodrigo Silva Tapia",
+          "Materia": "Reclamación interpuesta contra la resolución N°G3332 del Servicio Electoral, que rechaza la cuenta general de ingresos y gastos electorales de don Héctor Rodrigo Silva Tapia, candidato a Alcalde de la Municipalidad de Calle Larga, Región de Valparaíso, por omisión grave, en las Elecciones de Gobernadores Regionales, Consejeros Regionales, Alcaldes y Concejales de veintiséis y veintisiete de octubre de dos mil veinticuatro.",
           "Estado": "Con sentencia",
           "Solicitud_IA": "18-08-2026"
         },
@@ -1107,7 +1107,7 @@
           "Revisado": true,
           "Eleccion": "",
           "Pronunciamiento": "ACOGE PARCIAL",
-          "Materia": "Recurso de reclamación en contra de la resolución G. Nº 1648, de fecha 14 de agosto de 2026, que se acoge parcialmente la reclamación de la cuenta general de ingresos y gastos electorales de don Leonardo Borquez Castillo",
+          "Materia": "Reclamación interpuesta contra la resolución N°G14546 del Servicio Electoral, que Rechaza la cuenta general de ingresos y gastos electorales de don Leonardo Borquez Castillo, candidato a Consejero Regional por la circunscripción de Arica, Región de Arica y Parinacota, por omisión grave, en las Elecciones de Gobernadores Regionales, Consejeros Regionales, Alcaldes y Concejales de veintiséis y veintisiete de octubre de dos mil veinticuatro.",
           "Estado": "Con sentencia",
           "Solicitud_IA": "18-08-2026"
         },
@@ -1150,7 +1150,7 @@
           "Revisado": true,
           "Eleccion": "",
           "Pronunciamiento": "RECHAZA",
-          "Materia": "Recurso de reclamación en contra de la resolución G. Nº 1651, de fecha 14 de agosto de 2026, que se rechaza la reclamación de la cuenta general de ingresos y gastos electorales de don Danilo Fernando Orellana Suárez",
+          "Materia": "Reclamación interpuesta contra la resolución N°G9560 del Servicio Electoral, que Rechaza la cuenta general de ingresos y gastos electorales de don Danilo Fernando Orellana Suárez, candidato a Consejero Regional por la circunscripción de Antofagasta, Región de Antofagasta, por omisión grave, en las elecciones de Gobernadores Regionales, Consejeros Regionales, Alcaldes y Concejales de veintiséis y veintisiete de octubre de dos mil veinticuatro.",
           "Estado": "Con sentencia",
           "Solicitud_IA": "18-08-2026"
         },
@@ -1193,7 +1193,7 @@
           "Revisado": true,
           "Eleccion": "",
           "Pronunciamiento": "ACOGE TOTAL",
-          "Materia": "Recurso de reclamación en contra de la resolución G. Nº 1662, de fecha 14 de agosto de 2026, que se acoge la reclamación de la cuenta general de ingresos y gastos electorales de doña Érica del Pilar López Soto",
+          "Materia": "Reclamación interpuesta contra la Resolución N°G11717 del Servicio Electoral, que Aprueba con Observaciones la cuenta general de ingresos y gastos electorales de doña Érica del Pilar López Soto, candidata a Consejera Regional por la circunscripción de Cautín 1, Región de La Araucanía, en las elecciones de veintiséis y veintisiete de octubre de dos mil veinticuatro.",
           "Estado": "Con sentencia",
           "Solicitud_IA": "18-08-2026"
         },
