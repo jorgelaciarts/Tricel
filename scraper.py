@@ -411,12 +411,29 @@ def aplicar_filtro_fecha(page, fecha_desde=FECHA_DESDE_HISTORICA, fecha_hasta=No
 
     try:
         campo_desde = page.locator("#datetimepicker1 input")
-        campo_desde.fill(fecha_desde)
-        campo_desde.press("Tab")  # dispara el evento 'change' que usa Knockout
+        campo_desde.click()
+        campo_desde.fill("")  # limpiar por si el datepicker puso algo por defecto
+        campo_desde.type(fecha_desde, delay=50)  # escritura simulada, tecla por tecla
+        campo_desde.press("Tab")
 
         campo_hasta = page.locator("#datetimepicker2 input")
-        campo_hasta.fill(fecha_hasta)
+        campo_hasta.click()
+        campo_hasta.fill("")
+        campo_hasta.type(fecha_hasta, delay=50)
         campo_hasta.press("Tab")
+
+        # Respaldo: disparar también un evento 'change' nativo por si el
+        # datepicker (bootstrap-datetimepicker) no quedó sincronizado con
+        # Knockout solo con la escritura simulada.
+        try:
+            page.evaluate(
+                """() => {
+                    document.querySelectorAll('#datetimepicker1 input, #datetimepicker2 input')
+                        .forEach(el => el.dispatchEvent(new Event('change', { bubbles: true })));
+                }"""
+            )
+        except Exception:
+            pass
 
         page.click("form button[type='submit']")
 
@@ -427,8 +444,9 @@ def aplicar_filtro_fecha(page, fecha_desde=FECHA_DESDE_HISTORICA, fecha_hasta=No
         except Exception:
             pass
 
-        # Esperar a que se cierre solo
-        page.wait_for_selector("#buscandoestadodiariopublico", state="hidden", timeout=20000)
+        # Esperar a que se cierre solo (tiempo reducido: si va a fallar,
+        # que falle rápido para no perder tanto tiempo por causa)
+        page.wait_for_selector("#buscandoestadodiariopublico", state="hidden", timeout=8000)
         page.wait_for_timeout(1000)
 
     except Exception as exc:
