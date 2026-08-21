@@ -51,13 +51,15 @@
     border-collapse: collapse;
     background: var(--card);
     box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    table-layout: fixed;
   }
   th, td {
     text-align: left;
-    padding: 0.75rem 1rem;
+    padding: 0.9rem 1rem;
     border-bottom: 1px solid var(--border);
     font-size: 0.95rem;
     vertical-align: top;
+    word-wrap: break-word;
   }
   th {
     background: #efece6;
@@ -66,6 +68,28 @@
     text-transform: uppercase;
     letter-spacing: 0.03em;
     color: var(--muted);
+  }
+  /* Columna de Resolución: cada trámite en su propia línea, con
+     separación clara entre uno y otro */
+  ul.resolucion-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  ul.resolucion-list li {
+    padding-bottom: 0.6rem;
+    border-bottom: 1px dashed var(--border);
+  }
+  ul.resolucion-list li:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  ul.resolucion-list a {
+    display: inline-block;
+    line-height: 1.4;
   }
   pre#rawFallback {
     background: var(--card);
@@ -146,19 +170,29 @@ async function load() {
           e.Fecha + ' — ' + (e.Numero_Causas || '?') + ' causas, ' + (e.Numero_Tramites || '?') + ' trámites' +
           '</summary>';
         if (causas.length > 0) {
-          html += '<table style="box-shadow:none;"><thead><tr>' +
+          html += '<table style="box-shadow:none;">' +
+            '<colgroup>' +
+              '<col style="width:11%;">' +
+              '<col style="width:18%;">' +
+              '<col style="width:10%;">' +
+              '<col style="width:13%;">' +
+              '<col style="width:10%;">' +
+              '<col style="width:10%;">' +
+              '<col style="width:28%;">' +
+            '</colgroup>' +
+            '<thead><tr>' +
             '<th>CAUSA TRICEL - ROL</th><th>Carátula</th><th>ELECCIÓN</th>' +
             '<th>PRONUNCIAMIENTO</th><th>ESTADO</th><th>SOLICITUD IA</th>' +
             '<th>RESOLUCIÓN</th></tr></thead><tbody>';
           causas.forEach(c => {
             const resoluciones = c.Resoluciones || [];
-            let descargaHtml = '—';
+            let descargaHtml = '<span style="color:var(--muted);">—</span>';
             if (resoluciones.length > 0) {
-              descargaHtml = resoluciones.map(r => {
+              descargaHtml = '<ul class="resolucion-list">' + resoluciones.map(r => {
                 const ref = r.referencia || 'Resolución';
                 const fechaR = r.fecha_tramite ? ' (' + r.fecha_tramite + ')' : '';
-                return '<a href="' + r.url_publica + '" target="_blank" rel="noopener">' + ref + fechaR + '</a>';
-              }).join('<br>');
+                return '<li><a href="' + r.url_publica + '" target="_blank" rel="noopener">' + ref + fechaR + '</a></li>';
+              }).join('') + '</ul>';
             }
             html += '<tr>' +
               '<td>' + (c.ROL || '') + '</td>' +
@@ -169,6 +203,11 @@ async function load() {
               '<td>' + (c.Solicitud_IA || '—') + '</td>' +
               '<td>' + descargaHtml + '</td>' +
               '</tr>';
+            if (c.Materia) {
+              html += '<tr><td colspan="7" style="background:#f5f2ec;font-size:0.85rem;color:var(--ink);line-height:1.5;">' +
+                '<strong style="font-family:-apple-system,sans-serif;font-size:0.75rem;text-transform:uppercase;color:var(--muted);letter-spacing:0.03em;">Materia:</strong> ' +
+                c.Materia + '</td></tr>';
+            }
           });
           html += '</tbody></table>';
         } else {
