@@ -1,6 +1,6 @@
 {
   "source_url": "https://tricel.lexsoft.cl/tce/estadoDiario",
-  "fetched_at": "2026-08-21T21:21:52.628735+00:00",
+  "fetched_at": "2026-08-21T21:40:20.308871+00:00",
   "entries": [
     {
       "Fecha": "19-08-2026",
@@ -151,7 +151,7 @@
           "Revisado": true,
           "Eleccion": "",
           "Pronunciamiento": "ACOGE TOTAL",
-          "Materia": "Reclamación interpuesta contra la Resolución N°G14697 del Servicio Electoral, que Rechaza la cuenta general de ingresos y gastos electorales de doña Camila Nisleth Jarpa Fernández, candidata a Consejera Regional por la Región del Bío Bío, en las elecciones 2024.",
+          "Materia": "Reclamación interpuesta contra la resolución N°G14697 del Servicio Electoral, que Rechaza la cuenta general de ingresos y gastos electorales de doña Camila Nisleth Jarpa Fernández, candidata a Consejera Regional por la Región del Bío Bío, en las elecciones 2024.",
           "Estado": "Con sentencia",
           "Solicitud_IA": "21-08-2026"
         },
@@ -176,7 +176,7 @@
           "Revisado": true,
           "Eleccion": "",
           "Pronunciamiento": "ACOGE PARCIAL",
-          "Materia": "Reclamación interpuesta contra la resolución N°G3591 del Servicio Electoral, que Rechazó la cuenta general de ingresos y gastos electorales de don Julio Cesar Sanzana Cárdenas, candidato a Consejero Regional por la circunscripción territorial Chiloé, Región de Los Lagos, en las elecciones de 2024.",
+          "Materia": "Reclamación interpuesta contra la resolución N°G3591 del Servicio Electoral, que Rechazó la cuenta general de ingresos y gastos electorales de don Julio Sanzana Cárdenas, candidato a Consejero Regional por la circunscripción territorial Chiloé, Región de Los Lagos, en las elecciones de 2024.",
           "Estado": "Con sentencia",
           "Solicitud_IA": "21-08-2026"
         }
@@ -226,7 +226,7 @@
           "Revisado": true,
           "Eleccion": "",
           "Pronunciamiento": "ACOGE PARCIAL",
-          "Materia": "Reclamación interpuesta contra la resolución N°G3252 del Servicio Electoral, que aprobó con observaciones la cuenta general de ingresos y gastos electorales de don Gonzalo Andrés Vega Moreno, candidato a Alcalde por la comuna de San Antonio, en las elecciones municipales 2024.",
+          "Materia": "Reclamación interpuesta contra la Resolución N°G3252 del Servicio Electoral, que aprobó con observaciones la cuenta general de ingresos y gastos electorales de don Gonzalo Andrés Vega Moreno, candidato a Alcalde por la comuna de San Antonio, en las elecciones municipales 2024.",
           "Estado": "Con sentencia",
           "Solicitud_IA": "21-08-2026"
         },
@@ -263,7 +263,7 @@
           "Revisado": true,
           "Eleccion": "",
           "Pronunciamiento": "RECHAZA",
-          "Materia": "Reclamación interpuesta contra la resolución N°G10028 del Servicio Electoral, que rechazó la cuenta general de ingresos y gastos electorales de doña Javiera Román Amarales, candidata a Consejera Regional por la Región de Magallanes y de la Antártica Chilena, en las elecciones de Consejeros Regionales 2024.",
+          "Materia": "Reclamación interpuesta contra la resolución N°G10028 del Servicio Electoral, que Rechaza la cuenta general de ingresos y gastos electorales de doña Javiera Román Amarales, candidata a Consejera Regional por la Región de Magallanes y de la Antártica Chilena, en las elecciones de Consejeros Regionales 2024.",
           "Estado": "Con sentencia",
           "Solicitud_IA": "21-08-2026"
         },
@@ -300,7 +300,7 @@
           "Revisado": true,
           "Eleccion": "",
           "Pronunciamiento": "ACOGE PARCIAL",
-          "Materia": "Reclamación interpuesta contra la Resolución N°G14950 del Servicio Electoral, que rechazó la cuenta general de ingresos y gastos electorales de don Esteban Hernán Barahona Contreras, candidato a Consejero Regional por la Región de Valparaíso, en las elecciones de Consejeros Regionales 2024.",
+          "Materia": "Reclamación interpuesta contra la Resolución N°G14950 del Servicio Electoral, que rechazó la cuenta general de ingresos y gastos de la candidatura de don Esteban Hernán Barahona Contreras, candidato a Consejero Regional por la Región de Valparaíso, en las elecciones de Consejeros Regionales 2024.",
           "Estado": "Con sentencia",
           "Solicitud_IA": "21-08-2026"
         },
@@ -405,7 +405,7 @@
           "Revisado": true,
           "Eleccion": "",
           "Pronunciamiento": "RECHAZA",
-          "Materia": "Reclamación interpuesta contra la resolución N°G14431 del Servicio Electoral, que Rechaza la cuenta general de ingresos y gastos electorales de doña María Soledad Roblin Leupin, candidata a Concejala por la comuna de Villa Alemana, en las elecciones Municipales 2024.",
+          "Materia": "Reclamación interpuesta contra la resolución N°G14431 del Servicio Electoral, que Rechaza la cuenta electoral de doña María Soledad Roblin Leupin, candidata a Concejala por la comuna de Villa Alemana, en las elecciones Municipales 2024.",
           "Estado": "Con sentencia",
           "Solicitud_IA": "21-08-2026"
         },
@@ -448,7 +448,7 @@
           "Revisado": true,
           "Eleccion": "",
           "Pronunciamiento": "ACOGE TOTAL",
-          "Materia": "Reclamación interpuesta contra la resolución N°G16277 del Servicio Electoral, que Rechazó la cuenta electoral de doña Paula Domínguez Risopatrón, candidata a Concejala por la comuna de Vitacura, en las elecciones Municipales 2024, y desestimó reembolso de los gastos electorales.",
+          "Materia": "Reclamación interpuesta contra la Resolución N°G16277 del Servicio Electoral, que rechazó la cuenta electoral de doña Paula Domínguez Risopatrón, candidata a Concejala por la comuna de Vitacura, en las elecciones Municipales 2024, y desestimó reembolso de los gastos electorales.",
           "Estado": "Con sentencia",
           "Solicitud_IA": "21-08-2026"
         },
@@ -497,7 +497,7 @@
           "Revisado": true,
           "Eleccion": "",
           "Pronunciamiento": "RECHAZA",
-          "Materia": "Reclamación interpuesta contra la resolución N°G16171 del Servicio Electoral, que Rechaza la cuenta general de ingresos y gastos electorales de don Matías Irarrázabal Gutiérrez, candidato a Concejal por la comuna de Limache, en las elecciones Municipales 2024, por omisiones graves.",
+          "Materia": "Reclamación interpuesta contra la resolución N°G16171 del Servicio Electoral, que Rechaza la cuenta general de ingresos y gastos electorales de don Matías Irarrázabal Gutiérrez, candidato a Concejal por la comuna de Limache, en las elecciones Municipales 2024.",
           "Estado": "Con sentencia",
           "Solicitud_IA": "21-08-2026"
         },
@@ -540,7 +540,7 @@
           "Revisado": true,
           "Eleccion": "",
           "Pronunciamiento": "ACOGE PARCIAL",
-          "Materia": "Reclamación interpuesta contra la resolución N°G14813 del Servicio Electoral, que Aprobó con observaciones la cuenta general de ingresos y gastos electorales de don Juan Salvador Rodríguez Brahm, candidato a Consejero Regional por la Región del Maule, en las elecciones de Consejeros Regionales 2024.",
+          "Materia": "Reclamación interpuesta contra la resolución N°G14813 del Servicio Electoral, que Aprobó con Observaciones la cuenta general de ingresos y gastos electorales de don Juan Salvador Rodríguez Brahm, candidato a Consejero Regional por la Región del Maule, en las elecciones de Consejeros Regionales 2024.",
           "Estado": "Con sentencia",
           "Solicitud_IA": "21-08-2026"
         },
@@ -657,7 +657,7 @@
           "Revisado": true,
           "Eleccion": "",
           "Pronunciamiento": "RECHAZA",
-          "Materia": "Reclamación interpuesta contra la resolución N° G3107 del Servicio Electoral, que Rechaza la cuenta general de ingresos y gastos electorales de don Rafael Andrés González Camus, candidato a Alcalde por Valparaíso, en las elecciones municipales 2024, por omisiones graves.",
+          "Materia": "Reclamación interpuesta contra la resolución N° G3107 del Servicio Electoral, que rechazó la cuenta general de ingresos y gastos electorales de don Rafael Andrés González Camus, candidato a Alcalde por Valparaíso, en las elecciones municipales 2024, por omisiones graves.",
           "Estado": "Con sentencia",
           "Solicitud_IA": "21-08-2026"
         },
@@ -892,7 +892,7 @@
           "Revisado": true,
           "Eleccion": "CONCEJAL",
           "Pronunciamiento": "ACOGE TOTAL",
-          "Materia": "Reclamación interpuesta contra la resolución N°G8751 del Servicio Electoral, que Aprueba con Observaciones la cuenta general de ingresos y gastos electorales de doña Hilda Soledad Gallardo Vásquez, candidata a Concejal por la comuna de Temuco, Región de La Araucanía, en las elecciones de Gobernadores Regionales, Consejeros Regionales, Alcaldes y Concejales de dos mil veinticuatro.",
+          "Materia": "Reclamación interpuesta contra la resolución N°G8751 del Servicio Electoral, que Aprueba con Observaciones la cuenta general de ingresos y gastos electorales de doña Hilda Soledad Gallardo Vásquez, candidata a Concejal por la comuna de Temuco, Región de La Araucanía, en elecciones de Gobernadores Regionales, Consejeros Regionales, Alcaldes y Concejales de dos mil veinticuatro.",
           "Estado": "Con sentencia",
           "Solicitud_IA": "21-08-2026"
         },
@@ -1021,7 +1021,7 @@
           "Revisado": true,
           "Eleccion": "",
           "Pronunciamiento": "RECHAZA",
-          "Materia": "Reclamación interpuesta contra la resolución N°G11413 del Servicio Electoral, que Aprueba con Observaciones la cuenta general de ingresos y gastos electorales de don Pedro Miguel Concha Riquelme, candidato a Concejal por la Municipalidad de Trehuaco, Región de Ñuble, en elecciones de veintiséis y veintisiete de octubre de dos mil veinticuatro.",
+          "Materia": "Reclamación interpuesta contra la resolución N°G11413 del Servicio Electoral, que Aprueba con Observaciones la cuenta general de ingresos y gastos electorales de don Pedro Miguel Concha Riquelme, candidato a Concejal por la comuna de Trehuaco, Región de Ñuble, en las elecciones de veintiséis y veintisiete de octubre de dos mil veinticuatro.",
           "Estado": "Con sentencia",
           "Solicitud_IA": "21-08-2026"
         },
@@ -1064,7 +1064,7 @@
           "Revisado": true,
           "Eleccion": "",
           "Pronunciamiento": "ACOGE PARCIAL",
-          "Materia": "Reclamación interpuesta contra la Resolución N°G3332 del Servicio Electoral, que rechaza la cuenta general de ingresos y gastos electorales de don Héctor Rodrigo Silva Tapia, candidato a Alcalde de la Municipalidad de Calle Larga, Región de Valparaíso, por omisión grave, en las elecciones de veintiséis y veintisiete de octubre de dos mil veinticuatro.",
+          "Materia": "Reclamación interpuesta contra la resolución N°G3332 del Servicio Electoral, que rechaza la cuenta general de ingresos y gastos electorales de don Héctor Rodrigo Silva Tapia, candidato a Alcalde de la Municipalidad de Calle Larga, Región de Valparaíso, por omisión grave, en las elecciones de veintiséis y veintisiete de octubre de dos mil veinticuatro.",
           "Estado": "Con sentencia",
           "Solicitud_IA": "21-08-2026"
         },
@@ -1150,7 +1150,7 @@
           "Revisado": true,
           "Eleccion": "",
           "Pronunciamiento": "RECHAZA",
-          "Materia": "Reclamación interpuesta contra la resolución N°G9560 del Servicio Electoral, que Rechaza la cuenta general de ingresos y gastos electorales de don Danilo Fernando Orellana Suárez, candidato a Consejero Regional por la circunscripción de Antofagasta, Región de Antofagasta, por omisión grave, en las elecciones de Gobernadores Regionales, Consejeros Regionales, Alcaldes y Concejales de veintiséis y veintisiete de octubre de dos mil veinticuatro.",
+          "Materia": "Reclamación interpuesta contra la resolución N°G9560 del Servicio Electoral, que rechaza la cuenta general de ingresos y gastos electorales de don Danilo Fernando Orellana Suárez, candidato a Consejero Regional por la circunscripción de Antofagasta, Región de Antofagasta, por omisión grave, en las elecciones de Gobernadores Regionales, Consejeros Regionales, Alcaldes y Concejales de veintiséis y veintisiete de octubre de dos mil veinticuatro.",
           "Estado": "Con sentencia",
           "Solicitud_IA": "21-08-2026"
         },
@@ -1193,7 +1193,7 @@
           "Revisado": true,
           "Eleccion": "",
           "Pronunciamiento": "ACOGE TOTAL",
-          "Materia": "Reclamación interpuesta contra la Resolución N°G11717 del Servicio Electoral, que Aprueba con Observaciones la cuenta general de ingresos y gastos electorales de doña Érica del Pilar López Soto, candidata a Consejera Regional por la circunscripción de Cautín 1, Región de La Araucanía, en las Elecciones de Gobernadores Regionales, Consejeros Regionales, Alcaldes y Concejales de veintiséis y veintisiete de octubre de dos mil veinticuatro.",
+          "Materia": "Reclamación interpuesta contra la resolución N°G11717 del Servicio Electoral, que Aprueba con Observaciones la cuenta general de ingresos y gastos electorales de doña Érica del Pilar López Soto, candidata a Consejera Regional por la circunscripción de Cautín 1, Región de La Araucanía, en las Elecciones de Gobernadores Regionales, Consejeros Regionales, Alcaldes y Concejales de veintiséis y veintisiete de octubre de dos mil veinticuatro.",
           "Estado": "Con sentencia",
           "Solicitud_IA": "21-08-2026"
         },
