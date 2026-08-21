@@ -496,7 +496,10 @@ def backfill_missing_fields(previous_entries):
 
     for entry in previous_entries:
         for causa in entry.get("Causas", []) or []:
+            rol_debug = causa.get("ROL", "?")
+
             if not causa.get("Revisado"):
+                print(f"Backfill: {rol_debug} -> se salta (Revisado no es True)")
                 continue
 
             resoluciones = causa.get("Resoluciones") or []
@@ -505,14 +508,17 @@ def backfill_missing_fields(previous_entries):
                 None,
             )
             if not sentencia:
+                print(f"Backfill: {rol_debug} -> se salta (no tiene un trámite 'Sentencia' registrado)")
                 continue
 
             archivo_relativo = sentencia.get("archivo_relativo")
             if not archivo_relativo:
+                print(f"Backfill: {rol_debug} -> se salta (la Sentencia no tiene archivo_relativo registrado)")
                 continue
 
             pdf_path = ROOT / "docs" / archivo_relativo
             if not pdf_path.exists():
+                print(f"Backfill: {rol_debug} -> se salta (no se encontró el PDF en el checkout: {pdf_path})")
                 continue
 
             # MATERIA se recalcula siempre (aunque ya tuviera un valor):
@@ -524,18 +530,24 @@ def backfill_missing_fields(previous_entries):
                 if texto_pdf:
                     rol_causa = causa.get("ROL", "")
                     nueva_materia = generar_materia_con_ia(texto_pdf, rol_causa) or construir_materia(texto_pdf)
+                    print(f"Backfill: {rol_debug} -> Materia recalculada: {nueva_materia[:80] if nueva_materia else '(vacía)'}...")
                     if nueva_materia and nueva_materia != causa.get("Materia"):
                         causa["Materia"] = nueva_materia
                         corregidas += 1
+                else:
+                    print(f"Backfill: {rol_debug} -> no se pudo leer texto del PDF {pdf_path}")
                 continue
 
             texto_pdf = extraer_texto_pdf(pdf_path)
             if not texto_pdf:
+                print(f"Backfill: {rol_debug} -> no se pudo leer texto del PDF {pdf_path}")
                 continue
 
             eleccion = extraer_eleccion(texto_pdf)
             pronunciamiento = extraer_pronunciamiento(texto_pdf)
             materia = generar_materia_con_ia(texto_pdf, causa.get("ROL", "")) or construir_materia(texto_pdf)
+            print(f"Backfill: {rol_debug} -> Eleccion={eleccion!r} Pronunciamiento={pronunciamiento!r} "
+                  f"Materia={(materia[:80] + '...') if materia else '(vacía)'}")
 
             if eleccion and not causa.get("Eleccion"):
                 causa["Eleccion"] = eleccion
