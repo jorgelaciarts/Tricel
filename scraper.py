@@ -35,6 +35,7 @@ necesite ajustes. Revisar:
 import json
 import os
 import re
+import time
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -293,51 +294,58 @@ def generar_materia_con_ia(texto_pdf, rol):
     que las reglas de texto fijas.
 
     Requiere la variable de entorno ANTHROPIC_API_KEY. Si no está
-    configurada, o si la llamada falla por cualquier motivo (red, cuota,
-    error de la API), devuelve cadena vacía sin interrumpir la ejecución
-    -el llamador debe usar construir_materia() como respaldo en ese caso-.
+    configurada, o si la llamada falla incluso tras un reintento (red,
+    cuota, error transitorio de la API), devuelve cadena vacía sin
+    interrumpir la ejecución -el llamador debe usar construir_materia()
+    como respaldo en ese caso-.
     """
     api_key = os.environ.get("ANTHROPIC_API_KEY")
     if not api_key:
         return ""
 
-    try:
-        import anthropic
+    ejemplos_formateados = "\n".join(f"{i+1}. \"{ej}\"" for i, ej in enumerate(EJEMPLOS_MATERIA))
+    texto_recortado = texto_pdf[:6000]
 
-        client = anthropic.Anthropic(api_key=api_key)
-        texto_recortado = texto_pdf[:6000]
+    prompt = (
+        "Eres un asistente que redacta la columna \"Materia\" de una planilla de seguimiento "
+        "de causas del Tribunal Calificador de Elecciones (TCE) de Chile, a partir del texto "
+        "de una Sentencia.\n\n"
+        "Sigue este estilo EXACTO, con estos ejemplos reales como referencia:\n\n"
+        f"{ejemplos_formateados}\n\n"
+        "Notarás que el verbo, los calificadores (como 'por omisiones graves' o 'con "
+        "Observaciones') y la forma de mencionar la elección varían según lo que diga cada "
+        "documento textualmente -- usa siempre lo que dice el documento, no inventes ni "
+        "normalices a una única forma fija.\n\n"
+        "Ahora, a partir del siguiente texto de una Sentencia del TCE, escribe UNA sola "
+        "oración de Materia, en el mismo estilo. No agregues nada más (sin comillas, sin "
+        "explicación, sin encabezados ni notas) -- responde solo con la oración.\n\n"
+        f"Texto de la Sentencia (causa ROL {rol}):\n\"\"\"\n{texto_recortado}\n\"\"\""
+    )
 
-        ejemplos_formateados = "\n".join(f"{i+1}. \"{ej}\"" for i, ej in enumerate(EJEMPLOS_MATERIA))
+    import anthropic
+    client = anthropic.Anthropic(api_key=api_key)
 
-        prompt = (
-            "Eres un asistente que redacta la columna \"Materia\" de una planilla de seguimiento "
-            "de causas del Tribunal Calificador de Elecciones (TCE) de Chile, a partir del texto "
-            "de una Sentencia.\n\n"
-            "Sigue este estilo EXACTO, con estos ejemplos reales como referencia:\n\n"
-            f"{ejemplos_formateados}\n\n"
-            "Notarás que el verbo, los calificadores (como 'por omisiones graves' o 'con "
-            "Observaciones') y la forma de mencionar la elección varían según lo que diga cada "
-            "documento textualmente -- usa siempre lo que dice el documento, no inventes ni "
-            "normalices a una única forma fija.\n\n"
-            "Ahora, a partir del siguiente texto de una Sentencia del TCE, escribe UNA sola "
-            "oración de Materia, en el mismo estilo. No agregues nada más (sin comillas, sin "
-            "explicación, sin encabezados ni notas) -- responde solo con la oración.\n\n"
-            f"Texto de la Sentencia (causa ROL {rol}):\n\"\"\"\n{texto_recortado}\n\"\"\""
-        )
+    ultimo_error = None
+    for intento in range(2):
+        try:
+            response = client.messages.create(
+                model="claude-haiku-4-5-20251001",
+                max_tokens=300,
+                messages=[{"role": "user", "content": prompt}],
+            )
+            texto_generado = "".join(
+                getattr(block, "text", "") for block in response.content
+            ).strip()
+            if texto_generado:
+                return texto_generado
+            ultimo_error = "la IA devolvió una respuesta vacía"
+        except Exception as exc:
+            ultimo_error = exc
+            if intento == 0:
+                time.sleep(3)  # espera antes de reintentar, por si es un error pasajero
 
-        response = client.messages.create(
-            model="claude-haiku-4-5-20251001",
-            max_tokens=300,
-            messages=[{"role": "user", "content": prompt}],
-        )
-        texto_generado = "".join(
-            getattr(block, "text", "") for block in response.content
-        ).strip()
-        return texto_generado
-
-    except Exception as exc:
-        print(f"Aviso: no se pudo generar la Materia con IA para la causa {rol}: {exc}")
-        return ""
+    print(f"Aviso: no se pudo generar la Materia con IA para la causa {rol} (tras reintento): {ultimo_error}")
+    return ""
 
 
 def extract_causas_from_modal(page):
