@@ -174,16 +174,15 @@ async function load() {
           html += '<table style="box-shadow:none;">' +
             '<colgroup>' +
               '<col style="width:8%;">' +
-              '<col style="width:13%;">' +
-              '<col style="width:28%;">' +
-              '<col style="width:8%;">' +
+              '<col style="width:14%;">' +
+              '<col style="width:33%;">' +
+              '<col style="width:10%;">' +
               '<col style="width:9%;">' +
-              '<col style="width:8%;">' +
               '<col style="width:8%;">' +
               '<col style="width:18%;">' +
             '</colgroup>' +
             '<thead><tr>' +
-            '<th>CAUSA TRICEL - ROL</th><th>Carátula</th><th>MATERIA</th><th>ELECCIÓN</th>' +
+            '<th>CAUSA TRICEL - ROL</th><th>Carátula</th><th>MATERIA</th>' +
             '<th>PRONUNCIAMIENTO</th><th>ESTADO</th><th>SOLICITUD IA</th>' +
             '<th>RESOLUCIÓN</th></tr></thead><tbody>';
           causas.forEach(c => {
@@ -200,7 +199,6 @@ async function load() {
               '<td>' + (c.ROL || '') + '</td>' +
               '<td>' + (c.Caratula || '') + '</td>' +
               '<td>' + (c.Materia || '<span style="color:var(--muted);">—</span>') + '</td>' +
-              '<td>' + (c.Eleccion || '—') + '</td>' +
               '<td>' + (c.Pronunciamiento || '—') + '</td>' +
               '<td>' + (c.Estado || '—') + '</td>' +
               '<td>' + (c.Solicitud_IA || '—') + '</td>' +
