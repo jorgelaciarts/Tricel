@@ -69,6 +69,7 @@ DATA_FILE = DATA_DIR / "estado_diario.json"
 RAW_HTML_FILE = DATA_DIR / "estado_diario_raw.html"
 HISTORY_DIR = DATA_DIR / "history"
 RESOLUCIONES_DIR = DATA_DIR / "resoluciones"
+HISTORICO_MANUAL_DIR = DATA_DIR / "historico_manual"
 
 # Límite de causas nuevas a procesar por ejecución (protección ante
 # ejecuciones inesperadamente largas, p. ej. la primera corrida con
@@ -95,6 +96,134 @@ def extraer_texto_pdf(pdf_path):
     except Exception as exc:
         print(f"Aviso: no se pudo leer el texto del PDF {pdf_path}: {exc}")
     return texto
+
+
+MESES_INGLES_A_NUM = {
+    "january": "01", "february": "02", "march": "03", "april": "04",
+    "may": "05", "june": "06", "july": "07", "august": "08",
+    "september": "09", "october": "10", "november": "11", "december": "12",
+}
+
+
+def extraer_fecha_estado_diario_pdf(texto):
+    """
+    Extrae la fecha del encabezado 'Santiago, <día de la semana>,  DD de
+    <Mes en inglés> de AAAA' que traen los PDF de 'Estado Diario de
+    Causas' descargados manualmente del sitio, y la devuelve en formato
+    DD-MM-AAAA (igual al resto del sistema).
+    """
+    t = _normalizar_texto(texto)
+    m = re.search(r"Santiago,\s*\w+,\s*(\d{1,2})\s*de\s*(\w+)\s*de\s*(\d{4})", t, re.IGNORECASE)
+    if not m:
+        return ""
+    dia, mes_ingles, anio = m.groups()
+    mes_num = MESES_INGLES_A_NUM.get(mes_ingles.lower())
+    if not mes_num:
+        return ""
+    return f"{int(dia):02d}-{mes_num}-{anio}"
+
+
+def extraer_causas_estado_diario_pdf(texto):
+    """
+    Extrae la lista de causas (ROL, Carátula/Recurrente) de un PDF
+    'Estado Diario de Causas' descargado manualmente desde el sitio
+    (botón 'Descargar documento' de la tabla principal, junto a
+    'Detalle'). Formato de cada fila: 'N.- ROL RECURRENTES N°RESOL'.
+
+    Algunas filas con carátulas muy largas quedan interrumpidas por el
+    diseño del PDF (el texto de la columna vecina se intercala en medio),
+    lo que rompe el patrón principal. Para esos casos hay un respaldo que
+    igual captura el ROL (con una carátula aproximada o vacía) en vez de
+    perder la causa por completo.
+    """
+    t = _normalizar_texto(texto)
+    causas = []
+    roles_vistos = set()
+
+    for rol, caratula in re.findall(
+        r"\d+\.-\s*([\dA-Za-z]+-20\d{2})\s+(.*?)\.\s*Jurisdiccional\s*\d+", t
+    ):
+        rol = rol.strip()
+        if rol not in roles_vistos:
+            causas.append(_nueva_causa_desde_pdf(rol, caratula.strip()))
+            roles_vistos.add(rol)
+
+    for orden, rol in re.findall(r"(\d+)\.-\s*([\dA-Za-z]+-20\d{2})", t):
+        rol = rol.strip()
+        if rol not in roles_vistos:
+            idx = t.find(f"{orden}.- {rol}")
+            fragmento = ""
+            if idx != -1:
+                trozo = t[idx:idx + 180]
+                m2 = re.search(r"\d+\.-\s*[\dA-Za-z]+-20\d{2}\s+(.*?)(?:\s*\(|\s*Jurisdiccional)", trozo)
+                if m2:
+                    fragmento = m2.group(1).strip().rstrip(".")
+            causas.append(_nueva_causa_desde_pdf(rol, fragmento))
+            roles_vistos.add(rol)
+
+    return causas
+
+
+def _nueva_causa_desde_pdf(rol, caratula):
+    return {
+        "ROL": rol,
+        "Caratula": caratula,
+        "Numero_Tramites": "",
+        "Resoluciones": [],
+        "Eleccion": "",
+        "Pronunciamiento": "",
+        "Materia": "",
+        "Estado": "",
+        "Solicitud_IA": "",
+        "Revisado": False,
+    }
+
+
+def importar_pdfs_historicos(previous_entries):
+    """
+    Lee los PDF 'Estado Diario de Causas' que el usuario haya subido
+    manualmente a docs/data/historico_manual/ (uno por fecha, descargados
+    con el botón 'Descargar documento' del sitio) y agrega esas fechas a
+    'previous_entries' si todavía no existen -sin necesidad de que el
+    navegador automatizado visite el sitio para esas fechas-.
+
+    Solo aporta el listado básico de causas (ROL y Carátula); no incluye
+    las Resoluciones/Sentencias individuales de esas causas, ya que esos
+    PDF no vienen en este documento (habría que descargarlos aparte,
+    causa por causa, si se quiere ese detalle).
+    """
+    if not HISTORICO_MANUAL_DIR.exists():
+        return
+
+    fechas_existentes = {e.get("Fecha") for e in previous_entries if "Fecha" in e}
+    pdfs = sorted(HISTORICO_MANUAL_DIR.glob("*.pdf"))
+
+    for pdf_path in pdfs:
+        texto = extraer_texto_pdf(pdf_path)
+        if not texto:
+            continue
+
+        fecha = extraer_fecha_estado_diario_pdf(texto)
+        if not fecha:
+            print(f"Aviso: no se pudo determinar la fecha del PDF histórico {pdf_path.name}")
+            continue
+
+        if fecha in fechas_existentes:
+            continue  # ya la teníamos, no la duplicamos
+
+        causas = extraer_causas_estado_diario_pdf(texto)
+        if not causas:
+            print(f"Aviso: no se encontraron causas en el PDF histórico {pdf_path.name} (fecha {fecha})")
+            continue
+
+        previous_entries.append({
+            "Fecha": fecha,
+            "Numero_Causas": str(len(causas)),
+            "Numero_Tramites": str(len(causas)),
+            "Causas": causas,
+        })
+        fechas_existentes.add(fecha)
+        print(f"Importado desde PDF histórico: {fecha} ({len(causas)} causas) — {pdf_path.name}")
 
 
 def extraer_eleccion(texto):
@@ -988,6 +1117,7 @@ def main():
     DATA_DIR.mkdir(parents=True, exist_ok=True)
     HISTORY_DIR.mkdir(parents=True, exist_ok=True)
     RESOLUCIONES_DIR.mkdir(parents=True, exist_ok=True)
+    HISTORICO_MANUAL_DIR.mkdir(parents=True, exist_ok=True)
 
     previous_entries = []
     if DATA_FILE.exists():
@@ -1007,15 +1137,33 @@ def main():
     previous_entries_antes_del_backfill = copy.deepcopy(previous_entries)
 
     backfill_missing_fields(previous_entries)
+    importar_pdfs_historicos(previous_entries)
 
     with sync_playwright() as p:
         browser = p.chromium.launch()
         context = browser.new_context(accept_downloads=True)
         page = context.new_page()
         page.goto(URL, wait_until="domcontentloaded", timeout=60000)
-        entries = extract_entries(page, previous_entries)
+        entries_del_sitio = extract_entries(page, previous_entries)
         raw_html = page.content()
         browser.close()
+
+    # IMPORTANTE: el sitio solo muestra por defecto los últimos días del
+    # Estado Diario -las fechas más antiguas van "desapareciendo" de esa
+    # vista con el tiempo-. 'entries_del_sitio' solo trae lo que el sitio
+    # muestra HOY. Si simplemente reemplazáramos todo con eso, las fechas
+    # antiguas que ya no aparecen por defecto (o las importadas a mano
+    # desde PDF) se perderían silenciosamente en cada corrida. Por eso se
+    # combinan con lo que ya había en 'previous_entries', dando prioridad
+    # a la versión más reciente de cada fecha cuando existen ambas.
+    entries_por_fecha = {e.get("Fecha"): e for e in previous_entries if "Fecha" in e}
+    for entry in entries_del_sitio:
+        entries_por_fecha[entry.get("Fecha")] = entry
+    entries = sorted(
+        entries_por_fecha.values(),
+        key=lambda e: e.get("Fecha", ""),
+        reverse=True,
+    )
 
     now_local = datetime.now(timezone.utc).astimezone()
     today = now_local.strftime("%Y-%m-%d")
