@@ -165,6 +165,7 @@ async function load() {
     if (entries.length > 0 && entries[0].Fecha !== undefined) {
       let html = '';
       entries.forEach(e => {
+        if (!e.Fecha) return; // protección: nunca mostrar una entrada sin fecha válida
         const causas = e.Causas || [];
         html += '<details style="margin-bottom:1rem;background:var(--card);border:1px solid var(--border);border-radius:4px;">';
         html += '<summary style="cursor:pointer;padding:0.9rem 1rem;font-family:-apple-system,sans-serif;font-weight:600;">' +
