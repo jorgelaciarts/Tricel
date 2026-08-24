@@ -132,9 +132,11 @@ def extraer_causas_estado_diario_pdf(texto):
 
     Algunas filas con carátulas muy largas quedan interrumpidas por el
     diseño del PDF (el texto de la columna vecina se intercala en medio),
-    lo que rompe el patrón principal. Para esos casos hay un respaldo que
-    igual captura el ROL (con una carátula aproximada o vacía) en vez de
-    perder la causa por completo.
+    lo que rompe el patrón principal. Para esos casos se captura igual el
+    ROL, pero la Carátula queda vacía en vez de intentar adivinar un
+    fragmento -un intento anterior de "adivinar" terminaba a veces
+    arrastrando texto de la fila siguiente y mezclando causas distintas,
+    que es un error peor que simplemente dejarla en blanco-.
     """
     t = _normalizar_texto(texto)
     causas = []
@@ -151,14 +153,7 @@ def extraer_causas_estado_diario_pdf(texto):
     for orden, rol in re.findall(r"(\d+)\.-\s*([\dA-Za-z]+-20\d{2})", t):
         rol = rol.strip()
         if rol not in roles_vistos:
-            idx = t.find(f"{orden}.- {rol}")
-            fragmento = ""
-            if idx != -1:
-                trozo = t[idx:idx + 180]
-                m2 = re.search(r"\d+\.-\s*[\dA-Za-z]+-20\d{2}\s+(.*?)(?:\s*\(|\s*Jurisdiccional)", trozo)
-                if m2:
-                    fragmento = m2.group(1).strip().rstrip(".")
-            causas.append(_nueva_causa_desde_pdf(rol, fragmento))
+            causas.append(_nueva_causa_desde_pdf(rol, ""))
             roles_vistos.add(rol)
 
     return causas
@@ -184,18 +179,23 @@ def importar_pdfs_historicos(previous_entries):
     Lee los PDF 'Estado Diario de Causas' que el usuario haya subido
     manualmente a docs/data/historico_manual/ (uno por fecha, descargados
     con el botón 'Descargar documento' del sitio) y agrega esas fechas a
-    'previous_entries' si todavía no existen -sin necesidad de que el
-    navegador automatizado visite el sitio para esas fechas-.
+    'previous_entries' -sin necesidad de que el navegador automatizado
+    visite el sitio para esas fechas-.
 
     Solo aporta el listado básico de causas (ROL y Carátula); no incluye
-    las Resoluciones/Sentencias individuales de esas causas, ya que esos
-    PDF no vienen en este documento (habría que descargarlos aparte,
-    causa por causa, si se quiere ese detalle).
+    las Resoluciones/Sentencias individuales, ya que esos PDF no las
+    traen (habría que descargarlas aparte, causa por causa).
+
+    Si la fecha del PDF YA existía (por ejemplo, se corrige una versión
+    anterior con errores de lectura), se vuelve a parsear y actualiza esa
+    fecha, causa por causa -pero conservando cualquier causa que ya haya
+    sido revisada de verdad (Revisado=True, con sus Resoluciones reales),
+    para no pisar datos buenos con el listado básico del PDF-.
     """
     if not HISTORICO_MANUAL_DIR.exists():
         return
 
-    fechas_existentes = {e.get("Fecha") for e in previous_entries if "Fecha" in e}
+    entries_por_fecha = {e.get("Fecha"): e for e in previous_entries if e.get("Fecha")}
     pdfs = sorted(HISTORICO_MANUAL_DIR.glob("*.pdf"))
 
     for pdf_path in pdfs:
@@ -208,22 +208,45 @@ def importar_pdfs_historicos(previous_entries):
             print(f"Aviso: no se pudo determinar la fecha del PDF histórico {pdf_path.name}")
             continue
 
-        if fecha in fechas_existentes:
-            continue  # ya la teníamos, no la duplicamos
-
-        causas = extraer_causas_estado_diario_pdf(texto)
-        if not causas:
+        causas_nuevas = extraer_causas_estado_diario_pdf(texto)
+        if not causas_nuevas:
             print(f"Aviso: no se encontraron causas en el PDF histórico {pdf_path.name} (fecha {fecha})")
             continue
 
-        previous_entries.append({
-            "Fecha": fecha,
-            "Numero_Causas": str(len(causas)),
-            "Numero_Tramites": str(len(causas)),
-            "Causas": causas,
-        })
-        fechas_existentes.add(fecha)
-        print(f"Importado desde PDF histórico: {fecha} ({len(causas)} causas) — {pdf_path.name}")
+        entry_existente = entries_por_fecha.get(fecha)
+
+        if entry_existente is None:
+            nueva_entry = {
+                "Fecha": fecha,
+                "Numero_Causas": str(len(causas_nuevas)),
+                "Numero_Tramites": str(len(causas_nuevas)),
+                "Causas": causas_nuevas,
+            }
+            previous_entries.append(nueva_entry)
+            entries_por_fecha[fecha] = nueva_entry
+            print(f"Importado desde PDF histórico: {fecha} ({len(causas_nuevas)} causas) — {pdf_path.name}")
+            continue
+
+        # La fecha ya existía: volver a parsear y actualizar, conservando
+        # las causas que ya tengan datos reales revisados.
+        causas_previas_por_rol = {c.get("ROL"): c for c in entry_existente.get("Causas", [])}
+        causas_final = []
+        hubo_cambios = False
+        for causa in causas_nuevas:
+            rol = causa.get("ROL")
+            previa = causas_previas_por_rol.get(rol)
+            if previa is not None and previa.get("Revisado") is True:
+                causas_final.append(previa)
+            else:
+                if previa is None or previa.get("Caratula") != causa.get("Caratula"):
+                    hubo_cambios = True
+                causas_final.append(causa)
+
+        if hubo_cambios:
+            entry_existente["Causas"] = causas_final
+            entry_existente["Numero_Causas"] = str(len(causas_final))
+            entry_existente["Numero_Tramites"] = str(len(causas_final))
+            print(f"Corregido desde PDF histórico: {fecha} ({len(causas_final)} causas) — {pdf_path.name}")
 
 
 def extraer_eleccion(texto):
@@ -1156,9 +1179,15 @@ def main():
     # desde PDF) se perderían silenciosamente en cada corrida. Por eso se
     # combinan con lo que ya había en 'previous_entries', dando prioridad
     # a la versión más reciente de cada fecha cuando existen ambas.
-    entries_por_fecha = {e.get("Fecha"): e for e in previous_entries if "Fecha" in e}
+    entries_por_fecha = {e.get("Fecha"): e for e in previous_entries if e.get("Fecha")}
     for entry in entries_del_sitio:
-        entries_por_fecha[entry.get("Fecha")] = entry
+        fecha = entry.get("Fecha")
+        if not fecha:
+            # Modo de respaldo (texto_bruto): no tiene fecha real, no se
+            # puede fusionar por fecha -se descarta del snapshot final
+            # para no dejar una entrada fantasma sin fecha en la página-.
+            continue
+        entries_por_fecha[fecha] = entry
     entries = sorted(
         entries_por_fecha.values(),
         key=lambda e: e.get("Fecha", ""),
