@@ -659,29 +659,6 @@ function renderDashboard() {
   html += '<p style="font-family:-apple-system,sans-serif;font-size:0.85rem;color:var(--muted);">' +
     pctFinalizado + '% finalizado (' + finalizados + ' de ' + total + ')</p>';
 
-  // Desglose de pendientes por responsable
-  const pendientesPorResponsable = {};
-  registroCompleto.forEach(r => {
-    if (r['Finalizado']) return;
-    const resp = (r['Responsable Contabilidad'] || 'Sin asignar').trim() || 'Sin asignar';
-    pendientesPorResponsable[resp] = (pendientesPorResponsable[resp] || 0) + 1;
-  });
-  const listaResponsables = Object.entries(pendientesPorResponsable).sort((a, b) => b[1] - a[1]);
-
-  if (listaResponsables.length > 0) {
-    const maxValor = Math.max(...listaResponsables.map(([, v]) => v));
-    html += '<div class="desglose-dashboard"><h3>Pendientes por responsable</h3>';
-    listaResponsables.forEach(([nombre, cantidad]) => {
-      const anchoBarra = Math.round((cantidad / maxValor) * 100);
-      html += '<div class="fila-desglose">' +
-        '<div class="etiqueta-desglose">' + nombre + '</div>' +
-        '<div class="barra-mini"><div class="relleno-mini" style="width:' + anchoBarra + '%;"></div></div>' +
-        '<div class="valor-desglose">' + cantidad + '</div>' +
-        '</div>';
-    });
-    html += '</div>';
-  }
-
   // Desglose de TOTAL (finalizadas + pendientes) por responsable
   const statsPorResponsable = {};
   registroCompleto.forEach(r => {
@@ -707,6 +684,29 @@ function renderDashboard() {
           '<div class="relleno-mini" style="width:' + anchoPend + '%;background:var(--accent);"></div>' +
         '</div>' +
         '<div class="valor-desglose">' + total + ' (' + fin + '✓ / ' + pend + '⏳)</div>' +
+        '</div>';
+    });
+    html += '</div>';
+  }
+
+  // Desglose de pendientes por responsable
+  const pendientesPorResponsable = {};
+  registroCompleto.forEach(r => {
+    if (r['Finalizado']) return;
+    const resp = (r['Responsable Contabilidad'] || 'Sin asignar').trim() || 'Sin asignar';
+    pendientesPorResponsable[resp] = (pendientesPorResponsable[resp] || 0) + 1;
+  });
+  const listaResponsables = Object.entries(pendientesPorResponsable).sort((a, b) => b[1] - a[1]);
+
+  if (listaResponsables.length > 0) {
+    const maxValor = Math.max(...listaResponsables.map(([, v]) => v));
+    html += '<div class="desglose-dashboard"><h3>Pendientes por responsable</h3>';
+    listaResponsables.forEach(([nombre, cantidad]) => {
+      const anchoBarra = Math.round((cantidad / maxValor) * 100);
+      html += '<div class="fila-desglose">' +
+        '<div class="etiqueta-desglose">' + nombre + '</div>' +
+        '<div class="barra-mini"><div class="relleno-mini" style="width:' + anchoBarra + '%;"></div></div>' +
+        '<div class="valor-desglose">' + cantidad + '</div>' +
         '</div>';
     });
     html += '</div>';
