@@ -1176,6 +1176,7 @@ def extraer_datos_para_registro(causa):
         "Comentario Conta": "",
         "Comentario Juridico": "",
         "Finalizado": False,
+        "Fecha Agregado": datetime.now(timezone.utc).astimezone().strftime("%d-%m-%Y"),
     }
 
 
@@ -1317,4 +1318,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
