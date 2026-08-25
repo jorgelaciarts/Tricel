@@ -519,6 +519,16 @@ function renderComentario(valorActual, campo, indiceFila, deshabilitado) {
     '" placeholder="Escribir comentario…" rows="2"' + dis + '>' + v + '</textarea>';
 }
 
+let ordenFechaAgregado = 'desc'; // 'desc' = más reciente primero (por defecto)
+
+function parsearFechaDDMMAAAA(fecha) {
+  if (!fecha) return 0;
+  const partes = fecha.split('-');
+  if (partes.length !== 3) return 0;
+  const [d, m, a] = partes;
+  return new Date(`${a}-${m}-${d}`).getTime() || 0;
+}
+
 function renderRegistro(filtro) {
   const contenidoEl = document.getElementById('contenidoRegistro');
   const contadorEl = document.getElementById('contadorRegistro');
@@ -541,11 +551,18 @@ function renderRegistro(filtro) {
     );
   }
 
+  filas = [...filas].sort((a, b) => {
+    const diff = parsearFechaDDMMAAAA(a['Fecha Agregado']) - parsearFechaDDMMAAAA(b['Fecha Agregado']);
+    return ordenFechaAgregado === 'asc' ? diff : -diff;
+  });
+
   if (filas.length === 0) {
     contenidoEl.innerHTML = '<p style="font-family:-apple-system,sans-serif;color:var(--muted);">Sin resultados.</p>';
     contadorEl.textContent = '';
     return;
   }
+
+  const flechaOrden = ordenFechaAgregado === 'asc' ? '▲' : '▼';
 
   let html = '<table><colgroup>' +
     '<col style="width:8%;"><col style="width:14%;"><col style="width:6%;">' +
@@ -556,7 +573,7 @@ function renderRegistro(filtro) {
     '<th>ROL</th><th>Candidato</th><th>N° Res</th><th>Elección</th>' +
     '<th>Pronunciamiento</th><th>Estado Contabilidad</th><th>Responsable</th>' +
     '<th>Comentario Conta</th><th>Comentario Jurídico</th><th style="white-space:nowrap;">Finalizado</th>' +
-    '<th style="white-space:nowrap;">Fecha Agregado</th>' +
+    '<th id="thFechaAgregado" style="white-space:nowrap;cursor:pointer;" title="Click para cambiar el orden">Fecha Agregado ' + flechaOrden + '</th>' +
     '</tr></thead><tbody>';
 
   filas.forEach((r, i) => {
@@ -579,6 +596,11 @@ function renderRegistro(filtro) {
   contenidoEl.innerHTML = html;
   contadorEl.textContent = filas.length + ' de ' + registroCompleto.length + ' registros' +
     (soloPendientes ? ' (mostrando solo pendientes)' : '');
+
+  document.getElementById('thFechaAgregado').addEventListener('click', () => {
+    ordenFechaAgregado = ordenFechaAgregado === 'asc' ? 'desc' : 'asc';
+    renderRegistro(document.getElementById('buscadorRegistro').value);
+  });
 
   document.querySelectorAll('.check-finalizado').forEach(chk => {
     chk.addEventListener('change', () => {
