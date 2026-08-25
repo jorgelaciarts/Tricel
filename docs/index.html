@@ -588,7 +588,7 @@ function renderRegistro(filtro) {
       '<td>' + renderSelect(r['Responsable Contabilidad'], opcionesResponsable, 'Responsable Contabilidad', i, finalizado) + '</td>' +
       '<td>' + renderComentario(r['Comentario Conta'], 'Comentario Conta', i, finalizado) + '</td>' +
       '<td>' + renderComentario(r['Comentario Juridico'], 'Comentario Juridico', i, finalizado) + '</td>' +
-      '<td style="text-align:center;"><input type="checkbox" class="check-finalizado" data-fila="' + i + '" title="Marcar como finalizado y bloquear fila"' + (finalizado ? ' checked' : '') + '></td>' +
+      '<td style="text-align:center;"><input type="checkbox" class="check-finalizado" data-fila="' + i + '" data-rol="' + (r['CAUSA TRICEL - ROL'] || '').replace(/"/g, '&quot;') + '" title="Marcar como finalizado y bloquear fila"' + (finalizado ? ' checked' : '') + '></td>' +
       '<td style="white-space:nowrap;">' + (r['Fecha Agregado'] || '—') + '</td>' +
       '</tr>';
   });
@@ -611,6 +611,15 @@ function renderRegistro(filtro) {
         campo.disabled = bloquear;
       });
       fila.classList.toggle('fila-finalizada', bloquear);
+
+      // Actualizar el dato real en memoria (buscando por ROL, no por
+      // posición, ya que el orden/filtro visible puede no coincidir con
+      // el arreglo completo) y refrescar el Dashboard al instante.
+      const registroReal = registroCompleto.find(x => (x['CAUSA TRICEL - ROL'] || '') === chk.dataset.rol);
+      if (registroReal) {
+        registroReal['Finalizado'] = bloquear;
+      }
+      renderDashboard();
     });
   });
 }
