@@ -247,6 +247,10 @@
     <h2>Registro Cúmplase</h2>
     <p class="subtitulo">Seguimiento de causas: contabilidad, responsables y comentarios.</p>
     <input id="buscadorRegistro" type="text" placeholder="Buscar por ROL, nombre, RUT o resolución…">
+    <label style="display:inline-flex;align-items:center;gap:0.4rem;margin-left:1rem;font-family:-apple-system,sans-serif;font-size:0.85rem;color:var(--ink);cursor:pointer;">
+      <input type="checkbox" id="soloPendientes" style="width:16px;height:16px;accent-color:var(--accent);">
+      Mostrar solo pendientes
+    </label>
     <div id="contenidoRegistro"><p id="statusRegistro" style="font-family:-apple-system,sans-serif;color:var(--muted);">Cargando…</p></div>
     <div id="contadorRegistro"></div>
   </section>
@@ -403,8 +407,9 @@ function opcionesUnicas(campo) {
   return Array.from(set).sort();
 }
 
-function renderSelect(valorActual, opciones, campo, indiceFila) {
-  let html = '<select class="select-registro" data-campo="' + campo + '" data-fila="' + indiceFila + '">';
+function renderSelect(valorActual, opciones, campo, indiceFila, deshabilitado) {
+  const dis = deshabilitado ? ' disabled' : '';
+  let html = '<select class="select-registro" data-campo="' + campo + '" data-fila="' + indiceFila + '"' + dis + '>';
   html += '<option value=""' + (valorActual ? '' : ' selected') + '>— Sin asignar —</option>';
   opciones.forEach(op => {
     const sel = op === valorActual ? ' selected' : '';
@@ -414,28 +419,34 @@ function renderSelect(valorActual, opciones, campo, indiceFila) {
   return html;
 }
 
-function renderComentario(valorActual, campo, indiceFila) {
+function renderComentario(valorActual, campo, indiceFila, deshabilitado) {
   const v = (valorActual || '').toString().replace(/"/g, '&quot;');
+  const dis = deshabilitado ? ' disabled' : '';
   return '<textarea class="textarea-registro" data-campo="' + campo + '" data-fila="' + indiceFila +
-    '" placeholder="Escribir comentario…" rows="2">' + v + '</textarea>';
+    '" placeholder="Escribir comentario…" rows="2"' + dis + '>' + v + '</textarea>';
 }
 
 function renderRegistro(filtro) {
   const contenidoEl = document.getElementById('contenidoRegistro');
   const contadorEl = document.getElementById('contadorRegistro');
   const f = (filtro || '').trim().toLowerCase();
+  const soloPendientes = document.getElementById('soloPendientes')?.checked;
 
   const opcionesEstado = opcionesUnicas('Estado Contabilidad');
   const opcionesResponsable = opcionesUnicas('Responsable Contabilidad');
 
-  const filas = f
-    ? registroCompleto.filter(r =>
-        String(r['CAUSA TRICEL - ROL'] || '').toLowerCase().includes(f) ||
-        String(r['NOMBRE CANDIDATO'] || '').toLowerCase().includes(f) ||
-        String(r['RUT'] || '').toLowerCase().includes(f) ||
-        String(r['N° RES'] || '').toLowerCase().includes(f)
-      )
-    : registroCompleto;
+  let filas = registroCompleto;
+  if (soloPendientes) {
+    filas = filas.filter(r => !r['Finalizado']);
+  }
+  if (f) {
+    filas = filas.filter(r =>
+      String(r['CAUSA TRICEL - ROL'] || '').toLowerCase().includes(f) ||
+      String(r['NOMBRE CANDIDATO'] || '').toLowerCase().includes(f) ||
+      String(r['RUT'] || '').toLowerCase().includes(f) ||
+      String(r['N° RES'] || '').toLowerCase().includes(f)
+    );
+  }
 
   if (filas.length === 0) {
     contenidoEl.innerHTML = '<p style="font-family:-apple-system,sans-serif;color:var(--muted);">Sin resultados.</p>';
@@ -455,22 +466,24 @@ function renderRegistro(filtro) {
     '</tr></thead><tbody>';
 
   filas.forEach((r, i) => {
-    html += '<tr id="filaRegistro' + i + '">' +
+    const finalizado = !!r['Finalizado'];
+    html += '<tr id="filaRegistro' + i + '"' + (finalizado ? ' class="fila-finalizada"' : '') + '>' +
       '<td>' + (r['CAUSA TRICEL - ROL'] || '—') + '</td>' +
       '<td>' + (r['NOMBRE CANDIDATO'] || '—') + '<br><span style="color:var(--muted);font-size:0.75rem;">' + (r['RUT'] || '') + '</span></td>' +
       '<td>' + (r['N° RES'] || '—') + '</td>' +
       '<td>' + (r['ELECCIÓN'] || '—') + '</td>' +
       '<td>' + (r['PRONUNCIAMIENTO'] || '—') + '</td>' +
-      '<td>' + renderSelect(r['Estado Contabilidad'], opcionesEstado, 'Estado Contabilidad', i) + '</td>' +
-      '<td>' + renderSelect(r['Responsable Contabilidad'], opcionesResponsable, 'Responsable Contabilidad', i) + '</td>' +
-      '<td>' + renderComentario(r['Comentario Conta'], 'Comentario Conta', i) + '</td>' +
-      '<td>' + renderComentario(r['Comentario Juridico'], 'Comentario Juridico', i) + '</td>' +
-      '<td style="text-align:center;"><input type="checkbox" class="check-finalizado" data-fila="' + i + '" title="Marcar como finalizado y bloquear fila"></td>' +
+      '<td>' + renderSelect(r['Estado Contabilidad'], opcionesEstado, 'Estado Contabilidad', i, finalizado) + '</td>' +
+      '<td>' + renderSelect(r['Responsable Contabilidad'], opcionesResponsable, 'Responsable Contabilidad', i, finalizado) + '</td>' +
+      '<td>' + renderComentario(r['Comentario Conta'], 'Comentario Conta', i, finalizado) + '</td>' +
+      '<td>' + renderComentario(r['Comentario Juridico'], 'Comentario Juridico', i, finalizado) + '</td>' +
+      '<td style="text-align:center;"><input type="checkbox" class="check-finalizado" data-fila="' + i + '" title="Marcar como finalizado y bloquear fila"' + (finalizado ? ' checked' : '') + '></td>' +
       '</tr>';
   });
   html += '</tbody></table>';
   contenidoEl.innerHTML = html;
-  contadorEl.textContent = filas.length + ' de ' + registroCompleto.length + ' registros';
+  contadorEl.textContent = filas.length + ' de ' + registroCompleto.length + ' registros' +
+    (soloPendientes ? ' (mostrando solo pendientes)' : '');
 
   document.querySelectorAll('.check-finalizado').forEach(chk => {
     chk.addEventListener('change', () => {
@@ -494,6 +507,9 @@ async function loadRegistro() {
     renderRegistro('');
     document.getElementById('buscadorRegistro').addEventListener('input', (ev) => {
       renderRegistro(ev.target.value);
+    });
+    document.getElementById('soloPendientes').addEventListener('change', () => {
+      renderRegistro(document.getElementById('buscadorRegistro').value);
     });
   } catch (err) {
     contenidoEl.innerHTML = '<p style="font-family:-apple-system,sans-serif;color:var(--muted);">Aún no hay datos del Registro Cúmplase publicados.</p>';
