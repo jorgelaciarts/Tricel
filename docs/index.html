@@ -682,6 +682,36 @@ function renderDashboard() {
     html += '</div>';
   }
 
+  // Desglose de TOTAL (finalizadas + pendientes) por responsable
+  const statsPorResponsable = {};
+  registroCompleto.forEach(r => {
+    const resp = (r['Responsable Contabilidad'] || 'Sin asignar').trim() || 'Sin asignar';
+    if (!statsPorResponsable[resp]) statsPorResponsable[resp] = { finalizadas: 0, pendientes: 0 };
+    if (r['Finalizado']) statsPorResponsable[resp].finalizadas++;
+    else statsPorResponsable[resp].pendientes++;
+  });
+  const listaTotales = Object.entries(statsPorResponsable)
+    .map(([nombre, s]) => [nombre, s.finalizadas + s.pendientes, s.finalizadas, s.pendientes])
+    .sort((a, b) => b[1] - a[1]);
+
+  if (listaTotales.length > 0) {
+    const maxTotal = Math.max(...listaTotales.map(([, total]) => total));
+    html += '<div class="desglose-dashboard"><h3>Total de causas trabajadas por responsable</h3>';
+    listaTotales.forEach(([nombre, total, fin, pend]) => {
+      const anchoFin = Math.round((fin / maxTotal) * 100);
+      const anchoPend = Math.round((pend / maxTotal) * 100);
+      html += '<div class="fila-desglose">' +
+        '<div class="etiqueta-desglose">' + nombre + '</div>' +
+        '<div class="barra-mini" style="display:flex;">' +
+          '<div class="relleno-mini" style="width:' + anchoFin + '%;background:#2e7d32;"></div>' +
+          '<div class="relleno-mini" style="width:' + anchoPend + '%;background:var(--accent);"></div>' +
+        '</div>' +
+        '<div class="valor-desglose">' + total + ' (' + fin + '✓ / ' + pend + '⏳)</div>' +
+        '</div>';
+    });
+    html += '</div>';
+  }
+
   el.innerHTML = html;
 }
 
