@@ -548,14 +548,15 @@ function renderRegistro(filtro) {
   }
 
   let html = '<table><colgroup>' +
-    '<col style="width:9%;"><col style="width:16%;"><col style="width:6%;">' +
-    '<col style="width:7%;"><col style="width:9%;"><col style="width:10%;">' +
-    '<col style="width:9%;"><col style="width:8%;"><col style="width:8%;">' +
-    '<col style="width:9%;">' +
+    '<col style="width:8%;"><col style="width:14%;"><col style="width:6%;">' +
+    '<col style="width:7%;"><col style="width:9%;"><col style="width:9%;">' +
+    '<col style="width:8%;"><col style="width:7%;"><col style="width:7%;">' +
+    '<col style="width:8%;"><col style="width:8%;">' +
     '</colgroup><thead><tr>' +
     '<th>ROL</th><th>Candidato</th><th>N° Res</th><th>Elección</th>' +
     '<th>Pronunciamiento</th><th>Estado Contabilidad</th><th>Responsable</th>' +
     '<th>Comentario Conta</th><th>Comentario Jurídico</th><th style="white-space:nowrap;">Finalizado</th>' +
+    '<th style="white-space:nowrap;">Fecha Agregado</th>' +
     '</tr></thead><tbody>';
 
   filas.forEach((r, i) => {
@@ -571,6 +572,7 @@ function renderRegistro(filtro) {
       '<td>' + renderComentario(r['Comentario Conta'], 'Comentario Conta', i, finalizado) + '</td>' +
       '<td>' + renderComentario(r['Comentario Juridico'], 'Comentario Juridico', i, finalizado) + '</td>' +
       '<td style="text-align:center;"><input type="checkbox" class="check-finalizado" data-fila="' + i + '" title="Marcar como finalizado y bloquear fila"' + (finalizado ? ' checked' : '') + '></td>' +
+      '<td style="white-space:nowrap;">' + (r['Fecha Agregado'] || '—') + '</td>' +
       '</tr>';
   });
   html += '</tbody></table>';
