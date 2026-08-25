@@ -114,6 +114,48 @@
     color: var(--muted);
   }
   a { color: var(--accent); }
+  /* Sección Registro Cúmplase */
+  section#registro {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 0 1.5rem;
+  }
+  section#registro h2 {
+    font-size: 1.3rem;
+    margin-bottom: 0.25rem;
+  }
+  section#registro .subtitulo {
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--muted);
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+  }
+  #buscadorRegistro {
+    width: 100%;
+    max-width: 400px;
+    padding: 0.55rem 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 0.85rem;
+  }
+  .badge-estado {
+    display: inline-block;
+    padding: 0.15rem 0.5rem;
+    border-radius: 3px;
+    font-size: 0.72rem;
+    white-space: nowrap;
+  }
+  .badge-estado.contabilidad { background: #fff3cd; color: #7a5c00; }
+  .badge-estado.juridico { background: #dbe9ff; color: #1a4a8f; }
+  .badge-estado.pendiente { background: #f1f1ef; color: var(--muted); }
+  #contadorRegistro {
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-top: 0.5rem;
+  }
 </style>
 </head>
 <body>
@@ -125,6 +167,15 @@
   <div id="meta">Cargando datos…</div>
   <div id="content"><p id="status">Cargando…</p></div>
 </main>
+
+<section id="registro">
+  <h2>Registro Cúmplase</h2>
+  <p class="subtitulo">Seguimiento de causas: contabilidad, responsables y comentarios.</p>
+  <input id="buscadorRegistro" type="text" placeholder="Buscar por ROL, nombre, RUT o resolución…">
+  <div id="contenidoRegistro"><p id="statusRegistro" style="font-family:-apple-system,sans-serif;color:var(--muted);">Cargando…</p></div>
+  <div id="contadorRegistro"></div>
+</section>
+
 <footer>
   Este sitio no es oficial ni está afiliado al Tribunal Calificador de Elecciones.
   Es un espejo generado automáticamente a partir de la información pública publicada en su sitio.
@@ -245,6 +296,83 @@ async function load() {
   }
 }
 load();
+
+// --- Sección Registro Cúmplase ---
+let registroCompleto = [];
+
+function badgeEstado(estado) {
+  if (!estado) return '<span class="badge-estado pendiente">Sin asignar</span>';
+  const e = estado.toLowerCase();
+  let clase = 'pendiente';
+  if (e.includes('contabilidad')) clase = 'contabilidad';
+  else if (e.includes('juridico') || e.includes('jurídico')) clase = 'juridico';
+  return '<span class="badge-estado ' + clase + '">' + estado + '</span>';
+}
+
+function renderRegistro(filtro) {
+  const contenidoEl = document.getElementById('contenidoRegistro');
+  const contadorEl = document.getElementById('contadorRegistro');
+  const f = (filtro || '').trim().toLowerCase();
+
+  const filas = f
+    ? registroCompleto.filter(r =>
+        String(r['CAUSA TRICEL - ROL'] || '').toLowerCase().includes(f) ||
+        String(r['NOMBRE CANDIDATO'] || '').toLowerCase().includes(f) ||
+        String(r['RUT'] || '').toLowerCase().includes(f) ||
+        String(r['N° RES'] || '').toLowerCase().includes(f)
+      )
+    : registroCompleto;
+
+  if (filas.length === 0) {
+    contenidoEl.innerHTML = '<p style="font-family:-apple-system,sans-serif;color:var(--muted);">Sin resultados.</p>';
+    contadorEl.textContent = '';
+    return;
+  }
+
+  let html = '<table><colgroup>' +
+    '<col style="width:10%;"><col style="width:19%;"><col style="width:8%;">' +
+    '<col style="width:9%;"><col style="width:11%;"><col style="width:12%;">' +
+    '<col style="width:11%;"><col style="width:10%;"><col style="width:10%;">' +
+    '</colgroup><thead><tr>' +
+    '<th>ROL</th><th>Candidato</th><th>N° Res</th><th>Elección</th>' +
+    '<th>Pronunciamiento</th><th>Estado Contabilidad</th><th>Responsable</th>' +
+    '<th>Comentario Conta</th><th>Comentario Jurídico</th>' +
+    '</tr></thead><tbody>';
+
+  filas.forEach(r => {
+    html += '<tr>' +
+      '<td>' + (r['CAUSA TRICEL - ROL'] || '—') + '</td>' +
+      '<td>' + (r['NOMBRE CANDIDATO'] || '—') + '<br><span style="color:var(--muted);font-size:0.75rem;">' + (r['RUT'] || '') + '</span></td>' +
+      '<td>' + (r['N° RES'] || '—') + '</td>' +
+      '<td>' + (r['ELECCIÓN'] || '—') + '</td>' +
+      '<td>' + (r['PRONUNCIAMIENTO'] || '—') + '</td>' +
+      '<td>' + badgeEstado(r['Estado Contabilidad']) + '</td>' +
+      '<td>' + (r['Responsable Contabilidad'] || '<span style="color:var(--muted);">—</span>') + '</td>' +
+      '<td>' + (r['Comentario Conta'] || '<span style="color:var(--muted);">—</span>') + '</td>' +
+      '<td>' + (r['Comentario Juridico'] || '<span style="color:var(--muted);">—</span>') + '</td>' +
+      '</tr>';
+  });
+  html += '</tbody></table>';
+  contenidoEl.innerHTML = html;
+  contadorEl.textContent = filas.length + ' de ' + registroCompleto.length + ' registros';
+}
+
+async function loadRegistro() {
+  const contenidoEl = document.getElementById('contenidoRegistro');
+  try {
+    const res = await fetch('data/registro_cumplase.json?_=' + Date.now());
+    if (!res.ok) throw new Error('No se pudo cargar data/registro_cumplase.json');
+    registroCompleto = await res.json();
+    renderRegistro('');
+    document.getElementById('buscadorRegistro').addEventListener('input', (ev) => {
+      renderRegistro(ev.target.value);
+    });
+  } catch (err) {
+    contenidoEl.innerHTML = '<p style="font-family:-apple-system,sans-serif;color:var(--muted);">Aún no hay datos del Registro Cúmplase publicados.</p>';
+    console.error(err);
+  }
+}
+loadRegistro();
 </script>
 </body>
 </html>
