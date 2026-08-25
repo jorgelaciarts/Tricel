@@ -178,25 +178,61 @@
     color: var(--ink);
     resize: vertical;
   }
+  /* Pestañas */
+  nav#pestanas {
+    display: flex;
+    gap: 0.25rem;
+    max-width: 1200px;
+    margin: 1.5rem auto 0;
+    padding: 0 1.5rem;
+    border-bottom: 2px solid var(--border);
+  }
+  nav#pestanas button {
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 0.75rem 1.25rem;
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    color: var(--muted);
+    cursor: pointer;
+  }
+  nav#pestanas button.activa {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+  }
+  .vista { display: none; }
+  .vista.activa { display: block; }
 </style>
 </head>
 <body>
 <header>
-  <h1>Estado Diario · Tribunal Calificador de Elecciones</h1>
+  <h1>Tribunal Calificador de Elecciones</h1>
   <p>Extracción automática diaria de <a href="https://tricel.lexsoft.cl/tce/estadoDiario" style="color:#fff;">tricel.lexsoft.cl/tce/estadoDiario</a></p>
 </header>
-<main>
-  <div id="meta">Cargando datos…</div>
-  <div id="content"><p id="status">Cargando…</p></div>
-</main>
 
-<section id="registro">
-  <h2>Registro Cúmplase</h2>
-  <p class="subtitulo">Seguimiento de causas: contabilidad, responsables y comentarios.</p>
-  <input id="buscadorRegistro" type="text" placeholder="Buscar por ROL, nombre, RUT o resolución…">
-  <div id="contenidoRegistro"><p id="statusRegistro" style="font-family:-apple-system,sans-serif;color:var(--muted);">Cargando…</p></div>
-  <div id="contadorRegistro"></div>
-</section>
+<nav id="pestanas">
+  <button type="button" class="activa" data-vista="vistaEstadoDiario">Estado diario Tricel</button>
+  <button type="button" data-vista="vistaRegistro">Registro Cúmplase</button>
+</nav>
+
+<div id="vistaEstadoDiario" class="vista activa">
+  <main>
+    <div id="meta">Cargando datos…</div>
+    <div id="content"><p id="status">Cargando…</p></div>
+  </main>
+</div>
+
+<div id="vistaRegistro" class="vista">
+  <section id="registro">
+    <h2>Registro Cúmplase</h2>
+    <p class="subtitulo">Seguimiento de causas: contabilidad, responsables y comentarios.</p>
+    <input id="buscadorRegistro" type="text" placeholder="Buscar por ROL, nombre, RUT o resolución…">
+    <div id="contenidoRegistro"><p id="statusRegistro" style="font-family:-apple-system,sans-serif;color:var(--muted);">Cargando…</p></div>
+    <div id="contadorRegistro"></div>
+  </section>
+</div>
 
 <footer>
   Este sitio no es oficial ni está afiliado al Tribunal Calificador de Elecciones.
@@ -204,6 +240,15 @@
 </footer>
 
 <script>
+document.querySelectorAll('nav#pestanas button').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('nav#pestanas button').forEach(b => b.classList.remove('activa'));
+    document.querySelectorAll('.vista').forEach(v => v.classList.remove('activa'));
+    btn.classList.add('activa');
+    document.getElementById(btn.dataset.vista).classList.add('activa');
+  });
+});
+
 async function load() {
   const metaEl = document.getElementById('meta');
   const contentEl = document.getElementById('content');
