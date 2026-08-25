@@ -178,6 +178,24 @@
     color: var(--ink);
     resize: vertical;
   }
+  .check-finalizado {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: var(--accent);
+  }
+  tr.fila-finalizada {
+    background: #f1f1ef;
+  }
+  tr.fila-finalizada td {
+    opacity: 0.65;
+  }
+  select.select-registro:disabled,
+  textarea.textarea-registro:disabled {
+    background: #eceae5;
+    color: var(--muted);
+    cursor: not-allowed;
+  }
   /* Pestañas */
   nav#pestanas {
     display: flex;
@@ -426,17 +444,18 @@ function renderRegistro(filtro) {
   }
 
   let html = '<table><colgroup>' +
-    '<col style="width:10%;"><col style="width:19%;"><col style="width:8%;">' +
-    '<col style="width:9%;"><col style="width:11%;"><col style="width:12%;">' +
-    '<col style="width:11%;"><col style="width:10%;"><col style="width:10%;">' +
+    '<col style="width:9%;"><col style="width:17%;"><col style="width:7%;">' +
+    '<col style="width:8%;"><col style="width:10%;"><col style="width:11%;">' +
+    '<col style="width:10%;"><col style="width:9%;"><col style="width:9%;">' +
+    '<col style="width:6%;">' +
     '</colgroup><thead><tr>' +
     '<th>ROL</th><th>Candidato</th><th>N° Res</th><th>Elección</th>' +
     '<th>Pronunciamiento</th><th>Estado Contabilidad</th><th>Responsable</th>' +
-    '<th>Comentario Conta</th><th>Comentario Jurídico</th>' +
+    '<th>Comentario Conta</th><th>Comentario Jurídico</th><th>Finalizado</th>' +
     '</tr></thead><tbody>';
 
   filas.forEach((r, i) => {
-    html += '<tr>' +
+    html += '<tr id="filaRegistro' + i + '">' +
       '<td>' + (r['CAUSA TRICEL - ROL'] || '—') + '</td>' +
       '<td>' + (r['NOMBRE CANDIDATO'] || '—') + '<br><span style="color:var(--muted);font-size:0.75rem;">' + (r['RUT'] || '') + '</span></td>' +
       '<td>' + (r['N° RES'] || '—') + '</td>' +
@@ -446,11 +465,24 @@ function renderRegistro(filtro) {
       '<td>' + renderSelect(r['Responsable Contabilidad'], opcionesResponsable, 'Responsable Contabilidad', i) + '</td>' +
       '<td>' + renderComentario(r['Comentario Conta'], 'Comentario Conta', i) + '</td>' +
       '<td>' + renderComentario(r['Comentario Juridico'], 'Comentario Juridico', i) + '</td>' +
+      '<td style="text-align:center;"><input type="checkbox" class="check-finalizado" data-fila="' + i + '" title="Marcar como finalizado y bloquear fila"></td>' +
       '</tr>';
   });
   html += '</tbody></table>';
   contenidoEl.innerHTML = html;
   contadorEl.textContent = filas.length + ' de ' + registroCompleto.length + ' registros';
+
+  document.querySelectorAll('.check-finalizado').forEach(chk => {
+    chk.addEventListener('change', () => {
+      const fila = document.getElementById('filaRegistro' + chk.dataset.fila);
+      if (!fila) return;
+      const bloquear = chk.checked;
+      fila.querySelectorAll('select, textarea').forEach(campo => {
+        campo.disabled = bloquear;
+      });
+      fila.classList.toggle('fila-finalizada', bloquear);
+    });
+  });
 }
 
 async function loadRegistro() {
