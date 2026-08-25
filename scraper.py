@@ -1182,12 +1182,18 @@ def extraer_datos_para_registro(causa):
 
 def actualizar_registro_cumplase(entries):
     """
-    Revisa todas las causas ya procesadas (con Materia generada) cuya
-    Carátula mencione 'Servicio Electoral', y las agrega automáticamente
-    al Registro Cúmplase (docs/data/registro_cumplase.json) si todavía no
-    estaban ahí -sin pisar registros existentes, para no perder el
-    seguimiento manual (Estado Contabilidad, Responsable, comentarios,
-    Finalizado) ya cargado a mano-.
+    Revisa las causas cuya Sentencia se procesó JUSTO HOY (comparando con
+    el campo 'Solicitud_IA') y cuya Carátula mencione 'Servicio
+    Electoral', y las agrega automáticamente al Registro Cúmplase
+    (docs/data/registro_cumplase.json) si todavía no estaban ahí -sin
+    pisar registros existentes, para no perder el seguimiento manual
+    (Estado Contabilidad, Responsable, comentarios, Finalizado) ya
+    cargado a mano-.
+
+    Se compara por fecha de procesamiento (no solo "si ya está en el
+    registro o no") para que la PRIMERA vez que corre esta función no
+    traiga de golpe todo el historial de causas ya procesadas en días
+    anteriores -solo las genuinamente nuevas del día-.
     """
     registro_path = DATA_DIR / "registro_cumplase.json"
     registro = []
@@ -1198,6 +1204,7 @@ def actualizar_registro_cumplase(entries):
             registro = []
 
     roles_existentes = {str(r.get("CAUSA TRICEL - ROL", "")).strip() for r in registro}
+    hoy = datetime.now(timezone.utc).astimezone().strftime("%d-%m-%Y")
     agregados = 0
 
     for entry in entries:
@@ -1205,6 +1212,8 @@ def actualizar_registro_cumplase(entries):
             rol = str(causa.get("ROL", "")).strip()
             if not rol or rol in roles_existentes:
                 continue
+            if causa.get("Solicitud_IA") != hoy:
+                continue  # se procesó otro día, no es una novedad de hoy
             caratula = (causa.get("Caratula") or "").lower()
             if "servicio electoral" not in caratula:
                 continue
