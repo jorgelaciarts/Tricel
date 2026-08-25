@@ -307,6 +307,9 @@
     flex-shrink: 0;
   }
 </style>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
 </head>
 <body>
 <header>
@@ -339,6 +342,23 @@
   <section id="registro">
     <h2>Registro Cúmplase</h2>
     <p class="subtitulo">Seguimiento de causas: contabilidad, responsables y comentarios.</p>
+
+    <div id="barraSesion" style="margin-bottom:1rem;padding:0.75rem 1rem;background:var(--card);border:1px solid var(--border);border-radius:4px;font-family:-apple-system,sans-serif;font-size:0.85rem;">
+      <div id="loginForm">
+        <span>Inicia sesión para poder editar (los datos se ven igual sin iniciar sesión):</span>
+        <input type="email" id="loginEmail" placeholder="Correo del equipo" style="margin-left:0.5rem;padding:0.35rem 0.5rem;border:1px solid var(--border);border-radius:3px;font-size:0.85rem;">
+        <input type="password" id="loginPassword" placeholder="Contraseña" style="padding:0.35rem 0.5rem;border:1px solid var(--border);border-radius:3px;font-size:0.85rem;">
+        <button type="button" id="btnLogin" style="padding:0.35rem 0.8rem;background:var(--accent);color:#fff;border:none;border-radius:3px;cursor:pointer;font-size:0.85rem;">Iniciar sesión</button>
+        <span id="loginError" style="color:#b00020;margin-left:0.5rem;"></span>
+      </div>
+      <div id="sesionActiva" style="display:none;">
+        <span style="color:#2e7d32;">✓ Sesión iniciada como <strong id="emailActivo"></strong> — edición habilitada</span>
+        <button type="button" id="btnLogout" style="margin-left:0.75rem;padding:0.3rem 0.7rem;background:none;border:1px solid var(--border);border-radius:3px;cursor:pointer;font-size:0.8rem;">Cerrar sesión</button>
+        <button type="button" id="btnSincronizar" style="margin-left:0.75rem;padding:0.3rem 0.7rem;background:none;border:1px solid var(--accent);color:var(--accent);border-radius:3px;cursor:pointer;font-size:0.8rem;">🔄 Sincronizar causas nuevas desde el scraper</button>
+        <span id="syncStatus" style="margin-left:0.5rem;color:var(--muted);"></span>
+      </div>
+    </div>
+
     <input id="buscadorRegistro" type="text" placeholder="Buscar por ROL, nombre, RUT o resolución…">
     <label style="display:inline-flex;align-items:center;gap:0.4rem;margin-left:1rem;font-family:-apple-system,sans-serif;font-size:0.85rem;color:var(--ink);cursor:pointer;">
       <input type="checkbox" id="soloPendientes" style="width:16px;height:16px;accent-color:var(--accent);">
@@ -482,6 +502,111 @@ load();
 // --- Sección Registro Cúmplase ---
 let registroCompleto = [];
 
+// --- Firebase: base de datos en tiempo real + login ---
+const firebaseConfig = {
+  apiKey: "AIzaSyCRjggumcOiENI3yFo4Tn4ZitMMns6OeBw",
+  authDomain: "tricel-registro.firebaseapp.com",
+  projectId: "tricel-registro",
+  storageBucket: "tricel-registro.firebasestorage.app",
+  messagingSenderId: "216792769170",
+  appId: "1:216792769170:web:8358ba34cb2de2d0453c4b"
+};
+firebase.initializeApp(firebaseConfig);
+const auth = firebase.auth();
+const db = firebase.firestore();
+const COLECCION_REGISTRO = 'registro_cumplase';
+
+let sesionActiva = false;
+
+function actualizarUISesion(user) {
+  sesionActiva = !!user;
+  document.getElementById('loginForm').style.display = sesionActiva ? 'none' : 'block';
+  document.getElementById('sesionActiva').style.display = sesionActiva ? 'block' : 'none';
+  if (sesionActiva) {
+    document.getElementById('emailActivo').textContent = user.email;
+  }
+  renderRegistro(document.getElementById('buscadorRegistro')?.value || '');
+}
+
+auth.onAuthStateChanged(user => {
+  actualizarUISesion(user);
+});
+
+document.getElementById('btnLogin').addEventListener('click', () => {
+  const email = document.getElementById('loginEmail').value.trim();
+  const password = document.getElementById('loginPassword').value;
+  const errorEl = document.getElementById('loginError');
+  errorEl.textContent = '';
+  auth.signInWithEmailAndPassword(email, password).catch(err => {
+    errorEl.textContent = 'No se pudo iniciar sesión: correo o contraseña incorrectos.';
+    console.error(err);
+  });
+});
+
+document.getElementById('btnLogout').addEventListener('click', () => {
+  auth.signOut();
+});
+
+// Escuchar cambios en tiempo real desde Firestore. Si la colección está
+// vacía (primera vez), se usa el JSON estático como respaldo temporal
+// hasta que alguien logueado presione "Sincronizar".
+let firestoreYaRespondio = false;
+db.collection(COLECCION_REGISTRO).onSnapshot(snapshot => {
+  firestoreYaRespondio = true;
+  if (!snapshot.empty) {
+    registroCompleto = snapshot.docs.map(doc => doc.data());
+    renderRegistro(document.getElementById('buscadorRegistro')?.value || '');
+    renderDashboard();
+  }
+}, err => {
+  console.error('Error leyendo Firestore:', err);
+});
+
+async function sincronizarDesdeJSON(mostrarEstado) {
+  try {
+    const res = await fetch('data/registro_cumplase.json?_=' + Date.now());
+    if (!res.ok) throw new Error('No se pudo cargar data/registro_cumplase.json');
+    const datosJSON = await res.json();
+
+    const snapshot = await db.collection(COLECCION_REGISTRO).get();
+    const rolesExistentes = new Set(snapshot.docs.map(d => d.id));
+
+    const batch = db.batch();
+    let nuevos = 0;
+    datosJSON.forEach(entry => {
+      const rol = (entry['CAUSA TRICEL - ROL'] || '').trim();
+      if (!rol || rolesExistentes.has(rol)) return; // no pisar lo que ya está en Firestore
+      const ref = db.collection(COLECCION_REGISTRO).doc(rol);
+      batch.set(ref, entry);
+      nuevos++;
+    });
+    if (nuevos > 0) {
+      await batch.commit();
+    }
+    if (mostrarEstado) {
+      document.getElementById('syncStatus').textContent = nuevos > 0
+        ? `Se agregaron ${nuevos} causa(s) nueva(s).`
+        : 'Ya estaba todo al día.';
+    }
+  } catch (err) {
+    console.error(err);
+    if (mostrarEstado) {
+      document.getElementById('syncStatus').textContent = 'Error al sincronizar.';
+    }
+  }
+}
+
+document.getElementById('btnSincronizar').addEventListener('click', () => {
+  document.getElementById('syncStatus').textContent = 'Sincronizando…';
+  sincronizarDesdeJSON(true);
+});
+
+function actualizarCampoFirestore(rol, campo, valor) {
+  if (!sesionActiva || !rol) return;
+  db.collection(COLECCION_REGISTRO).doc(rol).set({ [campo]: valor }, { merge: true })
+    .catch(err => console.error('Error guardando en Firestore:', err));
+}
+
 function badgeEstado(estado) {
   if (!estado) return '<span class="badge-estado pendiente">Sin asignar</span>';
   const e = estado.toLowerCase();
@@ -500,9 +625,9 @@ function opcionesUnicas(campo) {
   return Array.from(set).sort();
 }
 
-function renderSelect(valorActual, opciones, campo, indiceFila, deshabilitado) {
-  const dis = deshabilitado ? ' disabled' : '';
-  let html = '<select class="select-registro" data-campo="' + campo + '" data-fila="' + indiceFila + '"' + dis + '>';
+function renderSelect(valorActual, opciones, campo, rol, deshabilitado) {
+  const dis = (deshabilitado || !sesionActiva) ? ' disabled' : '';
+  let html = '<select class="select-registro" data-campo="' + campo + '" data-rol="' + (rol || '').replace(/"/g, '&quot;') + '"' + dis + '>';
   html += '<option value=""' + (valorActual ? '' : ' selected') + '>— Sin asignar —</option>';
   opciones.forEach(op => {
     const sel = op === valorActual ? ' selected' : '';
@@ -512,10 +637,10 @@ function renderSelect(valorActual, opciones, campo, indiceFila, deshabilitado) {
   return html;
 }
 
-function renderComentario(valorActual, campo, indiceFila, deshabilitado) {
+function renderComentario(valorActual, campo, rol, deshabilitado) {
   const v = (valorActual || '').toString().replace(/"/g, '&quot;');
-  const dis = deshabilitado ? ' disabled' : '';
-  return '<textarea class="textarea-registro" data-campo="' + campo + '" data-fila="' + indiceFila +
+  const dis = (deshabilitado || !sesionActiva) ? ' disabled' : '';
+  return '<textarea class="textarea-registro" data-campo="' + campo + '" data-rol="' + (rol || '').replace(/"/g, '&quot;') +
     '" placeholder="Escribir comentario…" rows="2"' + dis + '>' + v + '</textarea>';
 }
 
@@ -578,28 +703,45 @@ function renderRegistro(filtro) {
 
   filas.forEach((r, i) => {
     const finalizado = !!r['Finalizado'];
+    const rol = r['CAUSA TRICEL - ROL'] || '';
     html += '<tr id="filaRegistro' + i + '"' + (finalizado ? ' class="fila-finalizada"' : '') + '>' +
-      '<td>' + (r['CAUSA TRICEL - ROL'] || '—') + '</td>' +
+      '<td>' + (rol || '—') + '</td>' +
       '<td>' + (r['NOMBRE CANDIDATO'] || '—') + '<br><span style="color:var(--muted);font-size:0.75rem;">' + (r['RUT'] || '') + '</span></td>' +
       '<td>' + (r['N° RES'] || '—') + '</td>' +
       '<td>' + (r['ELECCIÓN'] || '—') + '</td>' +
       '<td>' + (r['PRONUNCIAMIENTO'] || '—') + '</td>' +
-      '<td>' + renderSelect(r['Estado Contabilidad'], opcionesEstado, 'Estado Contabilidad', i, finalizado) + '</td>' +
-      '<td>' + renderSelect(r['Responsable Contabilidad'], opcionesResponsable, 'Responsable Contabilidad', i, finalizado) + '</td>' +
-      '<td>' + renderComentario(r['Comentario Conta'], 'Comentario Conta', i, finalizado) + '</td>' +
-      '<td>' + renderComentario(r['Comentario Juridico'], 'Comentario Juridico', i, finalizado) + '</td>' +
-      '<td style="text-align:center;"><input type="checkbox" class="check-finalizado" data-fila="' + i + '" data-rol="' + (r['CAUSA TRICEL - ROL'] || '').replace(/"/g, '&quot;') + '" title="Marcar como finalizado y bloquear fila"' + (finalizado ? ' checked' : '') + '></td>' +
+      '<td>' + renderSelect(r['Estado Contabilidad'], opcionesEstado, 'Estado Contabilidad', rol, finalizado) + '</td>' +
+      '<td>' + renderSelect(r['Responsable Contabilidad'], opcionesResponsable, 'Responsable Contabilidad', rol, finalizado) + '</td>' +
+      '<td>' + renderComentario(r['Comentario Conta'], 'Comentario Conta', rol, finalizado) + '</td>' +
+      '<td>' + renderComentario(r['Comentario Juridico'], 'Comentario Juridico', rol, finalizado) + '</td>' +
+      '<td style="text-align:center;"><input type="checkbox" class="check-finalizado" data-fila="' + i + '" data-rol="' + rol.replace(/"/g, '&quot;') + '" title="Marcar como finalizado y bloquear fila"' + (finalizado ? ' checked' : '') + (sesionActiva ? '' : ' disabled') + '></td>' +
       '<td style="white-space:nowrap;">' + (r['Fecha Agregado'] || '—') + '</td>' +
       '</tr>';
   });
   html += '</tbody></table>';
   contenidoEl.innerHTML = html;
   contadorEl.textContent = filas.length + ' de ' + registroCompleto.length + ' registros' +
-    (soloPendientes ? ' (mostrando solo pendientes)' : '');
+    (soloPendientes ? ' (mostrando solo pendientes)' : '') +
+    (sesionActiva ? '' : ' — inicia sesión para editar');
 
   document.getElementById('thFechaAgregado').addEventListener('click', () => {
     ordenFechaAgregado = ordenFechaAgregado === 'asc' ? 'desc' : 'asc';
     renderRegistro(document.getElementById('buscadorRegistro').value);
+  });
+
+  // Guardar en Firestore cuando cambian los desplegables o comentarios
+  document.querySelectorAll('.select-registro, .textarea-registro').forEach(campo => {
+    campo.addEventListener('change', () => {
+      const rol = campo.dataset.rol;
+      const nombreCampo = campo.dataset.campo;
+      const valor = campo.value;
+      const registroReal = registroCompleto.find(x => (x['CAUSA TRICEL - ROL'] || '') === rol);
+      if (registroReal) registroReal[nombreCampo] = valor;
+      actualizarCampoFirestore(rol, nombreCampo, valor);
+      if (nombreCampo === 'Responsable Contabilidad' || nombreCampo === 'Estado Contabilidad') {
+        renderDashboard();
+      }
+    });
   });
 
   document.querySelectorAll('.check-finalizado').forEach(chk => {
@@ -608,17 +750,19 @@ function renderRegistro(filtro) {
       if (!fila) return;
       const bloquear = chk.checked;
       fila.querySelectorAll('select, textarea').forEach(campo => {
-        campo.disabled = bloquear;
+        campo.disabled = bloquear || !sesionActiva;
       });
       fila.classList.toggle('fila-finalizada', bloquear);
 
       // Actualizar el dato real en memoria (buscando por ROL, no por
       // posición, ya que el orden/filtro visible puede no coincidir con
-      // el arreglo completo) y refrescar el Dashboard al instante.
+      // el arreglo completo), guardar en Firestore, y refrescar el
+      // Dashboard al instante.
       const registroReal = registroCompleto.find(x => (x['CAUSA TRICEL - ROL'] || '') === chk.dataset.rol);
       if (registroReal) {
         registroReal['Finalizado'] = bloquear;
       }
+      actualizarCampoFirestore(chk.dataset.rol, 'Finalizado', bloquear);
       renderDashboard();
     });
   });
@@ -627,17 +771,26 @@ function renderRegistro(filtro) {
 async function loadRegistro() {
   const contenidoEl = document.getElementById('contenidoRegistro');
   try {
-    const res = await fetch('data/registro_cumplase.json?_=' + Date.now());
-    if (!res.ok) throw new Error('No se pudo cargar data/registro_cumplase.json');
-    registroCompleto = await res.json();
-    renderRegistro('');
-    renderDashboard();
     document.getElementById('buscadorRegistro').addEventListener('input', (ev) => {
       renderRegistro(ev.target.value);
     });
     document.getElementById('soloPendientes').addEventListener('change', () => {
       renderRegistro(document.getElementById('buscadorRegistro').value);
     });
+
+    // Si Firestore ya respondió con datos reales, no los pisamos con el
+    // JSON estático (que es solo el respaldo inicial antes de sincronizar).
+    if (firestoreYaRespondio && registroCompleto.length > 0) {
+      return;
+    }
+
+    const res = await fetch('data/registro_cumplase.json?_=' + Date.now());
+    if (!res.ok) throw new Error('No se pudo cargar data/registro_cumplase.json');
+    if (!(firestoreYaRespondio && registroCompleto.length > 0)) {
+      registroCompleto = await res.json();
+      renderRegistro('');
+      renderDashboard();
+    }
   } catch (err) {
     contenidoEl.innerHTML = '<p style="font-family:-apple-system,sans-serif;color:var(--muted);">Aún no hay datos del Registro Cúmplase publicados.</p>';
     document.getElementById('contenidoDashboard').innerHTML =
