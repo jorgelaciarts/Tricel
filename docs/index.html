@@ -222,6 +222,90 @@
   }
   .vista { display: none; }
   .vista.activa { display: block; }
+  /* Dashboard */
+  section#dashboard {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 0 1.5rem;
+  }
+  .tarjetas-dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+  .tarjeta {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1.25rem 1.5rem;
+  }
+  .tarjeta .numero {
+    font-size: 2.2rem;
+    font-weight: 700;
+    line-height: 1;
+  }
+  .tarjeta .etiqueta {
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-top: 0.4rem;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+  .tarjeta.total .numero { color: var(--ink); }
+  .tarjeta.finalizados .numero { color: #2e7d32; }
+  .tarjeta.pendientes .numero { color: #b8860b; }
+  .barra-progreso {
+    width: 100%;
+    height: 22px;
+    background: #eceae5;
+    border-radius: 11px;
+    overflow: hidden;
+    margin: 0.5rem 0 0.25rem;
+  }
+  .barra-progreso .relleno {
+    height: 100%;
+    background: #2e7d32;
+    transition: width 0.3s ease;
+  }
+  .desglose-dashboard {
+    margin-top: 2rem;
+  }
+  .desglose-dashboard h3 {
+    font-size: 1.05rem;
+    margin-bottom: 0.75rem;
+  }
+  .fila-desglose {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.4rem 0;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 0.85rem;
+  }
+  .fila-desglose .etiqueta-desglose {
+    width: 160px;
+    flex-shrink: 0;
+    color: var(--ink);
+  }
+  .fila-desglose .barra-mini {
+    flex: 1;
+    height: 14px;
+    background: #eceae5;
+    border-radius: 7px;
+    overflow: hidden;
+  }
+  .fila-desglose .barra-mini .relleno-mini {
+    height: 100%;
+    background: var(--accent);
+  }
+  .fila-desglose .valor-desglose {
+    width: 70px;
+    text-align: right;
+    color: var(--muted);
+    flex-shrink: 0;
+  }
 </style>
 </head>
 <body>
@@ -233,6 +317,7 @@
 <nav id="pestanas">
   <button type="button" class="activa" data-vista="vistaEstadoDiario">Estado diario Tricel</button>
   <button type="button" data-vista="vistaRegistro">Registro Cúmplase</button>
+  <button type="button" data-vista="vistaDashboard">Dashboard</button>
 </nav>
 
 <div id="vistaEstadoDiario" class="vista activa">
@@ -253,6 +338,14 @@
     </label>
     <div id="contenidoRegistro"><p id="statusRegistro" style="font-family:-apple-system,sans-serif;color:var(--muted);">Cargando…</p></div>
     <div id="contadorRegistro"></div>
+  </section>
+</div>
+
+<div id="vistaDashboard" class="vista">
+  <section id="dashboard">
+    <h2>Dashboard · Registro Cúmplase</h2>
+    <p class="subtitulo">Resumen del estado de avance de las causas.</p>
+    <div id="contenidoDashboard"><p style="font-family:-apple-system,sans-serif;color:var(--muted);">Cargando…</p></div>
   </section>
 </div>
 
@@ -455,14 +548,14 @@ function renderRegistro(filtro) {
   }
 
   let html = '<table><colgroup>' +
-    '<col style="width:9%;"><col style="width:17%;"><col style="width:7%;">' +
-    '<col style="width:8%;"><col style="width:10%;"><col style="width:11%;">' +
-    '<col style="width:10%;"><col style="width:9%;"><col style="width:9%;">' +
-    '<col style="width:6%;">' +
+    '<col style="width:9%;"><col style="width:16%;"><col style="width:6%;">' +
+    '<col style="width:7%;"><col style="width:9%;"><col style="width:10%;">' +
+    '<col style="width:9%;"><col style="width:8%;"><col style="width:8%;">' +
+    '<col style="width:9%;">' +
     '</colgroup><thead><tr>' +
     '<th>ROL</th><th>Candidato</th><th>N° Res</th><th>Elección</th>' +
     '<th>Pronunciamiento</th><th>Estado Contabilidad</th><th>Responsable</th>' +
-    '<th>Comentario Conta</th><th>Comentario Jurídico</th><th>Finalizado</th>' +
+    '<th>Comentario Conta</th><th>Comentario Jurídico</th><th style="white-space:nowrap;">Finalizado</th>' +
     '</tr></thead><tbody>';
 
   filas.forEach((r, i) => {
@@ -505,6 +598,7 @@ async function loadRegistro() {
     if (!res.ok) throw new Error('No se pudo cargar data/registro_cumplase.json');
     registroCompleto = await res.json();
     renderRegistro('');
+    renderDashboard();
     document.getElementById('buscadorRegistro').addEventListener('input', (ev) => {
       renderRegistro(ev.target.value);
     });
@@ -513,9 +607,60 @@ async function loadRegistro() {
     });
   } catch (err) {
     contenidoEl.innerHTML = '<p style="font-family:-apple-system,sans-serif;color:var(--muted);">Aún no hay datos del Registro Cúmplase publicados.</p>';
+    document.getElementById('contenidoDashboard').innerHTML =
+      '<p style="font-family:-apple-system,sans-serif;color:var(--muted);">Aún no hay datos del Registro Cúmplase publicados.</p>';
     console.error(err);
   }
 }
+
+function renderDashboard() {
+  const el = document.getElementById('contenidoDashboard');
+  if (!registroCompleto.length) {
+    el.innerHTML = '<p style="font-family:-apple-system,sans-serif;color:var(--muted);">Sin datos todavía.</p>';
+    return;
+  }
+
+  const total = registroCompleto.length;
+  const finalizados = registroCompleto.filter(r => r['Finalizado']).length;
+  const pendientes = total - finalizados;
+  const pctFinalizado = total ? Math.round((finalizados / total) * 100) : 0;
+
+  let html = '<div class="tarjetas-dashboard">' +
+    '<div class="tarjeta total"><div class="numero">' + total + '</div><div class="etiqueta">Total causas</div></div>' +
+    '<div class="tarjeta finalizados"><div class="numero">' + finalizados + '</div><div class="etiqueta">Finalizados</div></div>' +
+    '<div class="tarjeta pendientes"><div class="numero">' + pendientes + '</div><div class="etiqueta">Pendientes</div></div>' +
+    '</div>';
+
+  html += '<div class="barra-progreso"><div class="relleno" style="width:' + pctFinalizado + '%;"></div></div>';
+  html += '<p style="font-family:-apple-system,sans-serif;font-size:0.85rem;color:var(--muted);">' +
+    pctFinalizado + '% finalizado (' + finalizados + ' de ' + total + ')</p>';
+
+  // Desglose de pendientes por responsable
+  const pendientesPorResponsable = {};
+  registroCompleto.forEach(r => {
+    if (r['Finalizado']) return;
+    const resp = (r['Responsable Contabilidad'] || 'Sin asignar').trim() || 'Sin asignar';
+    pendientesPorResponsable[resp] = (pendientesPorResponsable[resp] || 0) + 1;
+  });
+  const listaResponsables = Object.entries(pendientesPorResponsable).sort((a, b) => b[1] - a[1]);
+
+  if (listaResponsables.length > 0) {
+    const maxValor = Math.max(...listaResponsables.map(([, v]) => v));
+    html += '<div class="desglose-dashboard"><h3>Pendientes por responsable</h3>';
+    listaResponsables.forEach(([nombre, cantidad]) => {
+      const anchoBarra = Math.round((cantidad / maxValor) * 100);
+      html += '<div class="fila-desglose">' +
+        '<div class="etiqueta-desglose">' + nombre + '</div>' +
+        '<div class="barra-mini"><div class="relleno-mini" style="width:' + anchoBarra + '%;"></div></div>' +
+        '<div class="valor-desglose">' + cantidad + '</div>' +
+        '</div>';
+    });
+    html += '</div>';
+  }
+
+  el.innerHTML = html;
+}
+
 loadRegistro();
 </script>
 </body>
