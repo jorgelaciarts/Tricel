@@ -156,6 +156,16 @@
     color: var(--muted);
     margin-top: 0.5rem;
   }
+  select.select-registro {
+    width: 100%;
+    padding: 0.3rem 0.4rem;
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 0.78rem;
+    background: #fff;
+    color: var(--ink);
+  }
 </style>
 </head>
 <body>
@@ -309,10 +319,33 @@ function badgeEstado(estado) {
   return '<span class="badge-estado ' + clase + '">' + estado + '</span>';
 }
 
+function opcionesUnicas(campo) {
+  const set = new Set();
+  registroCompleto.forEach(r => {
+    const v = (r[campo] || '').toString().trim();
+    if (v) set.add(v);
+  });
+  return Array.from(set).sort();
+}
+
+function renderSelect(valorActual, opciones, campo, indiceFila) {
+  let html = '<select class="select-registro" data-campo="' + campo + '" data-fila="' + indiceFila + '">';
+  html += '<option value=""' + (valorActual ? '' : ' selected') + '>— Sin asignar —</option>';
+  opciones.forEach(op => {
+    const sel = op === valorActual ? ' selected' : '';
+    html += '<option value="' + op.replace(/"/g, '&quot;') + '"' + sel + '>' + op + '</option>';
+  });
+  html += '</select>';
+  return html;
+}
+
 function renderRegistro(filtro) {
   const contenidoEl = document.getElementById('contenidoRegistro');
   const contadorEl = document.getElementById('contadorRegistro');
   const f = (filtro || '').trim().toLowerCase();
+
+  const opcionesEstado = opcionesUnicas('Estado Contabilidad');
+  const opcionesResponsable = opcionesUnicas('Responsable Contabilidad');
 
   const filas = f
     ? registroCompleto.filter(r =>
@@ -339,15 +372,15 @@ function renderRegistro(filtro) {
     '<th>Comentario Conta</th><th>Comentario Jurídico</th>' +
     '</tr></thead><tbody>';
 
-  filas.forEach(r => {
+  filas.forEach((r, i) => {
     html += '<tr>' +
       '<td>' + (r['CAUSA TRICEL - ROL'] || '—') + '</td>' +
       '<td>' + (r['NOMBRE CANDIDATO'] || '—') + '<br><span style="color:var(--muted);font-size:0.75rem;">' + (r['RUT'] || '') + '</span></td>' +
       '<td>' + (r['N° RES'] || '—') + '</td>' +
       '<td>' + (r['ELECCIÓN'] || '—') + '</td>' +
       '<td>' + (r['PRONUNCIAMIENTO'] || '—') + '</td>' +
-      '<td>' + badgeEstado(r['Estado Contabilidad']) + '</td>' +
-      '<td>' + (r['Responsable Contabilidad'] || '<span style="color:var(--muted);">—</span>') + '</td>' +
+      '<td>' + renderSelect(r['Estado Contabilidad'], opcionesEstado, 'Estado Contabilidad', i) + '</td>' +
+      '<td>' + renderSelect(r['Responsable Contabilidad'], opcionesResponsable, 'Responsable Contabilidad', i) + '</td>' +
       '<td>' + (r['Comentario Conta'] || '<span style="color:var(--muted);">—</span>') + '</td>' +
       '<td>' + (r['Comentario Juridico'] || '<span style="color:var(--muted);">—</span>') + '</td>' +
       '</tr>';
