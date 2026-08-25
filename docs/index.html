@@ -166,6 +166,18 @@
     background: #fff;
     color: var(--ink);
   }
+  textarea.textarea-registro {
+    width: 100%;
+    min-width: 110px;
+    padding: 0.3rem 0.4rem;
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 0.78rem;
+    background: #fff;
+    color: var(--ink);
+    resize: vertical;
+  }
 </style>
 </head>
 <body>
@@ -339,6 +351,12 @@ function renderSelect(valorActual, opciones, campo, indiceFila) {
   return html;
 }
 
+function renderComentario(valorActual, campo, indiceFila) {
+  const v = (valorActual || '').toString().replace(/"/g, '&quot;');
+  return '<textarea class="textarea-registro" data-campo="' + campo + '" data-fila="' + indiceFila +
+    '" placeholder="Escribir comentario…" rows="2">' + v + '</textarea>';
+}
+
 function renderRegistro(filtro) {
   const contenidoEl = document.getElementById('contenidoRegistro');
   const contadorEl = document.getElementById('contadorRegistro');
@@ -381,8 +399,8 @@ function renderRegistro(filtro) {
       '<td>' + (r['PRONUNCIAMIENTO'] || '—') + '</td>' +
       '<td>' + renderSelect(r['Estado Contabilidad'], opcionesEstado, 'Estado Contabilidad', i) + '</td>' +
       '<td>' + renderSelect(r['Responsable Contabilidad'], opcionesResponsable, 'Responsable Contabilidad', i) + '</td>' +
-      '<td>' + (r['Comentario Conta'] || '<span style="color:var(--muted);">—</span>') + '</td>' +
-      '<td>' + (r['Comentario Juridico'] || '<span style="color:var(--muted);">—</span>') + '</td>' +
+      '<td>' + renderComentario(r['Comentario Conta'], 'Comentario Conta', i) + '</td>' +
+      '<td>' + renderComentario(r['Comentario Juridico'], 'Comentario Juridico', i) + '</td>' +
       '</tr>';
   });
   html += '</tbody></table>';
