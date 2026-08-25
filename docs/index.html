@@ -315,12 +315,20 @@
 </header>
 
 <nav id="pestanas">
-  <button type="button" class="activa" data-vista="vistaEstadoDiario">Estado diario Tricel</button>
+  <button type="button" class="activa" data-vista="vistaDashboard">Dashboard</button>
+  <button type="button" data-vista="vistaEstadoDiario">Estado diario Tricel</button>
   <button type="button" data-vista="vistaRegistro">Registro Cúmplase</button>
-  <button type="button" data-vista="vistaDashboard">Dashboard</button>
 </nav>
 
-<div id="vistaEstadoDiario" class="vista activa">
+<div id="vistaDashboard" class="vista activa">
+  <section id="dashboard">
+    <h2>Dashboard · Registro Cúmplase</h2>
+    <p class="subtitulo">Resumen del estado de avance de las causas.</p>
+    <div id="contenidoDashboard"><p style="font-family:-apple-system,sans-serif;color:var(--muted);">Cargando…</p></div>
+  </section>
+</div>
+
+<div id="vistaEstadoDiario" class="vista">
   <main>
     <div id="meta">Cargando datos…</div>
     <div id="content"><p id="status">Cargando…</p></div>
@@ -338,14 +346,6 @@
     </label>
     <div id="contenidoRegistro"><p id="statusRegistro" style="font-family:-apple-system,sans-serif;color:var(--muted);">Cargando…</p></div>
     <div id="contadorRegistro"></div>
-  </section>
-</div>
-
-<div id="vistaDashboard" class="vista">
-  <section id="dashboard">
-    <h2>Dashboard · Registro Cúmplase</h2>
-    <p class="subtitulo">Resumen del estado de avance de las causas.</p>
-    <div id="contenidoDashboard"><p style="font-family:-apple-system,sans-serif;color:var(--muted);">Cargando…</p></div>
   </section>
 </div>
 
