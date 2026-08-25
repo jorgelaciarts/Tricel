@@ -7,10 +7,11 @@
     "ELECCIÓN": "CORE",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "1002-2025",
-    "Estado Contabilidad": "En revision Contabilidad",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "Julissa Lazo",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 11,
@@ -20,10 +21,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "1017-2025",
-    "Estado Contabilidad": "En revision Juridico",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "Miguel Baeza",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 86,
@@ -33,10 +35,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "1030-2025",
-    "Estado Contabilidad": "Pendiente asignar",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "Felipe Sarabia",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 67,
@@ -46,10 +49,11 @@
     "ELECCIÓN": "CORE",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "1036-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "Veronica Palavecino",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 35,
@@ -59,10 +63,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "1037-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "Genesis Lopez",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 46,
@@ -72,10 +77,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "1040-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "Jose Celedon",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 123,
@@ -85,10 +91,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "1043-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 33,
@@ -98,10 +105,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "1050-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 77,
@@ -111,10 +119,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "1053-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 39,
@@ -124,10 +133,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "1056-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 31,
@@ -137,10 +147,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "1065-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 32,
@@ -150,10 +161,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "1071-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 34,
@@ -163,10 +175,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "1072-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 82,
@@ -176,10 +189,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "1077-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 40,
@@ -189,10 +203,11 @@
     "ELECCIÓN": "CORE",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "1091-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 42,
@@ -202,10 +217,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "1093-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 37,
@@ -215,10 +231,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "1099-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 111,
@@ -228,10 +245,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "1101-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 38,
@@ -241,10 +259,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "1121-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 36,
@@ -254,10 +273,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "1126-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 136,
@@ -267,10 +287,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "1135-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 150,
@@ -280,10 +301,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "1140-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 44,
@@ -293,10 +315,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "1142-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 104,
@@ -306,10 +329,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "1149-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 90,
@@ -319,10 +343,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "1152-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 68,
@@ -332,10 +357,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "1154-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 48,
@@ -345,10 +371,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "1162-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 72,
@@ -358,10 +385,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "1173-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 125,
@@ -371,10 +399,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "1179-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 47,
@@ -384,10 +413,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "1190-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 70,
@@ -397,10 +427,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "1191-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 69,
@@ -410,10 +441,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "1197-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 29,
@@ -423,10 +455,11 @@
     "ELECCIÓN": "CORE",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "1203-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 41,
@@ -436,10 +469,11 @@
     "ELECCIÓN": "CORE",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "1208-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 89,
@@ -449,10 +483,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "1211-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 49,
@@ -462,10 +497,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "1220-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 93,
@@ -475,10 +511,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "1227-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 26,
@@ -488,10 +525,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "1232-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 76,
@@ -501,10 +539,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "1233-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 30,
@@ -514,10 +553,11 @@
     "ELECCIÓN": "CORE",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "1234-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 50,
@@ -527,10 +567,11 @@
     "ELECCIÓN": "CORE",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "1251-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 92,
@@ -540,10 +581,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "1258-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 64,
@@ -553,10 +595,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "1270-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 126,
@@ -566,10 +609,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "1274-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 58,
@@ -579,10 +623,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "1276-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 60,
@@ -592,10 +637,11 @@
     "ELECCIÓN": "CORE",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "1277-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 55,
@@ -605,10 +651,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "1281-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 118,
@@ -618,10 +665,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "1284-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 63,
@@ -631,10 +679,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "1286-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 153,
@@ -644,10 +693,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "1288-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 59,
@@ -657,10 +707,11 @@
     "ELECCIÓN": "CORE",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "1297-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 27,
@@ -670,10 +721,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "1301-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 56,
@@ -683,10 +735,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "1309-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 101,
@@ -696,10 +749,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "1313-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 54,
@@ -709,10 +763,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "1320-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 105,
@@ -722,10 +777,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "1321-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 61,
@@ -735,10 +791,11 @@
     "ELECCIÓN": "CORE",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "1330-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 110,
@@ -748,10 +805,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "1335-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "En revision Contabilidad",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": false
   },
   {
     "Índice": 190,
@@ -761,10 +819,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "1337-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "En revision Contabilidad",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": false
   },
   {
     "Índice": 154,
@@ -774,10 +833,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "1346-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 53,
@@ -787,10 +847,11 @@
     "ELECCIÓN": "CORE",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "1347-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 100,
@@ -800,10 +861,11 @@
     "ELECCIÓN": "CORE",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "1354-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 51,
@@ -813,10 +875,11 @@
     "ELECCIÓN": "CORE",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "1355-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 57,
@@ -826,10 +889,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "1356-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 52,
@@ -839,10 +903,11 @@
     "ELECCIÓN": "CORE",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "1363-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 113,
@@ -852,10 +917,11 @@
     "ELECCIÓN": "CORE",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "1368-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 66,
@@ -865,10 +931,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "1371-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 234,
@@ -878,10 +945,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "137-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 91,
@@ -891,10 +959,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "1372-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 95,
@@ -904,10 +973,11 @@
     "ELECCIÓN": "CORE",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "1379-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 238,
@@ -917,10 +987,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "138-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 171,
@@ -930,10 +1001,11 @@
     "ELECCIÓN": "CORE",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "1383-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 106,
@@ -943,10 +1015,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "1386-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 152,
@@ -956,10 +1029,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "1389-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 177,
@@ -969,10 +1043,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "1396-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "En revision Contabilidad",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": false
   },
   {
     "Índice": 78,
@@ -982,10 +1057,11 @@
     "ELECCIÓN": "CORE",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "1405-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 119,
@@ -995,10 +1071,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "1406-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 157,
@@ -1008,10 +1085,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "1409-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 112,
@@ -1021,10 +1099,11 @@
     "ELECCIÓN": "CORE",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "1410-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 241,
@@ -1034,10 +1113,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "141-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 151,
@@ -1047,10 +1127,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "1412-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 79,
@@ -1060,10 +1141,11 @@
     "ELECCIÓN": "CORE",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "1413-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 124,
@@ -1073,10 +1155,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "1424-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 117,
@@ -1086,10 +1169,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "1429-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 102,
@@ -1099,10 +1183,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "1444-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 127,
@@ -1112,10 +1197,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "1446-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 96,
@@ -1125,10 +1211,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "1457-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 107,
@@ -1138,10 +1225,11 @@
     "ELECCIÓN": "CORE",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "1458-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 116,
@@ -1151,10 +1239,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "1463-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 179,
@@ -1164,10 +1253,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "1464-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "En revision Contabilidad",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": false
   },
   {
     "Índice": 65,
@@ -1177,10 +1267,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "1471-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 122,
@@ -1190,10 +1281,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "1477-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 139,
@@ -1203,10 +1295,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "1479-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 120,
@@ -1216,10 +1309,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "1480-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 129,
@@ -1229,10 +1323,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "1483-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 128,
@@ -1242,10 +1337,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "1490-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 121,
@@ -1255,10 +1351,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "1492-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 135,
@@ -1268,10 +1365,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "1494-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 130,
@@ -1281,10 +1379,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "1495-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "En revision Contabilidad",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": false
   },
   {
     "Índice": 155,
@@ -1294,10 +1393,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "1500-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 103,
@@ -1307,10 +1407,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "1507-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 181,
@@ -1320,10 +1421,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "1512-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "En revision Contabilidad",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": false
   },
   {
     "Índice": 182,
@@ -1333,10 +1435,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "1520-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "En revision Contabilidad",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": false
   },
   {
     "Índice": 144,
@@ -1346,10 +1449,11 @@
     "ELECCIÓN": "CORE",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "1521-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 168,
@@ -1359,10 +1463,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "1527-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 164,
@@ -1372,10 +1477,11 @@
     "ELECCIÓN": "CORE",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "1531-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 159,
@@ -1385,10 +1491,11 @@
     "ELECCIÓN": "CORE",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "1537-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 180,
@@ -1398,10 +1505,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "1541-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "En revision Contabilidad",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": false
   },
   {
     "Índice": 142,
@@ -1411,10 +1519,11 @@
     "ELECCIÓN": "CORE",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "1542-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 162,
@@ -1424,10 +1533,11 @@
     "ELECCIÓN": "CORE",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "1545-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "En revision Contabilidad",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": false
   },
   {
     "Índice": 73,
@@ -1437,10 +1547,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "1547-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 166,
@@ -1450,10 +1561,11 @@
     "ELECCIÓN": "CORE",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "1550-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 255,
@@ -1463,10 +1575,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "155-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 207,
@@ -1476,10 +1589,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "1553-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "En revision Contabilidad",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": false
   },
   {
     "Índice": 99,
@@ -1489,10 +1603,11 @@
     "ELECCIÓN": "CORE",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "1554-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "En revision Contabilidad",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": false
   },
   {
     "Índice": 204,
@@ -1502,10 +1617,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "1555-2925",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "En revision Contabilidad",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": false
   },
   {
     "Índice": 143,
@@ -1515,10 +1631,11 @@
     "ELECCIÓN": "CORE",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "1557-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 147,
@@ -1528,10 +1645,11 @@
     "ELECCIÓN": "CORE",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "1559-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 62,
@@ -1541,10 +1659,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "1560-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 97,
@@ -1554,10 +1673,11 @@
     "ELECCIÓN": "CORE",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "1561-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 156,
@@ -1567,10 +1687,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "1563-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 203,
@@ -1580,10 +1701,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "1564-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "En revision Contabilidad",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": false
   },
   {
     "Índice": 184,
@@ -1593,10 +1715,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "1565-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "En revision Contabilidad",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": false
   },
   {
     "Índice": 183,
@@ -1606,10 +1729,11 @@
     "ELECCIÓN": "CORE",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "1566-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "En revision Contabilidad",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": false
   },
   {
     "Índice": 163,
@@ -1619,10 +1743,11 @@
     "ELECCIÓN": "CORE",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "1567-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 185,
@@ -1632,10 +1757,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "1573-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "En revision Contabilidad",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": false
   },
   {
     "Índice": 161,
@@ -1645,10 +1771,11 @@
     "ELECCIÓN": "CORE",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "1574-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 200,
@@ -1658,10 +1785,11 @@
     "ELECCIÓN": "CORE",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "1578-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "En revision Contabilidad",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": false
   },
   {
     "Índice": 186,
@@ -1671,10 +1799,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "1579-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "En revision Contabilidad",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": false
   },
   {
     "Índice": 98,
@@ -1684,10 +1813,11 @@
     "ELECCIÓN": "CORE",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "1580-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 141,
@@ -1697,10 +1827,11 @@
     "ELECCIÓN": "CORE",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "1583-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 140,
@@ -1710,10 +1841,11 @@
     "ELECCIÓN": "CORE",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "1587-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 158,
@@ -1723,10 +1855,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "1591-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 133,
@@ -1736,10 +1869,11 @@
     "ELECCIÓN": "CORE",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "1592-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 205,
@@ -1749,10 +1883,11 @@
     "ELECCIÓN": "CORE",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "1594-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "En revision Contabilidad",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": false
   },
   {
     "Índice": 172,
@@ -1762,10 +1897,11 @@
     "ELECCIÓN": "CORE",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "1595-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "En revision Contabilidad",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": false
   },
   {
     "Índice": 146,
@@ -1775,10 +1911,11 @@
     "ELECCIÓN": "CORE",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "1598-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 208,
@@ -1788,10 +1925,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "1606-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "En revision Contabilidad",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": false
   },
   {
     "Índice": 188,
@@ -1801,10 +1939,11 @@
     "ELECCIÓN": "CORE",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "1607-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "En revision Contabilidad",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": false
   },
   {
     "Índice": 189,
@@ -1814,10 +1953,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "1610-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "En revision Contabilidad",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": false
   },
   {
     "Índice": 138,
@@ -1827,10 +1967,11 @@
     "ELECCIÓN": "CORE",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "1613-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 193,
@@ -1840,10 +1981,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "1618-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "En revision Contabilidad",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": false
   },
   {
     "Índice": 195,
@@ -1853,10 +1995,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "1622-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "En revision Contabilidad",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": false
   },
   {
     "Índice": 134,
@@ -1866,10 +2009,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "1623-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 194,
@@ -1879,10 +2023,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "1629-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "En revision Contabilidad",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": false
   },
   {
     "Índice": 196,
@@ -1892,10 +2037,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "1643-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "En revision Contabilidad",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": false
   },
   {
     "Índice": 206,
@@ -1905,10 +2051,11 @@
     "ELECCIÓN": "CORE",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "1644-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "En revision Contabilidad",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": false
   },
   {
     "Índice": 192,
@@ -1918,10 +2065,11 @@
     "ELECCIÓN": "CORE",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "1648-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "En revision Contabilidad",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": false
   },
   {
     "Índice": 209,
@@ -1931,10 +2079,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "1652-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "En revision Contabilidad",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": false
   },
   {
     "Índice": 210,
@@ -1944,10 +2093,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "1653-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "En revision Contabilidad",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": false
   },
   {
     "Índice": 187,
@@ -1957,10 +2107,11 @@
     "ELECCIÓN": "CORE",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "1659-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "En revision Contabilidad",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": false
   },
   {
     "Índice": 191,
@@ -1970,10 +2121,11 @@
     "ELECCIÓN": "CORE",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "1662-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "En revision Contabilidad",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": false
   },
   {
     "Índice": 211,
@@ -1983,10 +2135,11 @@
     "ELECCIÓN": "CORE",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "1663-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "En revision Contabilidad",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": false
   },
   {
     "Índice": 212,
@@ -1996,10 +2149,11 @@
     "ELECCIÓN": "CORE",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "1664-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "En revision Contabilidad",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": false
   },
   {
     "Índice": 170,
@@ -2009,10 +2163,11 @@
     "ELECCIÓN": "CORE",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "1671-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "En revision Contabilidad",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": false
   },
   {
     "Índice": 176,
@@ -2022,10 +2177,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "1676-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "En revision Contabilidad",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": false
   },
   {
     "Índice": 149,
@@ -2035,10 +2191,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "1680-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 145,
@@ -2048,10 +2205,11 @@
     "ELECCIÓN": "CORE",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "1687-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 257,
@@ -2061,10 +2219,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "170-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 202,
@@ -2074,10 +2233,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "1703-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "En revision Contabilidad",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": false
   },
   {
     "Índice": 178,
@@ -2087,10 +2247,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "1711-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "En revision Contabilidad",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": false
   },
   {
     "Índice": 173,
@@ -2100,10 +2261,11 @@
     "ELECCIÓN": "CORE",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "1716-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "En revision Contabilidad",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": false
   },
   {
     "Índice": 174,
@@ -2113,10 +2275,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "1718-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "En revision Contabilidad",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": false
   },
   {
     "Índice": 201,
@@ -2126,10 +2289,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "1720-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "En revision Contabilidad",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": false
   },
   {
     "Índice": 175,
@@ -2139,10 +2303,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "1722-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "En revision Contabilidad",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": false
   },
   {
     "Índice": 167,
@@ -2152,10 +2317,11 @@
     "ELECCIÓN": "CORE",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "1742-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 199,
@@ -2165,10 +2331,11 @@
     "ELECCIÓN": "CORE",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "1750-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "En revision Contabilidad",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": false
   },
   {
     "Índice": 197,
@@ -2178,10 +2345,11 @@
     "ELECCIÓN": "CORE",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "1758-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "En revision Contabilidad",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": false
   },
   {
     "Índice": 198,
@@ -2191,10 +2359,11 @@
     "ELECCIÓN": "CORE",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "1759-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "En revision Contabilidad",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": false
   },
   {
     "Índice": 223,
@@ -2204,10 +2373,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "191-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 226,
@@ -2217,10 +2387,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "194-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 230,
@@ -2230,10 +2401,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "200-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 239,
@@ -2243,10 +2415,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "204-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 240,
@@ -2256,10 +2429,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "207-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 251,
@@ -2269,10 +2443,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "214-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 252,
@@ -2282,10 +2457,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "215-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 254,
@@ -2295,10 +2471,11 @@
     "ELECCIÓN": "CORE",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "216-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 250,
@@ -2308,10 +2485,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "226-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 259,
@@ -2321,10 +2499,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "228-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 260,
@@ -2334,10 +2513,11 @@
     "ELECCIÓN": "CORE",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "229-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 262,
@@ -2347,10 +2527,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "230-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 263,
@@ -2360,10 +2541,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "231-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 217,
@@ -2373,10 +2555,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "238-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 221,
@@ -2386,10 +2569,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "239-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 222,
@@ -2399,10 +2583,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "241-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 224,
@@ -2412,10 +2597,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "242-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 233,
@@ -2425,10 +2611,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "244-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 235,
@@ -2438,10 +2625,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "245-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 244,
@@ -2451,10 +2639,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "247-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 236,
@@ -2464,10 +2653,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "255-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 237,
@@ -2477,10 +2667,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "256-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 213,
@@ -2490,10 +2681,11 @@
     "ELECCIÓN": "CORE",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "257-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 219,
@@ -2503,10 +2695,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "261-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 253,
@@ -2516,10 +2709,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "263-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 248,
@@ -2529,10 +2723,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "264-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 242,
@@ -2542,10 +2737,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "265-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 261,
@@ -2555,10 +2751,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "266-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 243,
@@ -2568,10 +2765,11 @@
     "ELECCIÓN": "CORE",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "267-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 232,
@@ -2581,10 +2779,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "269-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 249,
@@ -2594,10 +2793,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "270-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 245,
@@ -2607,10 +2807,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "272-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 218,
@@ -2620,10 +2821,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "273-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 246,
@@ -2633,10 +2835,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "274-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 258,
@@ -2646,10 +2849,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "275-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 227,
@@ -2659,10 +2863,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "276-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 247,
@@ -2672,10 +2877,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "278-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 256,
@@ -2685,10 +2891,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "279-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 215,
@@ -2698,10 +2905,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "280-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 214,
@@ -2711,10 +2919,11 @@
     "ELECCIÓN": "CORE",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "282-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 231,
@@ -2724,10 +2933,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "283-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 229,
@@ -2737,10 +2947,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "290-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 225,
@@ -2750,10 +2961,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "292-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 216,
@@ -2763,10 +2975,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "312-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 228,
@@ -2776,10 +2989,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "320-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 148,
@@ -2789,10 +3003,11 @@
     "ELECCIÓN": "CORE",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "355-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 13,
@@ -2802,10 +3017,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "357-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 1,
@@ -2815,10 +3031,11 @@
     "ELECCIÓN": "GORE",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "370-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 115,
@@ -2828,10 +3045,11 @@
     "ELECCIÓN": "GORE",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "374-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 2,
@@ -2841,10 +3059,11 @@
     "ELECCIÓN": "GORE",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "385-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 4,
@@ -2854,10 +3073,11 @@
     "ELECCIÓN": "GORE",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "390-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 7,
@@ -2867,10 +3087,11 @@
     "ELECCIÓN": "GORE",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "393-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 3,
@@ -2880,10 +3101,11 @@
     "ELECCIÓN": "GORE",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "395-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 131,
@@ -2893,10 +3115,11 @@
     "ELECCIÓN": "GORE",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "415-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "En revision Contabilidad",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": false
   },
   {
     "Índice": 114,
@@ -2906,10 +3129,11 @@
     "ELECCIÓN": "GORE",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "420-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 264,
@@ -2919,10 +3143,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "425-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 266,
@@ -2932,10 +3157,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "431-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 267,
@@ -2945,10 +3171,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "443-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 265,
@@ -2958,10 +3185,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "456-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 5,
@@ -2971,10 +3199,11 @@
     "ELECCIÓN": "GORE",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "457-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 94,
@@ -2984,10 +3213,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "499-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 108,
@@ -2997,10 +3227,11 @@
     "ELECCIÓN": "CORE",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "524-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 75,
@@ -3010,10 +3241,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "570-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 8,
@@ -3023,10 +3255,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "576-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 6,
@@ -3036,10 +3269,11 @@
     "ELECCIÓN": "CORE",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "628-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 220,
@@ -3049,10 +3283,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "69-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 160,
@@ -3062,10 +3297,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "727-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 84,
@@ -3075,10 +3311,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "750-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 165,
@@ -3088,10 +3325,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "752-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 87,
@@ -3101,10 +3339,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "797-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 71,
@@ -3114,10 +3353,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "799-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 88,
@@ -3127,10 +3367,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "804-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 81,
@@ -3140,10 +3381,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "828-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 10,
@@ -3153,10 +3395,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "836-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 80,
@@ -3166,10 +3409,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "857-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 132,
@@ -3179,10 +3423,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "858-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "En revision Contabilidad",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": false
   },
   {
     "Índice": 17,
@@ -3192,10 +3437,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "859-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 85,
@@ -3205,10 +3451,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "863-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 109,
@@ -3218,10 +3465,11 @@
     "ELECCIÓN": "CORE",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "900-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 23,
@@ -3231,10 +3479,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "914-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 169,
@@ -3244,10 +3493,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "917-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "En revision Contabilidad",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": false
   },
   {
     "Índice": 16,
@@ -3257,10 +3507,11 @@
     "ELECCIÓN": "CORE",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "924-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 45,
@@ -3270,10 +3521,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "930-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 14,
@@ -3283,10 +3535,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "943-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 25,
@@ -3296,10 +3549,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "947-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 24,
@@ -3309,10 +3563,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "953-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 12,
@@ -3322,10 +3577,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "958-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 43,
@@ -3335,10 +3591,11 @@
     "ELECCIÓN": "CORE",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "960-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 15,
@@ -3348,10 +3605,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "962-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 83,
@@ -3361,10 +3619,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "966-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 28,
@@ -3374,10 +3633,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "972-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 20,
@@ -3387,10 +3647,11 @@
     "ELECCIÓN": "CORE",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "973-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 74,
@@ -3400,10 +3661,11 @@
     "ELECCIÓN": "ALCALDE",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "979-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 9,
@@ -3413,10 +3675,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "986-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 137,
@@ -3426,10 +3689,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "989-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 22,
@@ -3439,10 +3703,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "991-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 21,
@@ -3452,10 +3717,11 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE PARCIAL",
     "CAUSA TRICEL - ROL": "996-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   },
   {
     "Índice": 19,
@@ -3465,9 +3731,10 @@
     "ELECCIÓN": "CONCEJAL",
     "PRONUNCIAMIENTO": "ACOGE TOTAL",
     "CAUSA TRICEL - ROL": "998-2025",
-    "Estado Contabilidad": "",
+    "Estado Contabilidad": "Finalizado",
     "Responsable Contabilidad": "",
     "Comentario Conta": "",
-    "Comentario Juridico": ""
+    "Comentario Juridico": "",
+    "Finalizado": true
   }
 ]
