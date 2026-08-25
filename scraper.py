@@ -1136,6 +1136,91 @@ def build_summary(previous_entries, new_entries):
     return "\n".join(lines)
 
 
+def extraer_datos_para_registro(causa):
+    """
+    A partir de una causa ya procesada (con 'Materia' ya generada), arma
+    la fila para agregar al Registro Cúmplase: ROL, Nombre, N° de
+    Resolución del Servicio Electoral, Elección y Pronunciamiento.
+
+    NOTA: el RUT del reclamante no aparece en ningún lugar del texto de
+    las Sentencias (se verificó directamente), así que no se puede
+    extraer automáticamente -queda vacío para completarse a mano si se
+    necesita-.
+    """
+    materia = causa.get("Materia", "") or ""
+
+    n_res = ""
+    m = re.search(r"resoluci[oó]n N[°º]?\s*([A-Za-z]?\d+)", materia, re.IGNORECASE)
+    if m:
+        n_res = m.group(1).strip()
+
+    nombre = ""
+    m2 = re.search(r"de (?:don|do[ñn]a)\s+([^,]+?),\s*candidat[oa]", materia, re.IGNORECASE)
+    if m2:
+        nombre = m2.group(1).strip()
+    else:
+        m3 = re.search(r"de (?:don|do[ñn]a)\s+([^\.]+?)\.$", materia, re.IGNORECASE)
+        if m3:
+            nombre = m3.group(1).strip()
+
+    return {
+        "Índice": "",
+        "RUT": "",
+        "NOMBRE CANDIDATO": nombre.upper() if nombre else "",
+        "N° RES": n_res,
+        "ELECCIÓN": causa.get("Eleccion", "") or "",
+        "PRONUNCIAMIENTO": causa.get("Pronunciamiento", "") or "",
+        "CAUSA TRICEL - ROL": causa.get("ROL", ""),
+        "Estado Contabilidad": "",
+        "Responsable Contabilidad": "",
+        "Comentario Conta": "",
+        "Comentario Juridico": "",
+        "Finalizado": False,
+    }
+
+
+def actualizar_registro_cumplase(entries):
+    """
+    Revisa todas las causas ya procesadas (con Materia generada) cuya
+    Carátula mencione 'Servicio Electoral', y las agrega automáticamente
+    al Registro Cúmplase (docs/data/registro_cumplase.json) si todavía no
+    estaban ahí -sin pisar registros existentes, para no perder el
+    seguimiento manual (Estado Contabilidad, Responsable, comentarios,
+    Finalizado) ya cargado a mano-.
+    """
+    registro_path = DATA_DIR / "registro_cumplase.json"
+    registro = []
+    if registro_path.exists():
+        try:
+            registro = json.loads(registro_path.read_text(encoding="utf-8"))
+        except Exception:
+            registro = []
+
+    roles_existentes = {str(r.get("CAUSA TRICEL - ROL", "")).strip() for r in registro}
+    agregados = 0
+
+    for entry in entries:
+        for causa in entry.get("Causas", []) or []:
+            rol = str(causa.get("ROL", "")).strip()
+            if not rol or rol in roles_existentes:
+                continue
+            caratula = (causa.get("Caratula") or "").lower()
+            if "servicio electoral" not in caratula:
+                continue
+            if not causa.get("Materia"):
+                continue  # todavía no se ha procesado su Sentencia
+
+            registro.append(extraer_datos_para_registro(causa))
+            roles_existentes.add(rol)
+            agregados += 1
+
+    if agregados:
+        registro_path.write_text(
+            json.dumps(registro, ensure_ascii=False, indent=2), encoding="utf-8"
+        )
+        print(f"Registro Cúmplase: se agregaron {agregados} causa(s) nueva(s) automáticamente.")
+
+
 def main():
     DATA_DIR.mkdir(parents=True, exist_ok=True)
     HISTORY_DIR.mkdir(parents=True, exist_ok=True)
@@ -1193,6 +1278,8 @@ def main():
         key=lambda e: e.get("Fecha", ""),
         reverse=True,
     )
+
+    actualizar_registro_cumplase(entries)
 
     now_local = datetime.now(timezone.utc).astimezone()
     today = now_local.strftime("%Y-%m-%d")
