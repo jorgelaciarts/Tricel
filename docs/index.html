@@ -359,6 +359,8 @@
       </div>
     </div>
 
+    <div id="totalesRegistro" style="font-family:-apple-system,sans-serif;font-size:0.9rem;margin-bottom:0.75rem;"></div>
+
     <input id="buscadorRegistro" type="text" placeholder="Buscar por ROL, nombre, RUT o resolución…">
     <label style="display:inline-flex;align-items:center;gap:0.4rem;margin-left:1rem;font-family:-apple-system,sans-serif;font-size:0.85rem;color:var(--ink);cursor:pointer;">
       <input type="checkbox" id="soloPendientes" style="width:16px;height:16px;accent-color:var(--accent);">
@@ -659,6 +661,14 @@ function renderRegistro(filtro) {
   const contadorEl = document.getElementById('contadorRegistro');
   const f = (filtro || '').trim().toLowerCase();
   const soloPendientes = document.getElementById('soloPendientes')?.checked;
+
+  const totalPendientes = registroCompleto.filter(r => !r['Finalizado']).length;
+  const totalFinalizados = registroCompleto.length - totalPendientes;
+  const totalesEl = document.getElementById('totalesRegistro');
+  if (totalesEl) {
+    totalesEl.innerHTML = 'Total pendientes: <strong style="color:var(--accent);">' + totalPendientes + '</strong>' +
+      ' &nbsp;·&nbsp; Total finalizados: <strong style="color:#2e7d32;">' + totalFinalizados + '</strong>';
+  }
 
   const opcionesEstado = opcionesUnicas('Estado Contabilidad');
   const opcionesResponsable = opcionesUnicas('Responsable Contabilidad');
