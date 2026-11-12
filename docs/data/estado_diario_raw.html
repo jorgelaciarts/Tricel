@@ -158,6 +158,15 @@
 								</thead>
 								<tbody data-bind="foreach: estadoDiarios()">
 								<tr>
+									<td nowrap="" data-bind="text: $parent.formatearFechaUTC(fecha())">12-11-2026</td>
+									<td class="esconder-movil" nowrap="" data-bind="text: countCausas()">11</td>
+									<td class="esconder-movil" nowrap="" data-bind="text: countTramites()">11</td>
+									<td align="center" nowrap=""><span data-bind="click: function(){$parent.openDetalle($data)}" style="cursor: pointer;" class="glyphicon glyphicon-new-window"></span></td>
+									<td align="center" nowrap="" style="cursor: pointer" data-bind="click: function(){$parent.descargarDocumento($data, true)}">
+										<i class="fa fa-fw fa-download text-success"></i></td>
+								</tr>
+								
+								<tr>
 									<td nowrap="" data-bind="text: $parent.formatearFechaUTC(fecha())">11-11-2026</td>
 									<td class="esconder-movil" nowrap="" data-bind="text: countCausas()">2</td>
 									<td class="esconder-movil" nowrap="" data-bind="text: countTramites()">2</td>
@@ -565,7 +574,7 @@
 					</div>
 				</div>
 
-				<div class="modal fade bs-example-modal-sm in" tabindex="-1" role="dialog" id="buscandoestadodiariopublico" aria-hidden="false" style="display: none;">
+				<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" id="buscandoestadodiariopublico" aria-hidden="true" style="display: none;">
 					<div class="modal-dialog modal-sm" role="document">
 						<div class="modal-content">
 							<div class="modal-body">
