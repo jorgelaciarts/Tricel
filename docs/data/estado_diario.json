@@ -1,6 +1,6 @@
 {
   "source_url": "https://tricel.lexsoft.cl/tce/estadoDiario",
-  "fetched_at": "2026-11-13T20:40:57.150815+00:00",
+  "fetched_at": "2026-11-14T19:02:12.747971+00:00",
   "entries": [
     {
       "Fecha": "31-08-2026",
@@ -11518,6 +11518,505 @@
       ]
     },
     {
+      "Fecha": "13-11-2026",
+      "Numero_Causas": "12",
+      "Numero_Tramites": "12",
+      "Causas": [
+        {
+          "ROL": "882-2025",
+          "Caratula": "CABRERA/Servicio Electoral",
+          "Numero_Tramites": "1",
+          "Resoluciones": [
+            {
+              "archivo_relativo": "data/resoluciones/882-2025_13-11-2026_0.pdf",
+              "url_publica": "https://jorgelaciarts.github.io/Tricel/data/resoluciones/882-2025_13-11-2026_0.pdf",
+              "referencia": "Sentencia",
+              "fecha_tramite": "13-11-2026"
+            },
+            {
+              "archivo_relativo": "data/resoluciones/882-2025_23-09-2025_3.pdf",
+              "url_publica": "https://jorgelaciarts.github.io/Tricel/data/resoluciones/882-2025_23-09-2025_3.pdf",
+              "referencia": "Dese cuenta",
+              "fecha_tramite": "23-09-2025"
+            },
+            {
+              "archivo_relativo": "data/resoluciones/882-2025_06-08-2025_7.pdf",
+              "url_publica": "https://jorgelaciarts.github.io/Tricel/data/resoluciones/882-2025_06-08-2025_7.pdf",
+              "referencia": "Previo a resolver",
+              "fecha_tramite": "06-08-2025"
+            }
+          ],
+          "Revisado": true,
+          "Eleccion": "",
+          "Pronunciamiento": "Y LO DISPUESTO EN LOS ARTÍCULOS 47",
+          "Materia": "",
+          "Estado": "Con sentencia",
+          "Solicitud_IA": "14-11-2026"
+        },
+        {
+          "ROL": "937-2025",
+          "Caratula": "UGARTE/Servicio Electoral",
+          "Numero_Tramites": "1",
+          "Resoluciones": [
+            {
+              "archivo_relativo": "data/resoluciones/937-2025_13-11-2026_0.pdf",
+              "url_publica": "https://jorgelaciarts.github.io/Tricel/data/resoluciones/937-2025_13-11-2026_0.pdf",
+              "referencia": "Sentencia",
+              "fecha_tramite": "13-11-2026"
+            },
+            {
+              "archivo_relativo": "data/resoluciones/937-2025_23-09-2025_3.pdf",
+              "url_publica": "https://jorgelaciarts.github.io/Tricel/data/resoluciones/937-2025_23-09-2025_3.pdf",
+              "referencia": "Dese cuenta",
+              "fecha_tramite": "23-09-2025"
+            },
+            {
+              "archivo_relativo": "data/resoluciones/937-2025_06-08-2025_7.pdf",
+              "url_publica": "https://jorgelaciarts.github.io/Tricel/data/resoluciones/937-2025_06-08-2025_7.pdf",
+              "referencia": "Previo a resolver",
+              "fecha_tramite": "06-08-2025"
+            }
+          ],
+          "Revisado": true,
+          "Eleccion": "",
+          "Pronunciamiento": "Y LO ESTABLECIDO EN LOS ARTÍCULOS 10",
+          "Materia": "",
+          "Estado": "Con sentencia",
+          "Solicitud_IA": "14-11-2026"
+        },
+        {
+          "ROL": "1445-2025",
+          "Caratula": "ROMERO/Servicio Electoral",
+          "Numero_Tramites": "1",
+          "Resoluciones": [
+            {
+              "archivo_relativo": "data/resoluciones/1445-2025_13-11-2026_0.pdf",
+              "url_publica": "https://jorgelaciarts.github.io/Tricel/data/resoluciones/1445-2025_13-11-2026_0.pdf",
+              "referencia": "Sentencia",
+              "fecha_tramite": "13-11-2026"
+            },
+            {
+              "archivo_relativo": "data/resoluciones/1445-2025_04-03-2026_3.pdf",
+              "url_publica": "https://jorgelaciarts.github.io/Tricel/data/resoluciones/1445-2025_04-03-2026_3.pdf",
+              "referencia": "Téngase presente",
+              "fecha_tramite": "04-03-2026"
+            },
+            {
+              "archivo_relativo": "data/resoluciones/1445-2025_19-01-2026_5.pdf",
+              "url_publica": "https://jorgelaciarts.github.io/Tricel/data/resoluciones/1445-2025_19-01-2026_5.pdf",
+              "referencia": "Téngase presente",
+              "fecha_tramite": "19-01-2026"
+            },
+            {
+              "archivo_relativo": "data/resoluciones/1445-2025_13-10-2025_7.pdf",
+              "url_publica": "https://jorgelaciarts.github.io/Tricel/data/resoluciones/1445-2025_13-10-2025_7.pdf",
+              "referencia": "Dese cuenta",
+              "fecha_tramite": "13-10-2025"
+            },
+            {
+              "archivo_relativo": "data/resoluciones/1445-2025_05-09-2025_11.pdf",
+              "url_publica": "https://jorgelaciarts.github.io/Tricel/data/resoluciones/1445-2025_05-09-2025_11.pdf",
+              "referencia": "Previo a resolver",
+              "fecha_tramite": "05-09-2025"
+            }
+          ],
+          "Revisado": true,
+          "Eleccion": "",
+          "Pronunciamiento": "Y CITAS LEGALES",
+          "Materia": "",
+          "Estado": "Con sentencia",
+          "Solicitud_IA": "14-11-2026"
+        },
+        {
+          "ROL": "1453-2025",
+          "Caratula": "LLORENTE/Servicio Electoral",
+          "Numero_Tramites": "1",
+          "Resoluciones": [
+            {
+              "archivo_relativo": "data/resoluciones/1453-2025_13-11-2026_0.pdf",
+              "url_publica": "https://jorgelaciarts.github.io/Tricel/data/resoluciones/1453-2025_13-11-2026_0.pdf",
+              "referencia": "Sentencia",
+              "fecha_tramite": "13-11-2026"
+            },
+            {
+              "archivo_relativo": "data/resoluciones/1453-2025_17-06-2026_3.pdf",
+              "url_publica": "https://jorgelaciarts.github.io/Tricel/data/resoluciones/1453-2025_17-06-2026_3.pdf",
+              "referencia": "Téngase presente",
+              "fecha_tramite": "17-06-2026"
+            },
+            {
+              "archivo_relativo": "data/resoluciones/1453-2025_04-06-2026_5.pdf",
+              "url_publica": "https://jorgelaciarts.github.io/Tricel/data/resoluciones/1453-2025_04-06-2026_5.pdf",
+              "referencia": "Téngase presente",
+              "fecha_tramite": "04-06-2026"
+            },
+            {
+              "archivo_relativo": "data/resoluciones/1453-2025_13-10-2025_7.pdf",
+              "url_publica": "https://jorgelaciarts.github.io/Tricel/data/resoluciones/1453-2025_13-10-2025_7.pdf",
+              "referencia": "Dese cuenta",
+              "fecha_tramite": "13-10-2025"
+            },
+            {
+              "archivo_relativo": "data/resoluciones/1453-2025_05-09-2025_11.pdf",
+              "url_publica": "https://jorgelaciarts.github.io/Tricel/data/resoluciones/1453-2025_05-09-2025_11.pdf",
+              "referencia": "Previo a resolver",
+              "fecha_tramite": "05-09-2025"
+            }
+          ],
+          "Revisado": true,
+          "Eleccion": "",
+          "Pronunciamiento": "ACOGE PARCIAL",
+          "Materia": "",
+          "Estado": "Con sentencia",
+          "Solicitud_IA": "14-11-2026"
+        },
+        {
+          "ROL": "1455-2025",
+          "Caratula": "Pacheco Aguilera/Servicio Electoral",
+          "Numero_Tramites": "1",
+          "Resoluciones": [
+            {
+              "archivo_relativo": "data/resoluciones/1455-2025_13-11-2026_0.pdf",
+              "url_publica": "https://jorgelaciarts.github.io/Tricel/data/resoluciones/1455-2025_13-11-2026_0.pdf",
+              "referencia": "Sentencia",
+              "fecha_tramite": "13-11-2026"
+            },
+            {
+              "archivo_relativo": "data/resoluciones/1455-2025_13-10-2025_3.pdf",
+              "url_publica": "https://jorgelaciarts.github.io/Tricel/data/resoluciones/1455-2025_13-10-2025_3.pdf",
+              "referencia": "Dese cuenta",
+              "fecha_tramite": "13-10-2025"
+            },
+            {
+              "archivo_relativo": "data/resoluciones/1455-2025_05-09-2025_7.pdf",
+              "url_publica": "https://jorgelaciarts.github.io/Tricel/data/resoluciones/1455-2025_05-09-2025_7.pdf",
+              "referencia": "Previo a resolver",
+              "fecha_tramite": "05-09-2025"
+            }
+          ],
+          "Revisado": true,
+          "Eleccion": "",
+          "Pronunciamiento": "Y CITAS LEGALES",
+          "Materia": "",
+          "Estado": "Con sentencia",
+          "Solicitud_IA": "14-11-2026"
+        },
+        {
+          "ROL": "1456-2025",
+          "Caratula": "Romero/Servicio Electoral",
+          "Numero_Tramites": "1",
+          "Resoluciones": [
+            {
+              "archivo_relativo": "data/resoluciones/1456-2025_13-11-2026_0.pdf",
+              "url_publica": "https://jorgelaciarts.github.io/Tricel/data/resoluciones/1456-2025_13-11-2026_0.pdf",
+              "referencia": "Sentencia",
+              "fecha_tramite": "13-11-2026"
+            },
+            {
+              "archivo_relativo": "data/resoluciones/1456-2025_09-02-2026_3.pdf",
+              "url_publica": "https://jorgelaciarts.github.io/Tricel/data/resoluciones/1456-2025_09-02-2026_3.pdf",
+              "referencia": "Téngase presente",
+              "fecha_tramite": "09-02-2026"
+            },
+            {
+              "archivo_relativo": "data/resoluciones/1456-2025_19-01-2026_5.pdf",
+              "url_publica": "https://jorgelaciarts.github.io/Tricel/data/resoluciones/1456-2025_19-01-2026_5.pdf",
+              "referencia": "Téngase presente",
+              "fecha_tramite": "19-01-2026"
+            },
+            {
+              "archivo_relativo": "data/resoluciones/1456-2025_14-10-2025_7.pdf",
+              "url_publica": "https://jorgelaciarts.github.io/Tricel/data/resoluciones/1456-2025_14-10-2025_7.pdf",
+              "referencia": "Dese cuenta",
+              "fecha_tramite": "14-10-2025"
+            },
+            {
+              "archivo_relativo": "data/resoluciones/1456-2025_05-09-2025_12.pdf",
+              "url_publica": "https://jorgelaciarts.github.io/Tricel/data/resoluciones/1456-2025_05-09-2025_12.pdf",
+              "referencia": "Previo a resolver",
+              "fecha_tramite": "05-09-2025"
+            }
+          ],
+          "Revisado": true,
+          "Eleccion": "",
+          "Pronunciamiento": "Y CITAS LEGALES",
+          "Materia": "",
+          "Estado": "Con sentencia",
+          "Solicitud_IA": "14-11-2026"
+        },
+        {
+          "ROL": "1658-2025",
+          "Caratula": "MUÑOZ/Servicio Electoral",
+          "Numero_Tramites": "1",
+          "Resoluciones": [
+            {
+              "archivo_relativo": "data/resoluciones/1658-2025_09-09-2026_0.pdf",
+              "url_publica": "https://jorgelaciarts.github.io/Tricel/data/resoluciones/1658-2025_09-09-2026_0.pdf",
+              "referencia": "Trámite",
+              "fecha_tramite": "09-09-2026"
+            },
+            {
+              "archivo_relativo": "data/resoluciones/1658-2025_30-07-2026_3.pdf",
+              "url_publica": "https://jorgelaciarts.github.io/Tricel/data/resoluciones/1658-2025_30-07-2026_3.pdf",
+              "referencia": "Téngase presente",
+              "fecha_tramite": "30-07-2026"
+            },
+            {
+              "archivo_relativo": "data/resoluciones/1658-2025_04-03-2026_5.pdf",
+              "url_publica": "https://jorgelaciarts.github.io/Tricel/data/resoluciones/1658-2025_04-03-2026_5.pdf",
+              "referencia": "Téngase presente",
+              "fecha_tramite": "04-03-2026"
+            },
+            {
+              "archivo_relativo": "data/resoluciones/1658-2025_12-02-2026_9.pdf",
+              "url_publica": "https://jorgelaciarts.github.io/Tricel/data/resoluciones/1658-2025_12-02-2026_9.pdf",
+              "referencia": "Trámite",
+              "fecha_tramite": "12-02-2026"
+            },
+            {
+              "archivo_relativo": "data/resoluciones/1658-2025_05-02-2026_20.pdf",
+              "url_publica": "https://jorgelaciarts.github.io/Tricel/data/resoluciones/1658-2025_05-02-2026_20.pdf",
+              "referencia": "Téngase presente en lo que corresponda",
+              "fecha_tramite": "05-02-2026"
+            },
+            {
+              "archivo_relativo": "data/resoluciones/1658-2025_19-01-2026_22.pdf",
+              "url_publica": "https://jorgelaciarts.github.io/Tricel/data/resoluciones/1658-2025_19-01-2026_22.pdf",
+              "referencia": "Téngase presente",
+              "fecha_tramite": "19-01-2026"
+            },
+            {
+              "archivo_relativo": "data/resoluciones/1658-2025_06-08-2025_26.pdf",
+              "url_publica": "https://jorgelaciarts.github.io/Tricel/data/resoluciones/1658-2025_06-08-2025_26.pdf",
+              "referencia": "Dese cuenta",
+              "fecha_tramite": "06-08-2025"
+            }
+          ],
+          "Revisado": true,
+          "Eleccion": "",
+          "Pronunciamiento": "",
+          "Materia": "",
+          "Estado": "En trámite",
+          "Solicitud_IA": "10-09-2026"
+        },
+        {
+          "ROL": "1670-2025",
+          "Caratula": "LUCERO/Servicio Electoral",
+          "Numero_Tramites": "1",
+          "Resoluciones": [
+            {
+              "archivo_relativo": "data/resoluciones/1670-2025_13-11-2026_0.pdf",
+              "url_publica": "https://jorgelaciarts.github.io/Tricel/data/resoluciones/1670-2025_13-11-2026_0.pdf",
+              "referencia": "Sentencia",
+              "fecha_tramite": "13-11-2026"
+            },
+            {
+              "archivo_relativo": "data/resoluciones/1670-2025_12-03-2026_3.pdf",
+              "url_publica": "https://jorgelaciarts.github.io/Tricel/data/resoluciones/1670-2025_12-03-2026_3.pdf",
+              "referencia": "Téngase presente",
+              "fecha_tramite": "12-03-2026"
+            },
+            {
+              "archivo_relativo": "data/resoluciones/1670-2025_19-01-2026_5.pdf",
+              "url_publica": "https://jorgelaciarts.github.io/Tricel/data/resoluciones/1670-2025_19-01-2026_5.pdf",
+              "referencia": "Téngase presente",
+              "fecha_tramite": "19-01-2026"
+            },
+            {
+              "archivo_relativo": "data/resoluciones/1670-2025_30-09-2025_7.pdf",
+              "url_publica": "https://jorgelaciarts.github.io/Tricel/data/resoluciones/1670-2025_30-09-2025_7.pdf",
+              "referencia": "Dese cuenta",
+              "fecha_tramite": "30-09-2025"
+            },
+            {
+              "archivo_relativo": "data/resoluciones/1670-2025_16-09-2025_12.pdf",
+              "url_publica": "https://jorgelaciarts.github.io/Tricel/data/resoluciones/1670-2025_16-09-2025_12.pdf",
+              "referencia": "Previo a resolver",
+              "fecha_tramite": "16-09-2025"
+            }
+          ],
+          "Revisado": true,
+          "Eleccion": "",
+          "Pronunciamiento": "Y CITAS LEGALES",
+          "Materia": "",
+          "Estado": "Con sentencia",
+          "Solicitud_IA": "14-11-2026"
+        },
+        {
+          "ROL": "1679-2025",
+          "Caratula": "Orrego/Servicio Electoral",
+          "Numero_Tramites": "1",
+          "Resoluciones": [
+            {
+              "archivo_relativo": "data/resoluciones/1679-2025_12-11-2026_0.pdf",
+              "url_publica": "https://jorgelaciarts.github.io/Tricel/data/resoluciones/1679-2025_12-11-2026_0.pdf",
+              "referencia": "Téngase presente",
+              "fecha_tramite": "12-11-2026"
+            },
+            {
+              "archivo_relativo": "data/resoluciones/1679-2025_25-06-2026_3.pdf",
+              "url_publica": "https://jorgelaciarts.github.io/Tricel/data/resoluciones/1679-2025_25-06-2026_3.pdf",
+              "referencia": "Téngase presente",
+              "fecha_tramite": "25-06-2026"
+            },
+            {
+              "archivo_relativo": "data/resoluciones/1679-2025_18-11-2025_5.pdf",
+              "url_publica": "https://jorgelaciarts.github.io/Tricel/data/resoluciones/1679-2025_18-11-2025_5.pdf",
+              "referencia": "Téngase presente",
+              "fecha_tramite": "18-11-2025"
+            },
+            {
+              "archivo_relativo": "data/resoluciones/1679-2025_01-10-2025_7.pdf",
+              "url_publica": "https://jorgelaciarts.github.io/Tricel/data/resoluciones/1679-2025_01-10-2025_7.pdf",
+              "referencia": "Dese cuenta",
+              "fecha_tramite": "01-10-2025"
+            },
+            {
+              "archivo_relativo": "data/resoluciones/1679-2025_22-09-2025_12.pdf",
+              "url_publica": "https://jorgelaciarts.github.io/Tricel/data/resoluciones/1679-2025_22-09-2025_12.pdf",
+              "referencia": "Téngase presente",
+              "fecha_tramite": "22-09-2025"
+            },
+            {
+              "archivo_relativo": "data/resoluciones/1679-2025_16-09-2025_14.pdf",
+              "url_publica": "https://jorgelaciarts.github.io/Tricel/data/resoluciones/1679-2025_16-09-2025_14.pdf",
+              "referencia": "Previo a resolver",
+              "fecha_tramite": "16-09-2025"
+            }
+          ],
+          "Revisado": true,
+          "Eleccion": "",
+          "Pronunciamiento": "",
+          "Materia": "",
+          "Estado": "En trámite",
+          "Solicitud_IA": "12-11-2026"
+        },
+        {
+          "ROL": "2217-2025",
+          "Caratula": "Burgos Vásquez /Godoy Vera",
+          "Numero_Tramites": "1",
+          "Resoluciones": [
+            {
+              "archivo_relativo": "data/resoluciones/2217-2025_05-11-2026_0.pdf",
+              "url_publica": "https://jorgelaciarts.github.io/Tricel/data/resoluciones/2217-2025_05-11-2026_0.pdf",
+              "referencia": "Como se pide suspende",
+              "fecha_tramite": "05-11-2026"
+            },
+            {
+              "archivo_relativo": "data/resoluciones/2217-2025_16-01-2026_3.pdf",
+              "url_publica": "https://jorgelaciarts.github.io/Tricel/data/resoluciones/2217-2025_16-01-2026_3.pdf",
+              "referencia": "Téngase presente",
+              "fecha_tramite": "16-01-2026"
+            },
+            {
+              "archivo_relativo": "data/resoluciones/2217-2025_19-12-2025_7.pdf",
+              "url_publica": "https://jorgelaciarts.github.io/Tricel/data/resoluciones/2217-2025_19-12-2025_7.pdf",
+              "referencia": "Autos en relación",
+              "fecha_tramite": "19-12-2025"
+            }
+          ],
+          "Revisado": true,
+          "Eleccion": "",
+          "Pronunciamiento": "",
+          "Materia": "",
+          "Estado": "En trámite",
+          "Solicitud_IA": "05-11-2026"
+        },
+        {
+          "ROL": "2235-2025",
+          "Caratula": "Tapia Díaz/ Sandoval",
+          "Numero_Tramites": "1",
+          "Resoluciones": [
+            {
+              "archivo_relativo": "data/resoluciones/2235-2025_06-11-2026_0.pdf",
+              "url_publica": "https://jorgelaciarts.github.io/Tricel/data/resoluciones/2235-2025_06-11-2026_0.pdf",
+              "referencia": "Como se pide, suspéndase",
+              "fecha_tramite": "06-11-2026"
+            },
+            {
+              "archivo_relativo": "data/resoluciones/2235-2025_09-04-2026_2.pdf",
+              "url_publica": "https://jorgelaciarts.github.io/Tricel/data/resoluciones/2235-2025_09-04-2026_2.pdf",
+              "referencia": "Téngase presente",
+              "fecha_tramite": "09-04-2026"
+            },
+            {
+              "archivo_relativo": "data/resoluciones/2235-2025_20-02-2026_4.pdf",
+              "url_publica": "https://jorgelaciarts.github.io/Tricel/data/resoluciones/2235-2025_20-02-2026_4.pdf",
+              "referencia": "Téngase presente",
+              "fecha_tramite": "20-02-2026"
+            },
+            {
+              "archivo_relativo": "data/resoluciones/2235-2025_27-01-2026_7.pdf",
+              "url_publica": "https://jorgelaciarts.github.io/Tricel/data/resoluciones/2235-2025_27-01-2026_7.pdf",
+              "referencia": "Autos en relación",
+              "fecha_tramite": "27-01-2026"
+            },
+            {
+              "archivo_relativo": "data/resoluciones/2235-2025_16-01-2026_11.pdf",
+              "url_publica": "https://jorgelaciarts.github.io/Tricel/data/resoluciones/2235-2025_16-01-2026_11.pdf",
+              "referencia": "Dese cuenta",
+              "fecha_tramite": "16-01-2026"
+            }
+          ],
+          "Revisado": true,
+          "Eleccion": "",
+          "Pronunciamiento": "",
+          "Materia": "",
+          "Estado": "En trámite",
+          "Solicitud_IA": "07-11-2026"
+        },
+        {
+          "ROL": "186-2026",
+          "Caratula": "REYES/Servicio Electoral",
+          "Numero_Tramites": "1",
+          "Resoluciones": [
+            {
+              "archivo_relativo": "data/resoluciones/186-2026_09-09-2026_0.pdf",
+              "url_publica": "https://jorgelaciarts.github.io/Tricel/data/resoluciones/186-2026_09-09-2026_0.pdf",
+              "referencia": "dese cuenta",
+              "fecha_tramite": "09-09-2026"
+            },
+            {
+              "archivo_relativo": "data/resoluciones/186-2026_27-08-2026_4.pdf",
+              "url_publica": "https://jorgelaciarts.github.io/Tricel/data/resoluciones/186-2026_27-08-2026_4.pdf",
+              "referencia": "Trámite",
+              "fecha_tramite": "27-08-2026"
+            },
+            {
+              "archivo_relativo": "data/resoluciones/186-2026_30-07-2026_5.pdf",
+              "url_publica": "https://jorgelaciarts.github.io/Tricel/data/resoluciones/186-2026_30-07-2026_5.pdf",
+              "referencia": "Téngase presente",
+              "fecha_tramite": "30-07-2026"
+            },
+            {
+              "archivo_relativo": "data/resoluciones/186-2026_23-07-2026_8.pdf",
+              "url_publica": "https://jorgelaciarts.github.io/Tricel/data/resoluciones/186-2026_23-07-2026_8.pdf",
+              "referencia": "Previo a proveer",
+              "fecha_tramite": "23-07-2026"
+            },
+            {
+              "archivo_relativo": "data/resoluciones/186-2026_25-06-2026_10.pdf",
+              "url_publica": "https://jorgelaciarts.github.io/Tricel/data/resoluciones/186-2026_25-06-2026_10.pdf",
+              "referencia": "Téngase presente",
+              "fecha_tramite": "25-06-2026"
+            },
+            {
+              "archivo_relativo": "data/resoluciones/186-2026_14-05-2026_12.pdf",
+              "url_publica": "https://jorgelaciarts.github.io/Tricel/data/resoluciones/186-2026_14-05-2026_12.pdf",
+              "referencia": "Dese cuenta",
+              "fecha_tramite": "14-05-2026"
+            }
+          ],
+          "Revisado": true,
+          "Eleccion": "",
+          "Pronunciamiento": "",
+          "Materia": "",
+          "Estado": "En trámite",
+          "Solicitud_IA": "10-09-2026"
+        }
+      ]
+    },
+    {
       "Fecha": "13-10-2026",
       "Numero_Causas": "33",
       "Numero_Tramites": "33",
@@ -13679,7 +14178,7 @@
           "Pronunciamiento": "RECHAZA",
           "Materia": "",
           "Estado": "Con sentencia",
-          "Solicitud_IA": "13-11-2026"
+          "Solicitud_IA": "14-11-2026"
         },
         {
           "ROL": "208-2026",
