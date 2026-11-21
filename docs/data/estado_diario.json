@@ -1,6 +1,6 @@
 {
   "source_url": "https://tricel.lexsoft.cl/tce/estadoDiario",
-  "fetched_at": "2026-11-20T21:19:18.571069+00:00",
+  "fetched_at": "2026-11-21T20:19:18.371824+00:00",
   "entries": [
     {
       "Fecha": "31-08-2026",
@@ -7386,6 +7386,156 @@
       ]
     },
     {
+      "Fecha": "20-11-2026",
+      "Numero_Causas": "5",
+      "Numero_Tramites": "5",
+      "Causas": [
+        {
+          "ROL": "2106-2025",
+          "Caratula": "Caballero Germain /",
+          "Numero_Tramites": "1",
+          "Resoluciones": [
+            {
+              "archivo_relativo": "data/resoluciones/2106-2025_09-10-2026_0.pdf",
+              "url_publica": "https://jorgelaciarts.github.io/Tricel/data/resoluciones/2106-2025_09-10-2026_0.pdf",
+              "referencia": "Dese cuenta",
+              "fecha_tramite": "09-10-2026"
+            },
+            {
+              "archivo_relativo": "data/resoluciones/2106-2025_12-02-2026_1.pdf",
+              "url_publica": "https://jorgelaciarts.github.io/Tricel/data/resoluciones/2106-2025_12-02-2026_1.pdf",
+              "referencia": "Trámite",
+              "fecha_tramite": "12-02-2026"
+            },
+            {
+              "archivo_relativo": "data/resoluciones/2106-2025_06-11-2025_4.pdf",
+              "url_publica": "https://jorgelaciarts.github.io/Tricel/data/resoluciones/2106-2025_06-11-2025_4.pdf",
+              "referencia": "Autos en relación",
+              "fecha_tramite": "06-11-2025"
+            },
+            {
+              "archivo_relativo": "data/resoluciones/2106-2025_30-10-2025_8.pdf",
+              "url_publica": "https://jorgelaciarts.github.io/Tricel/data/resoluciones/2106-2025_30-10-2025_8.pdf",
+              "referencia": "Previo a resolver",
+              "fecha_tramite": "30-10-2025"
+            }
+          ],
+          "Revisado": true,
+          "Eleccion": "",
+          "Pronunciamiento": "",
+          "Materia": "",
+          "Estado": "En trámite",
+          "Solicitud_IA": "10-10-2026"
+        },
+        {
+          "ROL": "2107-2025",
+          "Caratula": "zepeda castro/",
+          "Numero_Tramites": "1",
+          "Resoluciones": [
+            {
+              "archivo_relativo": "data/resoluciones/2107-2025_09-10-2026_0.pdf",
+              "url_publica": "https://jorgelaciarts.github.io/Tricel/data/resoluciones/2107-2025_09-10-2026_0.pdf",
+              "referencia": "Dese cuenta",
+              "fecha_tramite": "09-10-2026"
+            },
+            {
+              "archivo_relativo": "data/resoluciones/2107-2025_12-02-2026_1.pdf",
+              "url_publica": "https://jorgelaciarts.github.io/Tricel/data/resoluciones/2107-2025_12-02-2026_1.pdf",
+              "referencia": "Trámite",
+              "fecha_tramite": "12-02-2026"
+            },
+            {
+              "archivo_relativo": "data/resoluciones/2107-2025_06-11-2025_4.pdf",
+              "url_publica": "https://jorgelaciarts.github.io/Tricel/data/resoluciones/2107-2025_06-11-2025_4.pdf",
+              "referencia": "Autos en relación",
+              "fecha_tramite": "06-11-2025"
+            }
+          ],
+          "Revisado": true,
+          "Eleccion": "",
+          "Pronunciamiento": "",
+          "Materia": "",
+          "Estado": "En trámite",
+          "Solicitud_IA": "10-10-2026"
+        },
+        {
+          "ROL": "2227-2025",
+          "Caratula": "Bujes Retamal /Cuerpo Bomberos Puente Alto",
+          "Numero_Tramites": "1",
+          "Resoluciones": [
+            {
+              "archivo_relativo": "data/resoluciones/2227-2025_05-11-2026_0.pdf",
+              "url_publica": "https://jorgelaciarts.github.io/Tricel/data/resoluciones/2227-2025_05-11-2026_0.pdf",
+              "referencia": "Téngase presente",
+              "fecha_tramite": "05-11-2026"
+            },
+            {
+              "archivo_relativo": "data/resoluciones/2227-2025_27-01-2026_2.pdf",
+              "url_publica": "https://jorgelaciarts.github.io/Tricel/data/resoluciones/2227-2025_27-01-2026_2.pdf",
+              "referencia": "Téngase presente",
+              "fecha_tramite": "27-01-2026"
+            },
+            {
+              "archivo_relativo": "data/resoluciones/2227-2025_02-01-2026_4.pdf",
+              "url_publica": "https://jorgelaciarts.github.io/Tricel/data/resoluciones/2227-2025_02-01-2026_4.pdf",
+              "referencia": "Autos en relación",
+              "fecha_tramite": "02-01-2026"
+            }
+          ],
+          "Revisado": true,
+          "Eleccion": "",
+          "Pronunciamiento": "",
+          "Materia": "",
+          "Estado": "En trámite",
+          "Solicitud_IA": "05-11-2026"
+        },
+        {
+          "ROL": "501-2026",
+          "Caratula": "Cáceres Osorio /Escanilla Gaete",
+          "Numero_Tramites": "1",
+          "Resoluciones": [
+            {
+              "archivo_relativo": "data/resoluciones/501-2026_05-11-2026_0.pdf",
+              "url_publica": "https://jorgelaciarts.github.io/Tricel/data/resoluciones/501-2026_05-11-2026_0.pdf",
+              "referencia": "Dese cuenta",
+              "fecha_tramite": "05-11-2026"
+            },
+            {
+              "archivo_relativo": "data/resoluciones/501-2026_07-08-2026_2.pdf",
+              "url_publica": "https://jorgelaciarts.github.io/Tricel/data/resoluciones/501-2026_07-08-2026_2.pdf",
+              "referencia": "Dese cuenta",
+              "fecha_tramite": "07-08-2026"
+            }
+          ],
+          "Revisado": true,
+          "Eleccion": "",
+          "Pronunciamiento": "",
+          "Materia": "",
+          "Estado": "En trámite",
+          "Solicitud_IA": "05-11-2026"
+        },
+        {
+          "ROL": "618-2026",
+          "Caratula": "cauquenes/",
+          "Numero_Tramites": "1",
+          "Resoluciones": [
+            {
+              "archivo_relativo": "data/resoluciones/618-2026_05-11-2026_0.pdf",
+              "url_publica": "https://jorgelaciarts.github.io/Tricel/data/resoluciones/618-2026_05-11-2026_0.pdf",
+              "referencia": "Dese cuenta",
+              "fecha_tramite": "05-11-2026"
+            }
+          ],
+          "Revisado": true,
+          "Eleccion": "",
+          "Pronunciamiento": "",
+          "Materia": "",
+          "Estado": "En trámite",
+          "Solicitud_IA": "05-11-2026"
+        }
+      ]
+    },
+    {
       "Fecha": "20-10-2026",
       "Numero_Causas": "30",
       "Numero_Tramites": "30",
@@ -9095,7 +9245,7 @@
           "Pronunciamiento": "Y CITAS LEGALES",
           "Materia": "",
           "Estado": "Con sentencia",
-          "Solicitud_IA": "20-11-2026"
+          "Solicitud_IA": "21-11-2026"
         },
         {
           "ROL": "225-2026",
@@ -9132,7 +9282,7 @@
           "Pronunciamiento": "Y CITAS LEGALES",
           "Materia": "",
           "Estado": "Con sentencia",
-          "Solicitud_IA": "20-11-2026"
+          "Solicitud_IA": "21-11-2026"
         },
         {
           "ROL": "226-2026",
@@ -9169,7 +9319,7 @@
           "Pronunciamiento": "Y CITAS LEGALES",
           "Materia": "",
           "Estado": "Con sentencia",
-          "Solicitud_IA": "20-11-2026"
+          "Solicitud_IA": "21-11-2026"
         },
         {
           "ROL": "227-2026",
